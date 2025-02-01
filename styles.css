@@ -211,18 +211,49 @@ button#CV{
     white-space: nowrap; /* Evita que el texto dentro del botón salte de línea */
     height: 45px;
     transition: .4s;
+    z-index: 100;
+}
+
+@keyframes hoverAnimation {
+    0% {
+        top: -47px;
+        height: 45px;
+
+    }
+    30% {
+        top: -47px;
+        height: 45px;
+
+    }
+    50% {
+        top: -50px;
+        height: 48px;
+
+    }
+    70% {
+        top: -47px;
+        height: 45px;
+
+    }
+    100% {
+        top: -47px;
+        height: 45px;
+
+    }
+}
+
+button#CV {
+    animation: hoverAnimation 1s  infinite;
+    cursor: pointer;
 }
 
 button#CV:hover{
-    background-color: #00D2FF;
+    background-color: #03BCE4;
     color: white;
-    cursor: pointer;
-    height: 55px;
-    transition: .2s ease-out;
-    top: -57px;
+    transition: .2s;
 }
 
-#About h1{
+#About h1{  
     margin: 100px auto 0 0;
 }
 
@@ -262,11 +293,15 @@ button#CV:hover{
     padding: 30px 35px;
     display: flex;
     flex-direction: row;
+    pointer-events: fill;
+    z-index: 0;
     height: auto;
     width: 75%;
     background: linear-gradient(135deg,rgba(0, 0, 0, 0.10),rgba(0, 0, 0, 0.10));
     transition: .4s;
+    position: relative;
 }
+
 
 #About-Info:hover{
     border: solid 1.5px #03BCE4;
@@ -699,6 +734,7 @@ button#CV:hover{
     color: #00D2FF;
     margin: 0 0 0 10px;
     font-style: italic;
+    text-decoration: underline;
     text-decoration: underline;
     opacity: .75;
 }
