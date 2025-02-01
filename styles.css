@@ -526,6 +526,15 @@ button#CV:hover{
     width: calc(41% - 70px);
     height: min-content;
     position: relative;
+    transition: .3s;
+}
+
+#Contact-Info:hover {
+    border: solid 1.5px #03BCE4;
+    transition: .2s;
+    background-color: rgba(0, 133, 173, 0.1);   
+    border-radius: 35px;
+    transform: translate(0, -10px);
 }
 
 #Contact-Info h2{
@@ -627,7 +636,21 @@ button#CV:hover{
     cursor: pointer;
     transition: .3s ;
 }
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
+.Contact-IMG {
+    animation: float 1.5s ease-in-out infinite; /* Aplica la animación de flotación */
+}
 .Experience{
     display: flex;
     flex-wrap: wrap;
@@ -669,16 +692,76 @@ button#CV:hover{
     margin: 0;
 }
 
+.Experience h3 span{
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Roboto';
+    color: #00D2FF;
+    margin: 0 0 0 10px;
+    font-style: italic;
+    text-decoration: underline;
+    opacity: .75;
+}
+
 .Experience h4{
     color: #0FA2C1;
+    position: relative;
 }
 
 .Experience p{
     color: #B3BDC7;
     font-size: 20px;
-    margin: 10px 0 10px 0;
+    margin: 10px 0 -20px 0;
 }
 
+footer{
+    background-color: #333439;
+    width: 50%;
+    position: absolute;
+    left: 0;
+    margin: 40px 0 0 0;
+    color: #00A6CA;
+    font-weight: medium;
+    font-family: 'Roboto Mono';
+    font-size: large;
+    text-align: center;
+    align-items: center;
+    padding: 10px 25% 5px 25%;
+}
+
+footer div {
+    display: flex;
+    justify-content: space-between; /* Dispersa los elementos uniformemente */
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: #00A6CA;
+    font-weight: 500; /* Cambia 'medium' a '500' para font-weight */
+    font-family: 'Roboto Mono';
+    font-size: large;
+    text-align: center;
+    width: 100%;
+}
+
+footer div a{
+    color: #00A6CA;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Roboto Mono';
+    font-size: large;
+    transition: .3s;
+    padding: 12px;
+    margin: 0;
+}
+footer div a:hover{
+    color: #00D2FF;
+    cursor: pointer;
+    transition: .7s;
+    rotate: 360deg;
+}
+footer p{
+    margin: 0;
+}
 @media (max-width: 1705px){
     #Front-Right{  
         max-width: 44%;
