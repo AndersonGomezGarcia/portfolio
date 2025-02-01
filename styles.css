@@ -226,7 +226,7 @@ button#CV:hover{
     margin: 100px auto 0 0;
 }
 
-#About h1, #Skills h1, #Contact h1, #Projects h1{
+#About h1, #Skills h1, #Contact h1, #Projects h1, #Experience h1{
     font-size: 50px;
     font-weight: 600;
     font-family: 'Roboto';
@@ -238,7 +238,7 @@ button#CV:hover{
     padding: 50px 0 50px 0;
 
 }
-#About h1:hover, #Skills h1:hover, #Contact h1:hover, #Projects h1:hover{
+#About h1:hover, #Skills h1:hover, #Contact h1:hover, #Projects h1:hover, #Experience h1:hover{
     white-space: 10px;
     text-indent: 2px;
     transition: .2s;
@@ -425,7 +425,6 @@ button#CV:hover{
     padding: 0;
     background-color: rgba(0, 0, 0, 0.10);
     background: linear-gradient(135deg,rgba(0, 0, 0, 0.10)); /* Gradiente lineal en diagonal */
-
     border-radius: 50px;
     color: white;
     flex-direction: column; 
@@ -512,6 +511,174 @@ button#CV:hover{
     list-style-type: none;
 }
 
+#Contact-Items{
+    display: inline-flex;
+}
+#Contact-Info{
+    display: flex;
+    margin: 125px 0 0 0 ;
+    padding: 40px;
+    color: white;
+    flex-direction: column; 
+    border: solid 1.5px #ffffff1f ;
+    background-color: #2C2D32;
+    border-radius: 25px;
+    width: calc(41% - 70px);
+    height: min-content;
+    position: relative;
+}
+
+#Contact-Info h2{
+    font-size: 45px;
+    font-weight: 600;
+    font-family: 'Roboto';
+    color: white;
+    transition: .4s;
+    margin: 0 0 15px 0;
+}
+
+#Contact-Info p{
+    font-size: 21px;
+    font-weight: 400;
+    font-family: 'Roboto';
+    color: white;
+    margin: 0 0 25px 0;
+    padding: 0;
+    opacity: .75;
+}
+#Contact-Info img{
+    height: 100px;
+    margin: 0 10px 0 0;
+    position: absolute;
+    top: -120px;
+    right: calc(50% - 50px);
+}
+#Contact-Info p img{
+    height: 20px;
+    margin: 0 10px 0 0;
+    top: 0;
+    position: relative;
+    right: 0;
+}
+
+#Contact-Form{
+    width: 54%;
+    margin: 0 0 0 auto;
+}
+
+#Contact-Form form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    transition: .3s;
+}
+
+#Contact-Form form input, #Contact-Form form textarea{
+    border: solid 1px #ffffff1f ;
+    border-radius: 15px;
+    padding: 10px 20px 10px 55px;
+    background-color: #2C2D32;
+    font-family: 'Roboto';
+    font-size: 20px;
+    margin: 0px;
+    font-weight: 600;
+    transition: .4s;
+    width: 100%;
+    color: #00b9ec;
+}
+#Contact form textarea{
+    padding-top: 30px;
+}
+
+#Contact-Form form input::placeholder, #Contact-Form form textarea::placeholder{
+    color: #009eca;
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#Contact-Form form input:focus, #Contact-Form form textarea:focus{
+    border: solid 1px #03BCE4;
+    transition: .2s;
+}
+
+#Contact-Form form button{
+    background-color: #00D2FF;
+    border: none;
+    padding: 10px 45px;
+    color: #27282C;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 18px;
+    font-family: 'Roboto Mono';
+    font-size: 28px;
+    transition: .3s;
+    float: left;
+    margin: 0 auto 0 0;
+}
+
+#Contact-Form form button:hover{
+    background-color: #03BCE4;
+    color: white;
+    cursor: pointer;
+    transition: .3s ;
+}
+
+.Experience{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    flex-direction: column; 
+    padding: 0 0 0 50px;
+    position: relative;
+}
+.Experience::before {
+    content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
+    display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
+    height: 8px;
+    width: 8px;
+    border-radius: 5px;
+    position: absolute; /* Posiciona el pseudo-elemento absolutamente */
+    left: 20px;
+    top: 17px; /* Ajusta la posición según sea necesario */
+    background-color: #00D2FF;
+}
+.Experience::after {
+    content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
+    display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
+    height: calc(100% - 35px);
+    width: 2px;
+    position: absolute; /* Posiciona el pseudo-elemento absolutamente */
+    left: 23px;
+    top: 17px; /* Ajusta la posición según sea necesario */
+    background-color: #00D2FF;
+    opacity: .5;
+}
+
+.Experience h3{
+    font-size: 35px;
+    font-weight: 600;
+    font-family: 'Roboto';
+    color: #00D2FF;
+    margin: 0;
+}
+
+.Experience h4{
+    color: #0FA2C1;
+}
+
+.Experience p{
+    color: #B3BDC7;
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+}
+
 @media (max-width: 1705px){
     #Front-Right{  
         max-width: 44%;
@@ -543,5 +710,14 @@ button#CV:hover{
     }
     nav li:not(:last-child)::after {
         right: -20px;
+    }
+    .Project {
+        width: 490px;
+    }
+    .Project .Skills{
+        gap: 10px;
+    }
+    .Project .Skills li img, .Project .Links img{
+        height: 35px;
     }
 }
