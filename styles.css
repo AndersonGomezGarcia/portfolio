@@ -476,6 +476,25 @@ button#CV:hover{
     background-color: rgba(0, 133, 173, 0.1);
  }
 
+@keyframes throb {
+
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+ .Project:hover img.hyperlink{
+    filter: brightness(1.4); /* Ajusta el valor según el nivel de brillo deseado */
+    animation: throb 1s ease-in-out infinite ; /* Añade una transición suave */
+    
+}
+
 .Project img{
     width: 90%;
     height: auto;
@@ -788,6 +807,14 @@ footer div a{
     transition: .3s;
     padding: 12px;
     margin: 0;
+    border-radius: 40px;
+    transition: .5s;
+
+}
+
+footer img{
+    height: 40px;
+
 }
 footer div a:hover{
     color: #00D2FF;
