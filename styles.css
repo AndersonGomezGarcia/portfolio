@@ -867,3 +867,76 @@ footer p{
         height: 35px;
     }
 }
+@media (max-width: 1375px){
+    .Project {
+        width: 47%;
+        padding: 2px;
+    }
+}
+
+@media (max-width: 1081px){
+    .Project{
+        width: 95%;
+    }
+    #Front{
+        display: inline-flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+      }
+    #Front-Right{
+        max-width: 100%;
+    }
+    #Front-Right span{
+        font-size: 180px;
+        float: left;
+    }
+
+    #Front-Left{
+        justify-content: center;
+        align-items: center;
+        float: right;
+        text-align: center;
+        width: 100%;
+        max-width: 80%;
+    }
+    #Front-Left h1{
+        font-size: 40px;
+        width: 100%;
+        max-width: 100%;
+    }
+    #Contact-Items{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        color: white;
+        gap: 20px;
+    }
+
+    #Contact-Info{
+        display: flex;
+        padding: 40px;
+        color: white;
+        flex-direction: column; 
+        border: solid 1.5px #ffffff1f ;
+        background-color: #2C2D32;
+        border-radius: 25px;
+        width: 100%;
+        height: min-content;
+        position: relative;
+        transition: .3s;
+    }
+
+    #Contact-Form{
+        width: 100%;
+        margin: 0 0 0 auto;
+    }
+
+    footer {
+        width: 86%;
+        padding: 10px 7% 5px 7%;
+    }   
+}
