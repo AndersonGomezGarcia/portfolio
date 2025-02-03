@@ -27,8 +27,10 @@
         <div id="Front-Left">
             <h1>Desarrollador Soft / Front End - Back End</h1>
             <div id="Front-Left-1">
-                <a href="#Contact"> <button class="Contact" > Contact me</button></a>
-                <a href="#Projects"><p>Mira mis desarrollos</p></a>
+                <a href="#Contact"> <button class="Contact"> Contact me</button></a>
+                <a href="#Projects">
+                    <p>Mira mis desarrollos</p>
+                </a>
             </div>
         </div>
 
@@ -155,7 +157,9 @@
                 </div>
                 <img src="img/project-1.png" alt="proyecto1">
                 <h3>Hotel el descanso</h3>
-                <p>Un portal integral para la gestión de huéspedes y habitaciones de un complejo hotelero, con funcionalidades avanzadas de roles para diferentes tipos de usuarios, permitiendo una administración eficiente y personalizada.</p>
+                <p>Un portal integral para la gestión de huéspedes y habitaciones de un complejo hotelero, con
+                    funcionalidades avanzadas de roles para diferentes tipos de usuarios, permitiendo una administración
+                    eficiente y personalizada.</p>
             </div>
             <div class="Project">
                 <div class="header">
@@ -168,12 +172,15 @@
                     </ul>
                     <div class="Links">
                         <a href="" target="_blank"><img src="img/github-link.png" alt=""></a>
-                        <a href="https://casahotelmateguadua.web.app/" target="_blank"><img class="hyperlink" src="img/link.png" alt=""></a>
+                        <a href="https://casahotelmateguadua.web.app/" target="_blank"><img class="hyperlink"
+                                src="img/link.png" alt=""></a>
                     </div>
                 </div>
                 <img src="img/project-2.png" alt="proyecto1">
                 <h3>Casa Hotel Mateguadua Website</h3>
-                <p> Página web para un hotel en Apartadó, Antioquia. Incluye información sobre habitaciones, ubicación, contacto y un carrusel de imágenes. Utiliza Bootstrap para el diseño y tiene integración con WhatsApp para reservas</p>
+                <p> Página web para un hotel en Apartadó, Antioquia. Incluye información sobre habitaciones, ubicación,
+                    contacto y un carrusel de imágenes. Utiliza Bootstrap para el diseño y tiene integración con
+                    WhatsApp para reservas</p>
             </div>
             <div class="Project">
                 <div class="header">
@@ -186,12 +193,14 @@
                     </ul>
                     <div class="Links">
                         <a href="" target="_blank"><img src="img/github-link.png" alt=""></a>
-                        <a href="https://anderc0de.github.io/Pagina-de-musica//" target="_blank"><img class="hyperlink" src="img/link.png" alt=""></a>
+                        <a href="https://anderc0de.github.io/Pagina-de-musica//" target="_blank"><img class="hyperlink"
+                                src="img/link.png" alt=""></a>
                     </div>
                 </div>
                 <img src="img/project-3.png" alt="proyecto1">
                 <h3>Reproductor de Musica</h3>
-                <p>Concepto de sitio web para descubrir música libre de copyright. Permite escuchar temas, conocer a los autores y explorar géneros</p>
+                <p>Concepto de sitio web para descubrir música libre de copyright. Permite escuchar temas, conocer a los
+                    autores y explorar géneros</p>
             </div>
             <div class="Project">
                 <div class="header">
@@ -204,12 +213,14 @@
                     </ul>
                     <div class="Links">
                         <a href="" target="_blank"><img src="img/github-link.png" alt=""></a>
-                        <a href="https://clinicarie-15673.web.app/" target="_blank"><img class="hyperlink" src="img/link.png" alt=""></a>
+                        <a href="https://clinicarie-15673.web.app/" target="_blank"><img class="hyperlink"
+                                src="img/link.png" alt=""></a>
                     </div>
                 </div>
                 <img src="img/project-4.png" alt="proyecto1">
                 <h3>Clinica Rie</h3>
-                <p>Página web para una clínica dental. Ofrece servicios como implantología, ortodoncia, alta estética y odontopediatría. Destaca la experiencia del Dr. Alex Camacho y testimonios de pacientes.</p>
+                <p>Página web para una clínica dental. Ofrece servicios como implantología, ortodoncia, alta estética y
+                    odontopediatría. Destaca la experiencia del Dr. Alex Camacho y testimonios de pacientes.</p>
             </div>
         </div>
     </div>
@@ -241,9 +252,9 @@
             <div id="Contact-Info">
                 <img class="Contact-IMG" src="img/contact.png" alt="">
                 <h2>Anderson Gomez Garcia</h2>
-                <p>andersongomezgarcia111@<wbr>gmail.com</p>
-                <p> <img src="img/colombia.svg" alt=""> +57 3185836788</p>
-                <p>Tulúa, Valle del Cauca, Colombia</p>
+                <p onclick="copyToClipboard(this)">andersongomezgarcia111@<wbr>gmail.com <img class="Copy" src="img/copy.png"> </p>
+                <p onclick="copyToClipboard(this)"> <img src="img/colombia.svg" alt=""> +57 3185836788 <img class="Copy" src="img/copy.png"></p>
+                <p onclick="copyToClipboard(this)">Tulúa, Valle del Cauca, Colombia <img class="Copy" src="img/copy.png"></p>
 
             </div>
             <div id="Contact-Form">
@@ -256,7 +267,7 @@
             </div>
         </div>
     </div>
-    
+
     <footer>
         <div>
             <a href=""><img src="img/mail.png" alt=""></a>
@@ -271,7 +282,7 @@
         </div>
         <p>@2025 Anderson Gomez Garcia | All right reserved</p>
     </footer>
-
+    <div id="CopyPopup" class="CopyPopup">Texto copiado</div>
     <script>
         function toggleMenu() {
             var menu = document.getElementById('nav-menu');
@@ -284,6 +295,24 @@
                 menu.style.background = 'rgba(46, 47, 56, 0.85)';
                 menu.style.backdropFilter = 'blur(10px)';
             }
+        }
+        function copyToClipboard(element) {
+            const text = element.innerText || element.textContent;
+            const tempInput = document.createElement('input');
+            tempInput.style.position = 'absolute';
+            tempInput.style.left = '-9999px';
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            const popup = document.getElementById('CopyPopup');
+            popup.classList.add('Show');
+
+            // Ocultar el popup después de 3 segundos
+            setTimeout(() => {
+                popup.classList.remove('Show');
+            }, 3000);
         }
     </script>
 </body>
