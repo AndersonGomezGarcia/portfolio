@@ -10,26 +10,7 @@ body{
     background: #27282C;
     /*backdrop-filter: blur(15px);*/
 }
-/*
-body::-webkit-scrollbar {
-    width: 100px;
-}
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(#1a91d618 10%, transparent 0), radial-gradient(#000b110c 20%, transparent 0);
-    background-size: 10px 10px; 
-    background-attachment: fixed; 
-    background-repeat: repeat; 
-    background-position: 0 0, 5px 5px;
- /* Aplica el desenfoque 
-    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido 
-}
-*/
+
 #Menu {
     color: white;
     padding: 2px 70px;
@@ -146,11 +127,12 @@ nav li:hover a {
 .menu {
     display: none;
     flex-direction: column;
-    background-color: #333;
+    background-color: transparent;
     position: absolute;
-    top: 50px;
+    top:   0px;
     right: 0;
     width: 200px;
+    font-size: larger;
 }
 
 .menu ul {
@@ -160,20 +142,18 @@ nav li:hover a {
 }
 
 .menu li {
-    border-bottom: 1px solid #444;
+    padding: 2px 15px;
 }
 
 .menu a {
-    color: white;
-    padding: 15px;
+    color: #02b3db;
+    padding: 2px 15px;
     text-decoration: none;
     display: block;
     text-align: center;
 }
 
-.menu a:hover {
-    background-color: #575757;
-}
+
 
 @media (min-width: 768px) {
     .menu {
@@ -219,9 +199,37 @@ button.Contact:hover{
     padding: 0;
     color: white;
 }
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(-10px);
+        transform: rotate(5deg);
+    }
+    25% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+        transform: rotate(-5deg);
+    }
+
+    
+    75% {
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-10px);
+        transform: rotate(5deg);
+    }
+
+}
+
 #Front-Right{
     float: right;
     display: inline-flex;
+    animation: floating 3s ease-in-out infinite;
 }
 #Front-Right span{
     margin-top: auto;
@@ -450,7 +458,7 @@ button#CV:hover{
 }
 
 #Tecnologies-Items ul li img, #Frameworks-Items ul li img, #Tools-Items ul li img{
-    height: 70px;
+    height: 60px;
     width: auto;
     margin: 0;
     padding: 0;
@@ -602,7 +610,7 @@ button#CV:hover{
 
 .Project h3{
     margin: 5px auto 0 32px!important;
-    font-size: 23px;
+    font-size: 25px;
     color: rgb(255, 255, 255);
 }
 
@@ -807,6 +815,12 @@ button#CV:hover{
     flex-direction: column; 
     padding: 0 0 0 50px;
     position: relative;
+    transition: .4s;
+    border-radius: 25px ;
+}
+.Experience:hover{
+    background-color: rgba(0,0,0,0.1);
+    transition: .2s;
 }
 .Experience::before {
     content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
@@ -829,6 +843,17 @@ button#CV:hover{
     top: 17px; /* Ajusta la posición según sea necesario */
     background-color: #00D2FF;
     opacity: .5;
+    border-radius: 2px;
+    transition: .4s;
+}
+@keyframe sliding{
+    0
+}
+.Experience:hover::after{
+    background-color: #00D2FF;
+    opacity: .8;
+    height: calc(100% - 50px);
+    transition: .3s;
 }
 
 .Experience h3{
