@@ -15,7 +15,8 @@
 
 <body>
     <div id="Menu">
-        <nav>
+        <div class="hamburger" onclick="toggleMenu()">☰ Menu</div>
+        <nav class="menu" id="nav-menu">
             <li> <a href="#About">About</a></li>
             <li> <a href="#Skills">Skills</a></li>
             <li> <a href="#Projects">Projects</a></li>
@@ -26,8 +27,8 @@
         <div id="Front-Left">
             <h1>Desarrollador Soft / Front End - Back End</h1>
             <div id="Front-Left-1">
-                <button class="Contact"> Contact me</button>
-                <p>Mira mis desarrollos</p>
+                <a href="#Contact"> <button class="Contact" > Contact me</button></a>
+                <a href="#Projects"><p>Mira mis desarrollos</p></a>
             </div>
         </div>
 
@@ -148,36 +149,67 @@
 
                     </ul>
                     <div class="Links">
-                        <a href=""><img src="img/github-link.png" alt=""></a>
-                        <a href=""><img class="hyperlink" src="img/link.png" alt=""></a>
+                        <a href="" target="_blank"><img src="img/github-link.png" alt=""></a>
+                        <a href="" target="_blank"><img class="hyperlink" src="img/link.png" alt=""></a>
                     </div>
                 </div>
                 <img src="img/project-1.png" alt="proyecto1">
                 <h3>Hotel el descanso</h3>
-                <p>Un portal para la administracion de huespedes y habitaciones de un complejo hotelario, con
-                    funcionalidad de roles.</p>
+                <p>Un portal integral para la gestión de huéspedes y habitaciones de un complejo hotelero, con funcionalidades avanzadas de roles para diferentes tipos de usuarios, permitiendo una administración eficiente y personalizada.</p>
             </div>
             <div class="Project">
                 <div class="header">
-                    <div class="skills"></div>
-                    <div class="links"></div>
-                </div>
-                <img src="img/proyecto2.png" alt="proyecto2">
-                <h3>Proyecto 2</h3>
-                <p>Descripción del proyecto 2</p>
+                    <ul class="Skills">
+                        <li><img src="img/html.png" alt="html"></li>
+                        <li><img src="img/css.png" alt="css"></li>
+                        <li><img src="img/bootstrap.png" alt="bootstrap"></li>
+                        <li><img src="img/figma.png" alt="figma"></li>
 
-            </div>
-            <div class="Project">
-                <div class="header">
-                    <div class="skills">
-
+                    </ul>
+                    <div class="Links">
+                        <a href="" target="_blank"><img src="img/github-link.png" alt=""></a>
+                        <a href="https://casahotelmateguadua.web.app/" target="_blank"><img class="hyperlink" src="img/link.png" alt=""></a>
                     </div>
-                    <div class="links"></div>
                 </div>
-                <img src="img/proyecto3.png" alt="proyecto3">
-                <h3>Proyecto 3</h3>
-                <p>Descripción del proyecto 3</p>
-                <button>Ver más</button>
+                <img src="img/project-2.png" alt="proyecto1">
+                <h3>Casa Hotel Mateguadua Website</h3>
+                <p> Página web para un hotel en Apartadó, Antioquia. Incluye información sobre habitaciones, ubicación, contacto y un carrusel de imágenes. Utiliza Bootstrap para el diseño y tiene integración con WhatsApp para reservas</p>
+            </div>
+            <div class="Project">
+                <div class="header">
+                    <ul class="Skills">
+                        <li><img src="img/html.png" alt="html"></li>
+                        <li><img src="img/css.png" alt="css"></li>
+                        <li><img src="img/bootstrap.png" alt="bootstrap"></li>
+                        <li><img src="img/figma.png" alt="figma"></li>
+
+                    </ul>
+                    <div class="Links">
+                        <a href="" target="_blank"><img src="img/github-link.png" alt=""></a>
+                        <a href="https://anderc0de.github.io/Pagina-de-musica//" target="_blank"><img class="hyperlink" src="img/link.png" alt=""></a>
+                    </div>
+                </div>
+                <img src="img/project-3.png" alt="proyecto1">
+                <h3>Reproductor de Musica</h3>
+                <p>Concepto de sitio web para descubrir música libre de copyright. Permite escuchar temas, conocer a los autores y explorar géneros</p>
+            </div>
+            <div class="Project">
+                <div class="header">
+                    <ul class="Skills">
+                        <li><img src="img/html.png" alt="html"></li>
+                        <li><img src="img/css.png" alt="css"></li>
+                        <li><img src="img/bootstrap.png" alt="bootstrap"></li>
+                        <li><img src="img/figma.png" alt="figma"></li>
+
+                    </ul>
+                    <div class="Links">
+                        <a href="" target="_blank"><img src="img/github-link.png" alt=""></a>
+                        <a href="https://clinicarie-15673.web.app/" target="_blank"><img class="hyperlink" src="img/link.png" alt=""></a>
+                    </div>
+                </div>
+                <img src="img/project-4.png" alt="proyecto1">
+                <h3>Clinica Rie</h3>
+                <p>Página web para una clínica dental. Ofrece servicios como implantología, ortodoncia, alta estética y odontopediatría. Destaca la experiencia del Dr. Alex Camacho y testimonios de pacientes.</p>
             </div>
         </div>
     </div>
@@ -209,7 +241,7 @@
             <div id="Contact-Info">
                 <img class="Contact-IMG" src="img/contact.png" alt="">
                 <h2>Anderson Gomez Garcia</h2>
-                <p>andersongomezgarcia111@gmail.com</p>
+                <p>andersongomezgarcia111@<wbr>gmail.com</p>
                 <p> <img src="img/colombia.svg" alt=""> +57 3185836788</p>
                 <p>Tulúa, Valle del Cauca, Colombia</p>
 
@@ -238,9 +270,18 @@
 
         </div>
         <p>@2025 Anderson Gomez Garcia | All right reserved</p>
-
-
     </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('nav-menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+    </script>
 </body>
 
 </html>
