@@ -304,7 +304,7 @@ button#CV{
     font-family: 'Roboto';
     font-size: 24px;
     position: absolute;
-    top: -47px;
+    top: -46px;
     display: inline-flex;
     right: 70px;
     white-space: nowrap; /* Evita que el texto dentro del botón salte de línea */
@@ -315,27 +315,37 @@ button#CV{
 
 @keyframes hoverAnimation {
     0% {
-        top: -47px;
+        top: -46px;
         height: 45px;
 
     }
-    30% {
-        top: -47px;
+    25% {
+        top: -46px;
         height: 45px;
 
     }
-    50% {
-        top: -50px;
+    35% {
+        top: -49px;
         height: 48px;
 
     }
-    70% {
-        top: -47px;
+    45% {
+        top: -46px;
+        height: 45px;
+
+    }
+    55% {
+        top: -49px;
+        height: 48px;
+
+    }
+    75% {
+        top: -46px;
         height: 45px;
 
     }
     100% {
-        top: -47px;
+        top: -46px;
         height: 45px;
 
     }
@@ -350,6 +360,7 @@ button#CV:hover{
     background-color: #03BCE4;
     color: white;
     transition: .2s;
+    animation:  none;
 }
 
 #About h1{  
@@ -432,7 +443,7 @@ button#CV:hover{
     color: #ffffff;
     margin: 0;
     padding: 0;
-    opacity: .75;
+    opacity: .80;
 }
 #center{
     margin: auto;
@@ -544,9 +555,9 @@ button#CV:hover{
     align-items: flex-start;
     flex-wrap: wrap;
     margin: 0;
-    padding: 0;
+    padding: 50px;
     color: white;
-    gap: 20px;
+    gap: 55px 10% ;
 }
 
 .Project{
@@ -554,7 +565,7 @@ button#CV:hover{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 640px;
+    width: 38%;
     margin: 0;
     padding: 0;
     background-color: rgba(0, 0, 0, 0.10);
@@ -622,7 +633,7 @@ button#CV:hover{
     margin: 0 auto 0 32px;
     padding: 0;
     color: white;
-    gap: 20px;
+    gap: 15px;
 
 }
 
@@ -632,7 +643,7 @@ button#CV:hover{
 
 }
 .Project .Skills li img, .Project .Links img{
-    height: 40px;
+    height: 35px;
     width: auto;
     margin: 0;
     padding: 0;
@@ -659,6 +670,7 @@ button#CV:hover{
     font-family: 'Roboto';
     font-size: 20px;
     color: rgba(255, 255, 255, 0.75);
+    font-weight: 300;
 }
 
 .Project .Links li{
@@ -1013,9 +1025,9 @@ footer p{
         height: 35px;
     }
 }
-@media (max-width: 1375px){
+@media (max-width: 1615px){
     .Project {
-        width: 47%;
+        width: 42%;
         padding: 2px;
     }
 }
