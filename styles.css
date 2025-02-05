@@ -569,7 +569,7 @@ button#CV:hover{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 38%;
+    width: 39%;
     margin: 0;
     padding: 0;
     background-color: rgba(0, 0, 0, 0.10);
@@ -1032,6 +1032,13 @@ footer p{
     .Project {
         width: 42%;
         padding: 2px;
+    }
+
+    .Project .Skills{
+        gap: 6px;
+    }
+    .Project .Skills li img, .Project .Links img{
+        height: 30px;
     }
 }
 

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descripción</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de que la ruta sea correcta -->
+    <script>
+        function resizeIframe(obj) {
+            obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+        }
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Description.html">Descripción</a></li>
+                <!-- Otros enlaces de navegación -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="Description">
+            <h1>Descripción del Proyecto</h1>
+            <div class="Separator"></div>
+            <p>
+                Aquí puedes agregar la descripción detallada de tu proyecto. Utiliza los estilos de tu página principal
+                para mantener la coherencia visual.
+                <img src="img/project-5.png" alt="">
+
+                Peor pojadlkfjaadl kjalfj alfkjasld kfjañlskfj añlskdj laskjf lajkflñaj lñ
+            <div class="iframeContainer">
+                <iframe src="https://drive.google.com/file/d/1AyNGJabNyvOzS06BFfWQ2UCc_a4iLCna/preview" allow="autoplay"
+                    onload="resizeIframe(this);"></iframe>
+            </div>
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Tu Nombre. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+<style>
+    /* Estilos generales */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0 15%;
+        background: #27282C;
+        color: white;
+    }
+
+    #Menu {
+        color: white;
+        padding: 2px 70px;
+        text-align: center;
+        border-radius: 0 0 80px 80px;
+        height: 60px;
+        margin: auto;
+        top: 0;
+        width: 63%;
+        align-items: center;
+        position: fixed;
+        display: flex;
+        border: solid 1px #ffffff0e;
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        left: calc(18.5% - 75px);
+        background-color: rgba(46, 47, 56, 0.85);
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        margin: auto;
+        flex-wrap: wrap;
+    }
+
+    nav li {
+        list-style: none;
+        margin: 0 20px;
+        position: relative;
+        border-radius: 25px;
+        padding: 10px;
+        transition: .4s;
+    }
+
+    nav li::before {
+        content: "";
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 18px;
+        transition: .2s ease-out;
+        transform: scale(.8);
+    }
+
+    nav li:hover::before {
+        background-color: rgba(0, 0, 0, 0.20);
+        transition: .1s ease-in;
+        transform: scale(1);
+    }
+
+    nav li:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 45px;
+        width: 3px;
+        border-radius: 2px;
+        background-color: #03BCE4;
+    }
+
+    nav li a {
+        color: #03BCE4;
+        text-decoration: none;
+        font-size: 24px;
+        font-family: 'Roboto';
+        font-weight: 500;
+        padding: 10px 20px;
+    }
+
+    nav li:hover a {
+        filter: drop-shadow(0 0 5px #03bbe4);
+        transition: .3s;
+    }
+
+    #Description {
+        margin: 100px 0;
+        /* Ajusta según sea necesario */
+        padding: 20px 20px 20px 20px;
+        border-radius: 10px;
+    }
+
+    #Description h1 {
+        font-size: 50px;
+        font-weight: 600;
+        font-family: 'Roboto';
+        color: #00D2FF;
+        transition: .4s;
+        padding: 0px 0;
+        margin: 0;
+    }
+
+    #Description p {
+        font-size: 20px;
+        font-weight: 400;
+        font-family: 'Roboto';
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        opacity: .80;
+    }
+
+    #Description img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin: 20px 0;
+
+    }
+    .iframeContainer {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding-top: 56.25%;
+        border-radius: 25px;
+        margin: 10px 0;
+    }
+    .iframeContainer iframe {
+        position: absolute;
+        top: 3%;
+        left: 3%;
+        width: 94%;
+        height: 94%;
+        border: none;
+        border-radius: 25px;
+    }
+
+    footer {
+        background-color: #333439;
+        width: 100%;
+        padding: 10px 0;
+        color: #00A6CA;
+        font-weight: 500;
+        font-family: 'Roboto Mono';
+        font-size: large;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+    }
+</style>
+
+</html>
