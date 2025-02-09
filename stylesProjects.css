@@ -104,34 +104,51 @@ nav li:hover a {
     margin: 0;
 }
 
-#Description p {
+#Description p, #Description li {
     font-size: 20px;
     font-weight: 400;
     font-family: 'Roboto';
     color: #ffffff;
     margin: 0;
     padding: 0;
-    opacity: .80;
+    line-height: 1.6em;
 }
+#Description li {
+    margin: 10px 0;
+    opacity: 1;
+    color: #76efff;
+    font-weight: 300;
+}
+
 
 #Description img {
-    width: 100%;
+    width: 80%;
     height: auto;
     border-radius: 10px;
-    margin: 20px 0;
+    margin: 20px 10%;
 
 }
 
-.iframeContainer {
+.iframeContainer, .iframeVerticalContainer {
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding-top: 56.25%;
     border-radius: 25px;
-    margin: 10px 0;
 }
 
-.iframeContainer iframe {
+.iframeContainer{
+    padding-top: 56.25%;   
+    margin: 10px 0;
+ 
+}
+
+.iframeVerticalContainer{
+    padding-top: 55.5%;
+    width: 25%;
+    background-color: black;
+    margin: 0 37.5%;
+}
+.iframeContainer iframe, .iframeVerticalContainer iframe{
     position: absolute;
     top: 3%;
     left: 3%;
@@ -139,6 +156,7 @@ nav li:hover a {
     height: 94%;
     border: none;
     border-radius: 25px;
+    background-color: white;
 }
 
 footer {
