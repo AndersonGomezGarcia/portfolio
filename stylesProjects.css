@@ -2,7 +2,7 @@
  body {
     font-family: 'Roboto';
     margin: 0;
-    padding: 0 15%;
+    padding: 0 18%;
     background: #27282C;
     color: white;
     display: flex;
@@ -25,14 +25,40 @@
     margin: 0;
 }
 
+#Description h1:hover {
+    white-space: 10px;
+    text-indent: 2px;
+    transition: .2s;
+    letter-spacing: 2px;
+    text-shadow: #00d0ff7a 1px 1px 05px;
+
+}
+
 #Description p, #Description li {
     font-size: 20px;
     font-weight: 400;
     font-family: 'Roboto';
-    color: #ffffff;
+    color: #ebfdff;
     margin: 0;
     padding: 0;
     line-height: 1.6em;
+}
+
+#Description ul{
+    background-color: rgba(0, 0 ,0 , 0.15);
+    padding: 20px 20px 20px 80px;
+    border-radius: 20px;
+}
+
+#Description ul ul{
+    background-color: #27282C;
+    padding: 10px 10px 10px 40px;
+    border-radius: 20px;
+    margin: 10px 5px 5px 0px;
+}
+
+#Description ul ul li b{
+    color: #a8f2ff;
 }
 
 #Description li b{
@@ -41,30 +67,42 @@
 #Description li {
     margin: 10px 0;
     opacity: 1;
-    color: #76efff;
+    color: #28e6ff;
     font-weight: 300;
+    transition: .3s;
+    
 }
 
+#Description li:hover{
+    transform: translate(10px, 0);
+    transition: .2s;
+}
 
 #Description img {
     width: 80%;
     height: auto;
     border-radius: 10px;
     margin: 20px 10%;
+    transition: .3s;
+}
 
+#Description img:hover{
+    transform: scale(1.025);
+    transition: .2s;
+    border-radius: 30px;
+    box-shadow: #00A6CA 0px 0px 15px -5px;
 }
 
 .iframeContainer, .iframeVerticalContainer {
     position: relative;
     overflow: hidden;
-    width: 100%;
+    width: 80%;
     border-radius: 25px;
 }
 
 .iframeContainer{
-    padding-top: 56.25%;   
-    margin: 10px 0;
- 
+    padding-top: 45%;   
+    margin: 10px 10%;
 }
 
 .iframeVerticalContainer{
@@ -83,7 +121,6 @@
     border-radius: 25px;
     background-color: white;
 }
-
 footer {
     background-color: #333439;
     width: 100%;
@@ -93,4 +130,8 @@ footer {
     font-family: 'Roboto Mono';
     font-size: large;
     text-align: center;
- }
+    margin-top: auto; /* Asegura que el footer esté al final */
+    display: block;
+    clear: both; /* Asegura que el footer no flote */
+}
+
