@@ -595,9 +595,22 @@ button#CV:hover{
     0% {
         transform: scale(1);
     }
-    50% {
-        transform: scale(1.1);
+    15% {
+        transform: scale(1);
     }
+    32.5% {
+        transform: scale(1.15);
+    }
+    47.5% {
+        transform: scale(1);
+    }
+    62.5% {
+        transform: scale(1.15);
+    }
+    75% {
+        transform: scale(1);
+    }
+
     100% {
         transform: scale(1);
     }
