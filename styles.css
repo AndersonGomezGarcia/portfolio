@@ -1046,11 +1046,12 @@ footer p{
         width: calc(auto - 10%);
     }
     #Front-Left h1{
-        font-size: 40px!important;
+        font-size: 40px;
     }
     #Front-Left{
         max-width: 40%;
     }
+    
     
     body{
         padding: 0 13% 0 13%;
@@ -1154,6 +1155,9 @@ footer p{
 }
 @media (max-width: 768px) {
 
+    body{
+        padding: 0 7% 0 7%;
+    }
     #Menu{
         height: auto;
         padding: 10px;
@@ -1161,6 +1165,7 @@ footer p{
         width: 40%;
         left: 30%;
     }
+    
     nav li{
         margin:  14px auto;
         width: fit-content;
@@ -1179,7 +1184,12 @@ footer p{
     }
     nav li  a{
         padding: 10px 50px;
-
+    }
+    #Front-Left h1{
+        font-size: 35px;
+    }
+    button.Contact, #Front-Left-1 a p{
+        font-size: 22px;
     }
     .menu {
         display: none;
@@ -1204,29 +1214,38 @@ footer p{
         height: 28px;
     }
     #Front-Right span{  
-        font-size: 200px;
+        font-size: 100px;
     }
     #Front-Right p{
         font-size: 28px;
     }
     #Front-Right img{
-        width: calc(auto - 10);
+        width: 100px;
+        height: auto;
     }
     footer img{
         height: 30px;
     }
     #About-Info{
         margin-top: 75px;
+        border-radius: 45px;
+        display: block;
+    }
+
+    #About-Info .Separator{
+        margin: 20px auto;
+        width: 80%;
+        height: 2px;
     }
     button#CV{
         background-color: #0000003d;
         border: none;
-        padding: 10px 55px 5px 55px;
+        padding: 10px 25px 5px 25px;
         color: #00F0FF;
         font-weight: 600;
         border-radius: 45px 45px 0 0;
         font-family: 'Roboto';
-        font-size: 24px;
+        font-size: 22px;
         position: absolute;
         top: -46px;
         display: inline-flex;
@@ -1236,5 +1255,26 @@ footer p{
         transition: .4s;
         transform: translate(50%, 0);
         z-index: 100;
+    }
+    #Projects-Items{
+        gap: 20px 5px;
+        padding: 10px;
+    }
+    .Project{
+        width: 100%;
+    }
+    .Project .Skills{
+        gap: 5px;
+    }
+    .Project .Links{
+        gap: 7px;
+    }
+
+    .Project .Skills li img, .Project .Links img{
+        height: 25px;
+    }
+
+    .Project p{
+        font-size: 18px;
     }
 }
