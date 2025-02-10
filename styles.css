@@ -99,6 +99,23 @@ nav li:hover a {
     transition: .3s; /* Añade una transición suave */
 }
 
+nav #translate{
+    background-size: cover;
+    background-image: url('/img/traducir-hover.png');
+    height: 40px;
+    width: 40px;
+    content: "";
+    margin: 5px 0 0 35px;
+    transition: .2s;
+}
+
+#translate:hover{
+    background-image: url('/img/traducir-hover.png');
+    filter: drop-shadow(0 0 5px #03bbe4); /* Aplica un brillo del color del icono */
+    transition: .2s;
+    cursor: pointer;
+}
+
 /* Media queries para pantallas más pequeñas */
 @media (max-width: 1110px) {
     #Menu {
