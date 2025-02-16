@@ -38,6 +38,35 @@ nav {
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
 }
 
+@keyframes jump {
+    0% {
+
+        transform: translateY(0) scale(.9) rotate(10deg) ; /* Posición inicial y final */
+    }
+    25% {
+        transform: translateY(-2px) rotate(10deg); /* Altura del salto */
+    }
+    50% {
+        transform: translateY(0) scale(.9) rotate(-10deg) ;
+    }
+    75% {
+        transform: translateY(-2px) rotate(10deg);
+    }
+
+    100% {
+        transform: translateY(0) scale(.9) rotate(10deg) ;
+    }
+}
+
+nav img{
+    height: 35px;
+    width: auto;
+    position: absolute;
+    top: calc(50% - 14px);
+    left: 55px;
+    animation: jump 1s ease-in-out infinite;
+}
+
 nav li {
     list-style: none;
     margin: 0 20px; /* Reduce el margen para pantallas más pequeñas */
@@ -73,7 +102,7 @@ nav li:hover::before {
     transition: .1s ease-in;
     transform: scale(1);
 }
-nav li:not(:last-child)::after {
+nav li:not(:nth-last-child(-n+2))::after {
     content: "";
     position: absolute;
     right: -20px; /* Ajusta según el margen */
@@ -105,8 +134,10 @@ nav #translate{
     height: 40px;
     width: 40px;
     content: "";
-    margin: 5px 0 0 35px;
+    position: absolute;
     transition: .2s;
+    right: 35px;
+    top: calc(50% - 22px);
 }
 
 #translate:hover{
@@ -497,12 +528,12 @@ button#CV:hover{
     width: auto;
     margin: 0;
     padding: 0;
-    transition: .4s;
+    transition: .3s;
 }
 
 #Tecnologies-Items ul li img:hover, #Frameworks-Items ul li img:hover, #Tools-Items ul li img:hover{
     filter: brightness(1.4); /* Ajusta el valor según el nivel de brillo deseado */
-    transition:  0.2s ease-in ; /* Añade una transición suave */
+    transition:  .2s  ; /* Añade una transición suave */
     transform: translate(0, -8px);
 }
 #Skills .Separator, .Separator{
@@ -592,7 +623,7 @@ button#CV:hover{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 39%;
+    width: 42%;
     margin: 0;
     padding: 0;
     background-color: rgba(0, 0, 0, 0.10);
@@ -615,34 +646,20 @@ button#CV:hover{
 
 @keyframes throb {
 
-    0% {
-        transform: scale(1);
+    0%, 100% {
+        transform: scale(1); 
     }
-    15% {
-        transform: scale(1);
+    25%, 75% {
+        transform: scale(1.1);
     }
-    32.5% {
-        transform: scale(1.15);
-    }
-    47.5% {
-        transform: scale(1);
-    }
-    62.5% {
-        transform: scale(1.15);
-    }
-    75% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(1);
+    50% {
+        transform: scale(1.2);
     }
 }
 
  .Project:hover img.hyperlink{
     filter: brightness(1.4); /* Ajusta el valor según el nivel de brillo deseado */
-    animation: throb 1s ease-in-out infinite ; /* Añade una transición suave */
-    
+    animation: throb 1s ease-in-out infinite ; /* Añade una transición suave */   
 }
 
 .Project img{
@@ -650,7 +667,13 @@ button#CV:hover{
     height: auto;
     border-radius: 38px;
     display: flex;
+}
 
+.Project img.Project-Image{
+    border-top: 1px solid #ffffff1f;
+    border-bottom: 1px solid #ffffff1f;
+    border-radius: 25px;
+    width: 92%;
 }
 
 .Project .header{
@@ -674,22 +697,53 @@ button#CV:hover{
     padding: 0;
     color: white;
     gap: 15px;
-
 }
 
 .Project .Skills li{
     position: relative;
     list-style-type: none;
-
 }
 .Project .Skills li img, .Project .Links img{
     height: 35px;
     width: auto;
     margin: 0;
     padding: 0;
-    transition: .4s;
-    
+    transition: .3s;
+    z-index: 2;
 }
+
+.Project .Skills li::before{
+    display: block;
+    content: attr(skill);
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%) scale(.2);
+    color: rgb(0, 174, 255);
+    background-color: #1e1f22;
+    overflow: hidden;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    pointer-events: none;
+    transition: .4s;
+    font-weight: 700;
+    opacity: 0;
+    z-index: 1; 
+}
+
+.Project .Skills li:hover::before{
+    opacity: 1;
+    top: -32px;
+    transition: .3s;
+    transform: translateX(-50%) scale(1);
+}
+
+.Project .Skills li img:hover{
+    filter: brightness(1.4);
+    transition: .2s;
+}
+
 .Project .Links img{
     border-radius: 0;
 }
