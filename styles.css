@@ -226,8 +226,8 @@ nav #translate{
 
 button.Contact{
     background-color: #00D2FF;
-    border: none;
-    padding: 10px 25px 10px 25px;
+    border: 2px solid #00D2FF;
+    padding: 10px 20px 10px 20px;
     color: #27282C;
     text-decoration: none;
     font-weight: 600;
@@ -238,8 +238,9 @@ button.Contact{
 }
 
 button.Contact:hover{
-    background-color: #03BCE4;
+    background-color: transparent;
     color: white;
+    border: 2px solid #00D2FF;
     cursor: pointer;
     transition: .3s ease-out;
 }
@@ -422,11 +423,21 @@ button#CV:hover{
     margin: 100px auto 0 0;
 }
 
+#About h1 span, #Skills h1 span, #Contact h1 span, #Projects h1 span, #Experience h1 span{
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Roboto';
+    color: #00D2FF;
+    margin: 0 0 0 10px;
+    display: block;
+}
+
 #About h1, #Skills h1, #Contact h1, #Projects h1, #Experience h1{
     font-size: 50px;
     font-weight: 600;
     font-family: 'Roboto';
     color: #00D2FF;
+    color: white;
     transition: .4s;
     padding: 20px 0 0 0;
 }
@@ -442,6 +453,7 @@ button#CV:hover{
     text-shadow: #00d0ff7a 1px 1px 05px;
 
 }
+
 #About{
     display: flex;
     justify-content: center;
@@ -551,6 +563,7 @@ button#CV:hover{
     margin: 0 auto 0 auto;
     font-family: 'Roboto';
     color: #00D2FF;
+    color: white;
     margin: 40px auto 0 auto;
 }
 
@@ -628,7 +641,7 @@ button#CV:hover{
     padding: 0;
     background-color: rgba(0, 0, 0, 0.10);
     background: linear-gradient(135deg,rgba(0, 0, 0, 0.10)); /* Gradiente lineal en diagonal */
-    border-radius: 50px;
+    border-radius: 40px;
     color: white;
     flex-direction: column; 
     transition: .3s;
@@ -640,8 +653,9 @@ button#CV:hover{
     transform: translate(0, -12px);
     transition: .2s;
     border: solid 1px #03BCE4;
-    border-radius: 60px;
+    border-radius: 50px;
     background-color: rgba(0, 133, 173, 0.1);
+    background-color: rgba(0, 0, 0, 0.15);
  }
 
 @keyframes throb {
@@ -659,7 +673,7 @@ button#CV:hover{
 
  .Project:hover img.hyperlink{
     filter: brightness(1.4); /* Ajusta el valor según el nivel de brillo deseado */
-    animation: throb 1s ease-in-out infinite ; /* Añade una transición suave */   
+    animation: throb .65s ease-in infinite ; /* Añade una transición suave */   
 }
 
 .Project img{
@@ -984,6 +998,7 @@ button#CV:hover{
     font-weight: 600;
     font-family: 'Roboto';
     color: #00D2FF;
+    color: rgb(211, 211, 211);
     margin: 0;
 }
 
