@@ -108,7 +108,7 @@ nav li:not(:nth-last-child(-n+2))::after {
     right: -20px; /* Ajusta según el margen */
     top: 50%;
     transform: translateY(-50%);
-    height: 25px; /* Ajusta según tus necesidades */
+    height: 45px; /* Ajusta según tus necesidades */
     width: 3px; /* Grosor del separador */
     border-radius: 2px;
     background-color: #03BCE4; /* Color del separador */
@@ -465,7 +465,7 @@ button#CV:hover{
 }
 #About-Info{
     border: solid 1.5px #ffffff1f ;
-    border-radius: 22px;
+    border-radius: 50px;
     margin: 45px auto 0 auto;
     padding: 30px 35px;
     display: flex;
@@ -474,7 +474,7 @@ button#CV:hover{
     z-index: 0;
     height: auto;
     width: 75%;
-    background-color: #2e2f35;
+    background: linear-gradient(135deg,rgba(0, 0, 0, 0.10),rgba(0, 0, 0, 0.10));
     transition: .4s;
     position: relative;
 }
@@ -570,7 +570,7 @@ button#CV:hover{
 
 #Tecnologies-Items, #Frameworks-Items, #Tools-Items{
     display: inline-flex;
-    background-color: #2e2f35;
+    background-color: #27282C;
     color: white;
     border: solid 1px #ffffff1f ;
     border-radius: 50px;
@@ -579,6 +579,7 @@ button#CV:hover{
     width:auto;
     max-width: 100%;
     transition: .4s;
+    background: linear-gradient(135deg,rgba(0, 24, 32, 0.25)0%,rgba(0, 0, 0, 0.10)15%,rgba(0, 0, 0, 0.10)85%, rgba(0, 24, 32, 0.25)100%);
     
     
     
@@ -639,9 +640,9 @@ button#CV:hover{
     margin: 0;
     padding: 0;
     background-color: rgba(0, 0, 0, 0.10);
-    background: #2e2f35; /* Gradiente lineal en diagonal */
-
-    border-radius: 22px;
+    background: linear-gradient(135deg,rgba(0, 0, 0, 0.10)); /* Gradiente lineal en diagonal */
+    
+    border-radius: 40px;
     color: white;
     flex-direction: column; 
     transition: .3s;
@@ -653,8 +654,9 @@ button#CV:hover{
     transform: translate(0, -12px);
     transition: .2s;
     border: solid 1px #03BCE4;
-    border-radius: 25px;
-    background-color: rgba(0, 133, 173, 0.05);
+    border-radius: 50px;
+    background-color: rgba(0, 133, 173, 0.1);
+    background-color: rgba(0, 0, 0, 0.15);
  }
 
 @keyframes throb {
@@ -678,15 +680,14 @@ button#CV:hover{
 .Project img{
     width: 90%;
     height: auto;
-    border-radius: 25px;
+    border-radius: 38px;
     display: flex;
 }
 
 .Project img.Project-Image{
     border-top: 1px solid #ffffff1f;
     border-bottom: 1px solid #ffffff1f;
-    border-radius: 14px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 25px;
     width: 92%;
 }
 
@@ -777,7 +778,7 @@ button#CV:hover{
     margin: 10px 32px 32px 32px;
     font-family: 'Roboto';
     font-size: 20px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.75);
     font-weight: 300;
 }
 
@@ -938,48 +939,20 @@ button#CV:hover{
 .Experience{
     display: flex;
     flex-wrap: wrap;
-    margin: 0 0 5px;
+    margin: 0;
     padding: 0;
     gap: 20px;
     flex-direction: column; 
-    padding: 10px 0 0 50px;
+    padding: 0 0 0 50px;
     position: relative;
     transition: .4s;
-    border-radius: 18px ;
+    border-radius: 25px ;
 }
 .Experience:hover{
-    background-color: rgba(255,255,255,0.045);
+    background-color: rgba(0,0,0,0.1);
     transition: .2s;
 }
-
-@keyframes goteoAnimacion {
-    20%, 100% {
-        transform: scale(1.5);
-        opacity: 1;
-    }
-    70% {
-        transform: scale(2);
-        opacity: 1;
-    }
-}
-
-@keyframes ondasAnimacion {
-    00% {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-    50% {
-        transform: scale(3);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0;
-    }
-}
-
-
-.Experience .ball {
+.Experience::before {
     content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
     display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
     height: 8px;
@@ -989,33 +962,6 @@ button#CV:hover{
     left: 20px;
     top: 17px; /* Ajusta la posición según sea necesario */
     background-color: #00D2FF;
-    animation: goteoAnimacion 1.5s infinite;
-
-}
-.Experience .ball::before{
-    content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
-    display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
-    height: 8px;
-    width: 8px;
-    border-radius: 5px;
-    position: absolute; /* Posiciona el pseudo-elemento absolutamente */
-    left: 0px;
-    top: 0px; /* Ajusta la posición según sea necesario */
-    background-color: #00D2FF;
-    animation: ondasAnimacion 1.5s infinite;
-
-}
-.Experience::before::after{
-    content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
-    display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
-    height: 8px;
-    width: 8px;
-    border-radius: 5px;
-    position: absolute; /* Posiciona el pseudo-elemento absolutamente */
-    left: 0px;
-    top: 0px; /* Ajusta la posición según sea necesario */
-    background-color: #00D2FF;
-    animation: goteoAnimacion 1s infinite;
 }
 .Experience::after {
     content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
