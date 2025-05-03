@@ -152,7 +152,7 @@ nav #translate{
     #Menu {
         width: 82%; /* Ajusta el ancho del menú */
         padding: 2px 20px; /* Reduce el padding */
-        left: calc(9% - 21px) ; /* Ajusta la posición del menú */
+        left: calc(9% - 21px); /* Ajusta la posición del menú */
     }
 
     nav li {
@@ -191,37 +191,6 @@ nav #translate{
     cursor: pointer;
     font-size: 24px;
 }
-/*
-.menu {
-    display: none;
-    flex-direction: column;
-    background-color: transparent;
-    position: absolute;
-    top:   0px;
-    right: 0;
-    width: 200px;
-    font-size: larger;
-}
-
-.menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menu li {
-    padding: 2px 15px;
-}
-
-.menu a {
-    color: #02b3db;
-    padding: 2px 15px;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-}
-
-*/
 
 
 button.Contact{
@@ -234,15 +203,16 @@ button.Contact{
     border-radius: 18px;
     font-family: 'Roboto Mono';
     font-size: 28px;
-    transition: .3s;
+    transition: .2s ease-in-out;
 }
 
 button.Contact:hover{
-    background-color: transparent;
-    color: white;
+    background-color: #00d0ff15;
+    color: #00D2FF;
     border: 2px solid #00D2FF;
     cursor: pointer;
-    transition: .3s ease-out;
+    box-shadow: #00d0ff4f 0 0 10px;
+
 }
 
 
@@ -328,20 +298,24 @@ button.Contact:hover{
     text-decoration: none;
 }
 #Front-Left-1 p{
-    color: #00D2FF;
+    color: #00d0ff8a;
     text-decoration: underline;
     margin: auto 0 auto 20px;
-    font-size: 30px;
+    font-size: 28px;
     font-family: 'Roboto Mono';
     text-underline-offset: 5px; /* Ajusta este valor según tus necesidades */
     text-decoration-thickness: 2px; /* Ajusta este valor para el grosor del subrayado */
     font-weight: 400;
-    font-style: italic;
     
 }
 #Front-Left-1 p:hover{
-    color: #03BCE4;
+    color: #00d0ff;
     cursor: pointer;
+    font-style: italic;
+    margin: auto 0 auto 20px;
+
+
+
 
 }
 

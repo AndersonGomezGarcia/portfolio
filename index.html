@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto Mono:600,300,400,500,500italic,400italic'
+    <link  href='https://fonts.googleapis.com/css?family=Roboto Mono:600,300,400,500,500italic,400italic'
         rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Tauri' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800' rel='stylesheet'>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anderson Gomez Garcia - Portfolio de desarrollador web. Explora mis proyectos y habilidades en desarrollo front-end y back-end. Contáctame para colaboraciones." />
     <title>Portfolio</title>
 </head>
 
@@ -18,10 +19,10 @@
         <div id="hamburger" class="hamburger" onclick="toggleMenu()">☰ Menu</div>
         <nav class="menu" id="nav-menu">
             <img src="img/icon.png" alt="programador">
-            <li> <a href="#About" onclick="toggleMenu()">About</a></li>
-            <li> <a href="#Skills" onclick="toggleMenu()">Skills</a></li>
-            <li> <a href="#Projects" onclick="toggleMenu()">Projects</a></li>
-            <li> <a href="#Contact" onclick="toggleMenu()">Contact</a></li>
+            <li> <a href="#About" onclick="toggleMenu()" aria-label="view about me">About</a></li>
+            <li> <a href="#Skills" onclick="toggleMenu()" aria-label="view my skills">Skills</a></li>
+            <li> <a href="#Projects" onclick="toggleMenu()" aria-label="View my projects">Projects</a></li>
+            <li> <a href="#Contact" onclick="toggleMenu()" aria-label="Contact">Contact</a></li>
             <div id="translate" onclick="changeLanguage()"></div>
         </nav>
     </div>
@@ -29,8 +30,8 @@
         <div id="Front-Left">
             <h1>Desarrollador Soft / Front End - Back End</h1>
             <div id="Front-Left-1">
-                <a href="#Contact"> <button class="Contact"> Contact me</button></a>
-                <a href="#Projects">
+                <a href="#Contact" aria-label="Contact me"> <button class="Contact"> Contact me</button></a>
+                <a href="#Projects" aria-label="View my projects">
                     <p>Mira mis desarrollos</p>
                 </a>
             </div>
@@ -161,7 +162,7 @@
                         <a href="Hotel.html" target="_blank"><img class="hyperlink" src="img/link.png" alt=""></a>
                     </div>
                 </div>
-                <img class="Project-Image" src="img/project-1.png" alt="proyecto1">
+                <img class="Project-Image" src="img/project-1.avif" alt="proyecto1">
                 <h3>Hotel el descanso</h3>
                 <p>Un portal integral para la gestión de huéspedes y habitaciones de un complejo hotelero, con
                     funcionalidades avanzadas de roles para diferentes tipos de usuarios, permitiendo una administración
@@ -181,7 +182,7 @@
                                 src="img/link.png" alt=""></a>
                     </div>
                 </div>
-                <img class="Project-Image" src="img/project-2.png" alt="proyecto1">
+                <img class="Project-Image" src="img/project-2.avif" alt="proyecto1">
                 <h3>Casa Hotel Mateguadua Website</h3>
                 <p> Página web para un hotel en Apartadó, Antioquia. Incluye información sobre habitaciones, ubicación,
                     contacto y un carrusel de imágenes. Utiliza Bootstrap para el diseño y tiene integración con
@@ -203,7 +204,7 @@
                                 src="img/link.png" alt=""></a>
                     </div>
                 </div>
-                <img class="Project-Image" src="img/project-3.png" alt="proyecto1">
+                <img class="Project-Image" src="img/project-3.avif" alt="proyecto1">
                 <h3>Reproductor de Musica</h3>
                 <p>Concepto de sitio web para descubrir música libre de copyright. Permite escuchar temas, conocer a los
                     autores y explorar géneros</p>
@@ -222,7 +223,7 @@
                                 src="img/link.png" alt=""></a>
                     </div>
                 </div>
-                <img class="Project-Image" src="img/project-4.png" alt="proyecto1">
+                <img class="Project-Image" src="img/project-4.avif" alt="proyecto1">
                 <h3>Clinica Rie</h3>
                 <p>Página web para una clínica dental. Ofrece servicios como implantología, ortodoncia, alta estética y
                     odontopediatría. Destaca la experiencia del Dr. Alex Camacho y testimonios de pacientes.</p>
@@ -239,7 +240,7 @@
                         <a href="PoolApp.html" target="_blank"><img class="hyperlink" src="img/link.png" alt=""></a>
                     </div>
                 </div>
-                <img class="Project-Image" src="img/project-5.png" alt="proyecto1">
+                <img class="Project-Image" src="img/project-5.avif" alt="proyecto1">
                 <h3>Pool Care</h3>
                 <p>App móvil para mantener piscinas en óptimas condiciones. Con guías de mantenimiento, recordatorios y
                     herramientas para calcular las cantidades de productos químicos necesarios, asegurando un cuidado
@@ -259,7 +260,7 @@
                                 alt=""></a>
                     </div>
                 </div>
-                <img class="Project-Image" src="img/project-6.png" alt="proyecto1">
+                <img class="Project-Image" src="img/project-6.avif" alt="proyecto1">
                 <h3>Mascota Feliz</h3>
                 <p>Aplicación para la gestión veterinaria con .NET y Azure Pages. Permite administrar clientes,
                     veterinarios, mascotas y citas médicas. Incluye historial de visitas con temperatura, peso y
@@ -280,7 +281,7 @@
                                 alt=""></a>
                     </div>
                 </div>
-                <img class="Project-Image" src="img/project-7.png" alt="proyecto1">
+                <img class="Project-Image" src="img/project-7.avif" alt="proyecto1">
                 <h3>DigitCol</h3>
                 <p>Plataforma para la compra de productos y servicios de desarrollo con gestión segura de clientes,
                     pagos y proyectos. Permite registro, autenticación, historial de compras y roles personalizados
@@ -304,7 +305,7 @@
                                 src="img/link.png" alt=""></a>
                     </div>
                 </div>
-                <img class="Project-Image" src="img/project-8.png" alt="proyecto1">
+                <img class="Project-Image" src="img/project-8.avif" alt="proyecto1">
                 <h3>AnderWeb</h3>
                 <p>Concepto de empresa desarrolladora de software, enfocado a la buena semantica y programacion con
                     buenas practicas, facilitando el seo y la accesibilidad.</p>
@@ -348,11 +349,11 @@
                 <img class="Contact-IMG" src="img/contact.png" alt="">
                 <h2>Anderson Gomez Garcia</h2>
                 <p onclick="copyToClipboard(this)">andersongomezgarcia111@<wbr>gmail.com <img class="Copy"
-                        src="img/copy.png"> </p>
+                        src="img/copy.png" alt="copy icon"> </p>
                 <p onclick="copyToClipboard(this)"> <img src="img/colombia.svg" alt=""> +57 3185836788 <img class="Copy"
-                        src="img/copy.png"></p>
+                        src="img/copy.png" alt="copy icon"></p>
                 <p onclick="copyToClipboard(this)">Tulúa, Valle del Cauca, Colombia <img class="Copy"
-                        src="img/copy.png"></p>
+                        src="img/copy.png" alt="copy icon"></p>
 
             </div>
             <div id="Contact-Form">
@@ -368,8 +369,8 @@
 
     <footer>
         <div>
-            <a href="mailto:andersongomezgarcia111@gmail.com"><img src="img/mail.png" alt=""></a>
-            <a href="https://discord.com/users/:withoutname1403"><img src="img/discord.png" alt=""></a>
+            <a href="mailto:andersongomezgarcia111@gmail.com"><img src="img/mail.png" alt="mail"></a>
+            <a href="https://discord.com/users/:withoutname1403"><img src="img/discord.png" alt="discord"></a>
             <!--<a href=""><img src="img/linkedin.png" alt=""></a>-->
             <!-- <a href=""><img src="img/stackoverflow.png" alt=""></a>-->
             <a href="tel:+57 3185836788"><img src="img/phone.png" alt=""></a>
