@@ -1,0 +1,74 @@
+---
+const { thumbnailSrc, fullSrc, alt = "" } = Astro.props;
+---
+
+<!-- Imagen en miniatura -->
+<img src={thumbnailSrc} alt={alt} class="image-popup-trigger fade-up no-hover" />
+
+<!-- Popup -->
+<div id="image-popup-modal" class="image-popup-modal hidden">
+  <img src={fullSrc} alt={alt} class="image-popup-full" />
+</div>
+
+<script>
+  const image = document.querySelector(".image-popup-trigger");
+  if (image) {
+    image.addEventListener("animationend", () => {
+      image.classList.remove("no-hover");
+    });
+  }
+  const trigger = document.querySelector(".image-popup-trigger");
+  const modal = document.getElementById("image-popup-modal");
+
+  if (trigger) {
+    trigger.addEventListener("click", () => {
+      if (modal) {
+        modal.classList.remove("hidden");
+      }
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      // solo cierra si haces clic fuera de la imagen
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+      }
+    });
+  }
+</script>
+
+<style>
+  .image-popup-trigger {
+    cursor: pointer;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.25s;
+    width: 100%;
+  }
+  .image-popup-trigger:hover {
+    opacity: 0.9;
+    box-shadow:  0 0px 12px rgba(0, 162, 255, 0.63);
+  }
+
+  .image-popup-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+  }
+  .image-popup-modal.hidden {
+    display: none;
+  }
+
+  .image-popup-full {
+    max-height: 90vh;
+    max-width: 90vw;
+    object-fit: contain;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+</style>

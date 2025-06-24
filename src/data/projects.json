@@ -1,0 +1,473 @@
+{
+    "projects": [
+        {
+            "key": "hotel-el-descanso",
+            "name": "Hotel el descanso",
+            "date": "2024",
+            "tagline": "Sistema de gestión hotelera",
+            "image": "/img/projects/project-1.avif",
+            "summary": "Un portal integral para la gestión de huéspedes y habitaciones de un complejo hotelero, con funcionalidades avanzadas de roles para diferentes tipos de usuarios, permitiendo una administración eficiente y personalizada. ",
+            "tecnologies": [
+                "php",
+                "html",
+                "css",
+                "xampp",
+                "postgresql",
+                "figma"
+            ],
+            "description": [
+                {
+                    "type": "text",
+                    "value": "El Sistema de Gestión Hotelera (SGH) es una solución diseñada para la administración eficiente de reservas, ocupación y servicios en el hotel El Descanso. Implementa una base de datos optimizada, asegurando integridad y normalización hasta la 3FN."
+                },
+                {
+                    "type": "img",
+                    "value": "/img/projects/project-1.avif"
+                },
+                {
+                    "type": "text",
+                    "value": "Características principales"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "Registro y gestión de habitaciones, clientes y reservas.",
+                        "Administración de servicios adicionales (restaurante, bar, lavandería, etc.).",
+                        "Perfiles de usuario con distintos niveles de acceso (gerente, recepcionista, cajero, administrador).",
+                        "Generación de facturas y estadísticas sobre ocupación y cancelaciones."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Tecnologías utilizadas:"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "Modelado de datos: Diagrama Entidad-Relación (Chen)",
+                        "Bases de datos relacionales: Implementación con dependencias funcionales y normalización.",
+                        "Herramientas: Draw.io para modelado, SQL para gestión de datos."
+                    ]
+                },
+                {
+                    "type": "demo",
+                    "value": "<iframe src=\"https://drive.google.com/file/d/1AyNGJabNyvOzS06BFfWQ2UCc_a4iLCna/preview\" allow=\"autoplay\"onload=\"resizeIframe(this);\"></iframe>"
+                }
+            ],
+            "links": {
+                "github": "https://github.com/AndersonGomezGarcia/Hotel-el-descanso"
+            }
+        },
+        {
+            "key": "casa-hotel-mateguadua",
+            "name": "Casa Hotel Mateguadua Website",
+            "date": "2023",
+            "tagline": "Sitio web para Casa Hotel Mateguadua",
+            "image": "/img/projects/project-2.avif",
+            "summary": "Página web para un hotel en Apartadó, Antioquia. Incluye información sobre habitaciones, ubicación, contacto y un carrusel de imágenes. Utiliza Bootstrap para el diseño y tiene integración con WhatsApp para reservas.",
+            "tecnologies": [
+                "html",
+                "css",
+                "bootstrap",
+                "figma"
+            ],
+            "description": [
+                {
+                    "type": "text",
+                    "value": "El sitio web para Casa Hotel Mateguadua es una plataforma diseñada para proporcionar información completa sobre el hotel, incluyendo detalles sobre habitaciones, servicios y opciones de reserva."
+                },
+                {
+                    "type": "img",
+                    "value": "/img/projects/project-2.avif"
+                },
+                {
+                    "type": "text",
+                    "value": "Características principales"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "Diseño responsivo utilizando Bootstrap.",
+                        "Integración con WhatsApp para reservas rápidas.",
+                        "Galería de imágenes del hotel y sus instalaciones.",
+                        "Sección de preguntas frecuentes y contacto."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Tecnologías utilizadas:"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "HTML, CSS y JavaScript para el desarrollo front-end.",
+                        "Bootstrap para el diseño responsivo.",
+                        "Firebase para la gestión de reservas y datos."
+                    ]
+                }
+            ],
+            "links": {
+                "url": "https://casahotelmateguadua.web.app/"
+            }
+        },
+        {
+            "key": "Reproductor-de-Musica",
+            "name": "Reproductor de Música",
+            "date": "2022",
+            "tagline": "Concepto con interfaz intuitiva",
+            "image": "/img/projects/project-3.avif",
+            "summary": "Concepto de sitio web para descubrir música libre de copyright. Permite escuchar temas, conocer a los autores y explorar géneros",
+            "tecnologies": [
+                "html",
+                "css",
+                "bootstrap",
+                "figma"
+            ],
+            "description": [
+                {
+                    "type": "text",
+                    "value": "El Reproductor de Música es un concepto de sitio web diseñado para facilitar el descubrimiento de música libre de copyright, ofreciendo una experiencia intuitiva y atractiva para los usuarios."
+                },
+                {
+                    "type": "img",
+                    "value": "/img/projects/project-3.avif"
+                },
+                {
+                    "type": "text",
+                    "value": "Características principales"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "Interfaz intuitiva para explorar música por géneros.",
+                        "Información detallada sobre los autores y sus obras.",
+                        "Reproductor integrado para escuchar temas directamente en el sitio."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Tecnologías utilizadas:"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "HTML, CSS y JavaScript para el desarrollo front-end.",
+                        "Frameworks modernos para una experiencia de usuario fluida.",
+                        "API de música para acceder a un amplio catálogo de temas."
+                    ]
+                }
+            ],
+            "links": {
+                "url": "https://anderc0de.github.io/Pagina-de-musica/",
+                "github": "https://github.com/AnderC0de/Pagina-de-musica"
+            }
+        },
+        {
+            "key": "clinica-rie",
+            "name": "Clínica RIE",
+            "date": "2024",
+            "tagline": "Pagina web",
+            "image": "/img/projects/project-4.avif",
+            "summary": "Página web para una clínica dental. Ofrece servicios como implantología, ortodoncia, alta estética y odontopediatría. Destaca la experiencia del Dr. Alex Camacho y testimonios de pacientes.",
+            "tecnologies": [
+                "html",
+                "css",
+                "bootstrap",
+                "figma"
+            ],
+            "description": [
+                {
+                    "type": "text",
+                    "value": "La Clínica RIE es una página web diseñada para proporcionar información sobre los servicios dentales ofrecidos, destacando la experiencia del Dr. Alex Camacho y los testimonios de pacientes satisfechos."
+                },
+                {
+                    "type": "img",
+                    "value": "/img/projects/project-4.avif"
+                },
+                {
+                    "type": "text",
+                    "value": "Características principales"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "Información detallada sobre servicios como implantología, ortodoncia y odontopediatría.",
+                        "Testimonios de pacientes para generar confianza.",
+                        "Formulario de contacto para consultas y citas."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Tecnologías utilizadas:"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "HTML, CSS y JavaScript para el desarrollo front-end.",
+                        "Frameworks modernos para una experiencia de usuario fluida.",
+                        "Integración con herramientas de SEO para mejorar la visibilidad en buscadores."
+                    ]
+                }
+            ],
+            "links": {
+                "url": "https://clinicarie-15673.web.app/"
+            }
+        },
+        {
+            "key": "pool-care",
+            "name": "Pool Care",
+            "date": "2024",
+            "tagline": "Aplicación para el mantenimiento de piscinas",
+            "image": "/img/projects/project-5.avif",
+            "summary": "App móvil para mantener piscinas en óptimas condiciones. Con guías de mantenimiento, recordatorios y herramientas para calcular las cantidades de productos químicos necesarios, asegurando un cuidado eficiente y efectivo",
+            "tecnologies": [
+                "react",
+                "css",
+                "figma"
+            ],
+            "description": [
+                {
+                    "type": "text",
+                    "value": "Pool Care es una aplicación móvil diseñada para ayudar a los propietarios de piscinas a mantener sus instalaciones en óptimas condiciones, proporcionando guías de mantenimiento, recordatorios y herramientas útiles."
+                },
+                {
+                    "type": "img",
+                    "value": "/img/projects/project-5.avif"
+                },
+                {
+                    "type": "text",
+                    "value": "Características principales"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "Guías detalladas de mantenimiento de piscinas.",
+                        "Recordatorios para la limpieza y el tratamiento del agua.",
+                        "Calculadoras para determinar las cantidades de productos químicos necesarios."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Tecnologías utilizadas:"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "HTML, CSS y JavaScript para el desarrollo front-end.",
+                        "Frameworks móviles para una experiencia de usuario fluida.",
+                        "API de salud para acceder a información sobre productos químicos."
+                    ]
+                }
+            ],
+            "links": {}
+        },
+        {
+            "key": "mascota-feliz",
+            "name": "Mascota Feliz",
+            "date": "2020",
+            "tagline": "Aplicación para el cuidado de mascotas",
+            "image": "/img/projects/project-6.avif",
+            "summary": "Aplicacion de Veterinaria, creado con c# .NET, que permite a los dueños de mascotas gestionar citas, seguimiento de salud y consejos útiles para el cuidado de sus animales de compañía.",
+            "tecnologies": [
+                "html",
+                "css",
+                "dotnet"
+            ],
+            "description": [
+                {
+                    "type": "text",
+                    "value": "Mascota Feliz es una aplicación diseñada para ayudar a los dueños de mascotas a cuidar de sus animales de compañía, proporcionando recordatorios de citas, seguimiento de salud y consejos útiles."
+                },
+                {
+                    "type": "img",
+                    "value": "/img/projects/project-6.avif"
+                },
+                {
+                    "type": "text",
+                    "value": "Características principales"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "Recordatorios de citas veterinarias.",
+                        "Seguimiento de la salud y el bienestar de la mascota.",
+                        "Consejos personalizados para el cuidado de mascotas."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Tecnologías utilizadas:"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "HTML, CSS y JavaScript para el desarrollo front-end.",
+                        "Frameworks modernos para una experiencia de usuario fluida.",
+                        "API de salud para acceder a información veterinaria."
+                    ]
+                },
+                {
+                    "type": "demo",
+                    "value": "<iframe src=\"https://www.youtube.com/embed/HEQnqpjiKP4\" allow=\"autoplay\"onload=\"resizeIframe(this);\"></iframe>"
+                }
+            ],
+            "links": {}
+        },
+        {
+            "key": "digitcol",
+            "name": "DigitCol",
+            "date": "2024",
+            "tagline": "Empresa de desarrollo de software",
+            "image": "/img/projects/project-7.avif",
+            "summary": "Concepto de empresa desarrolladora de software, enfocado a la buena semantica y programacion con buenas practicas, facilitando el seo y la accesibilidad.",
+            "tecnologies": [
+                "php",
+                "html",
+                "figma"
+            ],
+            "description": [
+                {
+                    "type": "text",
+                    "value": "DigitCol es un concepto de empresa dedicada al desarrollo de software, enfocada en la creación de aplicaciones web y móviles con un fuerte énfasis en la semántica, buenas prácticas de programación y optimización para SEO."
+                },
+                {
+                    "type": "img",
+                    "value": "/img/projects/project-7.avif"
+                },
+                {
+                    "type": "text",
+                    "value": "Características principales"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "Desarrollo de aplicaciones web y móviles.",
+                        "Enfoque en la semántica y buenas prácticas de programación.",
+                        "Optimización para SEO y accesibilidad."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Tecnologías utilizadas:"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "HTML, CSS y JavaScript para el desarrollo front-end.",
+                        "Frameworks modernos para una experiencia de usuario fluida.",
+                        "Herramientas de SEO para mejorar la visibilidad en buscadores."
+                    ]
+                }
+            ],
+            "links": {
+                "github": "https://github.com/AndersonGomezGarcia/commerce-app"
+            }
+        },
+        {
+            "key": "anderweb",
+            "name": "AnderWeb",
+            "date": "2025",
+            "tagline": "Concepto de empresa de desarrollo web",
+            "image": "/img/projects/project-8.avif",
+            "summary": "Concepto de empresa desarrolladora de software, enfocado a la buena semantica y programacion con buenas practicas, facilitando el seo y la accesibilidad.",
+            "tecnologies": [
+                "html",
+                "css",
+                "figma"
+            ],
+            "description": [
+                {
+                    "type": "text",
+                    "value": "AnderWeb es un concepto de empresa dedicada al desarrollo web, enfocada en la creación de sitios web y aplicaciones con un fuerte énfasis en la semántica, buenas prácticas de programación y optimización para SEO."
+                },
+                {
+                    "type": "img",
+                    "value": "/img/projects/project-8.avif"
+                },
+                {
+                    "type": "text",
+                    "value": "Características principales"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "Desarrollo de sitios web y aplicaciones web.",
+                        "Enfoque en la semántica y buenas prácticas de programación.",
+                        "Optimización para SEO y accesibilidad."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Tecnologías utilizadas:"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "HTML, CSS y JavaScript para el desarrollo front-end.",
+                        "Frameworks modernos para una experiencia de usuario fluida.",
+                        "Herramientas de SEO para mejorar la visibilidad en buscadores."
+                    ]
+                }
+            ],
+            "links": {
+                "url": "https://andersongomezgarcia.github.io/WebCode/",
+                "github": "https://github.com/AndersonGomezGarcia/WebCode"
+            }
+        },
+        {
+            "key": "WeekArtApp",
+            "name": "WeekArt",
+            "date": "2025",
+            "tagline": "Red social para fotógrafos y creadores visuales",
+            "image": "/img/projects/WeekArt.avif",
+            "summary": "Aplicación web tipo red social para fotógrafos, que permite autenticar usuarios, subir publicaciones con imágenes, gestionar sesiones y navegar entre distintas páginas mediante React Router y Context API.",
+            "tecnologies": [
+                "react",
+                "javascript",
+                "html",
+                "css",
+                "postgresql",
+                "tailwind"
+            ],
+            "description": [
+                {
+                    "type": "text",
+                    "value": "WeekArt es una aplicación web tipo red social dirigida a fotógrafos y creadores visuales. Los usuarios pueden registrarse, iniciar sesión, subir sus fotos, navegar entre páginas y ver detalles de publicaciones."
+                },
+                {
+                    "type": "img",
+                    "value": "/img/projects/WeekArt.avif"
+                },
+                {
+                    "type": "text",
+                    "value": "Características principales"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "Sistema de autenticación persistente con Context API y localStorage.",
+                        "Navegación entre páginas con React Router (Home, Profile, Upload, Categories, PostDetail, SearchResults).",
+                        "Modales para login y signup que se activan desde la barra de navegación.",
+                        "Componentización clara y buenas prácticas en React."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "value": "Tecnologías utilizadas:"
+                },
+                {
+                    "type": "list",
+                    "value": [
+                        "React y Hooks para la lógica del front-end.",
+                        "React Router para la navegación entre páginas.",
+                        "Context API para gestionar la autenticación globalmente.",
+                        "CSS y HTML semántico para una experiencia accesible y responsive."
+                    ]
+                }
+            ],
+            "links": {
+                "github": "https://github.com/AndersonGomezGarcia/WeekArtApp"
+            }
+        }
+    ]
+}

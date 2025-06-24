@@ -1,0 +1,63 @@
+{
+    "menu": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "hero": {
+        "title": "Desarrolador Soft / Front End - Back End",
+        "button": "Contactame",
+        "link": "Mira mis desarrollos"
+    },
+    "about": {
+        "pretitle": "Sobre mi",
+        "title": "¿Quien soy?",
+        "button": "Descarga mi CV",
+        "description1": "Tengo afinidad por el desarrollo tecnológico, explorando tanto el diseño como el backend, ademas de bases de datos. Mi formación incluye estudios en el SENA y en Univalle. ",
+        "description2": "Soy un desarrollador enfocado en tareas específicas, escucho primero las opiniones de los demás y luego propongo las mías, prefiero condiciones claras y evitar ambigüedades al trabajar."
+    },
+    "Skills": {
+        "pretitle": "Habilidades",
+        "title": "Tecnológicas y herramientas",
+        "tecnologies": "Tecnologías",
+        "frameworks": "Frameworks",
+        "tools": "Herramientas"
+    },
+    "projects": {
+        "pretitle": "Mis",
+        "title": "Proyectos"  
+    },
+    "experience": {
+        "pretitle": "Mi",
+        "title": "Experiencia",
+        "experiences":[
+            {
+                "title": "Webcloster",
+                "datetime": "Actual (2025)",
+                "description": "Desarrollo de aplicaciones web con wordpress y maquetación de diseños responsivos."
+            },
+            {
+                "title": "Trabajo Autonomo",
+                "datetime": "6 meses (2024)",
+                "description": "Desarrollo de aplicaciones web con tecnologías como HTML, CSS, JavaScript, PHP, Laravel, React, .NET, SQL, entre otras."
+            },
+            {
+                "title": "Empresa GAB S.A.S",
+                "datetime": "3 meses y medio (2023)",
+                "description": "Encargado de Control de Accesos a personal y vehiculos."
+            }
+        ]
+    },
+    "contact": {
+        "pretitle": "Hazme",
+        "title": "Contacto",
+        "form": {
+            "name": "Nombre",
+            "email": "Email",
+            "message": "Mensaje",
+            "button": "Enviar"
+        }
+    }
+
+}

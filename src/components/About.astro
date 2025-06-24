@@ -1,0 +1,186 @@
+---
+import Title from "../components/elements/Title.astro";
+import data from "../data/main.json";
+import cv from "../../../public/HOJAVIDA.pdf"; // Importa el archivo PDF de tu CV
+---
+
+<div id="About" class="fade-up">
+  <Title title={data.about.title} beforeTitle={data.about.pretitle} />
+  <div id="About-Info">
+    <p>
+      {data.about.description1}
+    </p>
+    <div class="Separator"></div>
+    <p>
+      {data.about.description2}
+    </p>
+    <a href="AndersonGomezGarciaCV.pdf" download="AndersonGomezGarciaCV.pdf"
+      ><button id="CV">
+        {data.about.button}
+      </button></a>
+    
+  </div>
+</div>
+
+<style>
+  button#CV {
+    background-color: #0000003d;
+    border: none;
+    padding: 10px 55px 5px 55px;
+    color: #00f0ff;
+    font-weight: 600;
+    border-radius: 45px 45px 0 0;
+    font-family: "Roboto";
+    font-size: 24px;
+    position: absolute;
+    top: -46px;
+    display: inline-flex;
+    right: 70px;
+    white-space: nowrap; /* Evita que el texto dentro del botón salte de línea */
+    height: 45px;
+    transition: 0.4s;
+    z-index: 100;
+  }
+
+  @keyframes hoverAnimation {
+    0% {
+      top: -46px;
+      height: 45px;
+    }
+    25% {
+      top: -46px;
+      height: 45px;
+    }
+    35% {
+      top: -49px;
+      height: 48px;
+    }
+    45% {
+      top: -46px;
+      height: 45px;
+    }
+    55% {
+      top: -49px;
+      height: 48px;
+    }
+    75% {
+      top: -46px;
+      height: 45px;
+    }
+    100% {
+      top: -46px;
+      height: 45px;
+    }
+  }
+
+  button#CV {
+    animation: hoverAnimation 1s infinite;
+    cursor: pointer;
+  }
+
+  button#CV:hover {
+    background-color: #03bce4;
+    color: white;
+    transition: 0.2s;
+    animation: none;
+  }
+  #About,
+  #Skills,
+  #Contact,
+  #Projects {
+    padding: 50px 0 50px 0;
+  }
+  #About {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    color: white;
+    flex-direction: column;
+  }
+  #About-Info {
+    border: solid 1.5px #ffffff1f;
+    border-radius: 22px;
+    margin: 45px auto 0 auto;
+    padding: 30px 35px;
+    display: flex;
+    flex-direction: row;
+    pointer-events: fill;
+    z-index: 0;
+    height: auto;
+    width: 75%;
+    background-color: #2f313a;
+    background-color: #2f313a9d;
+    background-color: #373a469d;
+    transition: 0.4s;
+    position: relative;
+  }
+
+  #About-Info:hover {
+    border: solid 1.5px #03bce4;
+    transition: 0.2s;
+    background-color: rgba(0, 133, 173, 0.1);
+    padding: 30px 22px;
+  }
+
+  #About-Info:hover .Separator {
+    background-color: #03bce4;
+    transition: 0.2s;
+  }
+
+  #About-Info .Separator {
+    border: solid 1px #ffffff1f;
+    height: 80px; /* Ajusta la altura al 80% del contenedor padre */
+    background-color: #ffffff1f;
+    color: transparent;
+    margin: auto 20px; /* Centra verticalmente el separador */
+    transition: 0.4s;
+    flex-grow: 80%; /* Permite que el separador crezca para llenar el espacio disponible */
+    width: 0;
+  }
+
+  #About-Info p {
+    font-size: var(--paragraph-font-size, 20px);
+    font-weight: 400;
+    font-family: "Roboto";
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    #About-Info {
+      flex-direction: column;
+      width: calc(100% - 110px);
+      margin: 55px 0 0 0 ;
+    }
+    #About-Info .Separator {
+      height: 0;
+      width: 100%;
+      margin: 20px 0;
+    }
+    button#CV{
+        background-color: #0000003d;
+        border: none;
+        padding: 10px 25px 5px 25px;
+        color: #00F0FF;
+        font-weight: 600;
+        border-radius: 45px 45px 0 0;
+        font-family: 'Roboto';
+        font-size: 22px;
+        position: absolute;
+        top: -46px;
+        display: inline-flex;
+        right: 50%;
+        white-space: nowrap; /* Evita que el texto dentro del botón salte de línea */
+        height: 45px;
+        transition: .4s;
+        transform: translate(50%, 0);
+        z-index: 100;
+    }
+  }
+
+  
+</style>

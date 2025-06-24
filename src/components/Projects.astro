@@ -1,0 +1,418 @@
+---
+import type { arrayOutputType } from "astro:schema";
+import Title from "../components/elements/Title.astro";
+import data from "../data/main.json";
+import projects from "../data/projects.json";
+import getUrls from "../utils/urls.js";
+const route = "img/projects/";
+/*
+interface Project {
+    title: string;
+    pretitle: string;
+    image: string;
+    description: string;
+    skills: string[];
+    links: {
+        url?: string;
+        github?: string;
+        download?: string;
+    };
+}*/
+// Define the Project type based on your data structure
+const {complete} = Astro.props; 
+
+type Project = {
+  key: string;
+  name: string;
+  tagline: string;
+  image: string;
+  summary: string;
+  tecnologies: string[];
+  description: Record<string, any>[];
+  links: {
+    url?: string;
+    github?: string;
+    download?: string;
+  };
+};
+type Projects = Project[];
+
+const selectedKeyProyects: string[] = [
+  "WeekArtApp",
+  "digitcol",
+  "pool-care",
+  "hotel-el-descanso",
+];
+
+let selectedProjects: Projects;
+
+if (!complete) {
+  // If not complete, filter projects to only include selected ones
+  selectedProjects = projects.projects.filter((item) =>
+    selectedKeyProyects.includes(item.key)
+  );
+} else {
+  selectedProjects = projects.projects;
+}
+
+
+---
+
+<div id="Projects" class="fade-up">
+  <Title title={data.projects.title} beforeTitle={data.projects.pretitle} />
+  <div class="Separator"></div>
+  <div id="Projects-Items">
+    {
+      selectedProjects.map((item) => {
+        return (
+          <div class="Project fade-up">
+            <img class="Project-Image" src={`${item.image}`} alt={item.name} />
+            <div class="Content">
+              <h3>{item.name}</h3>
+              <p>{item.summary}</p>
+              <div class="header">
+                <ul class="Skills">
+                  {item.tecnologies.map((skill) => (
+                    <li data-skill={skill}>
+                      <img src={getUrls(skill)} alt={skill} />
+                    </li>
+                  ))}
+                </ul>
+                <div class="Links">
+                  <a class="details" href={"/projects/" + item.key}>
+                    Ver mas detalles{" "}
+                    <span style="  font-family: 'WDXL Lubrifont TC', sans-serif">
+                      {" "}
+                      →
+                    </span>
+                  </a>
+                  {item.links.github && (
+                    <a href={item.links.github} target="_blank">
+                      <img class="github" src="img/github-link.png" alt="" />
+                    </a>
+                  )}
+                  {item.links.url && (
+                    <a href={item.links.url} target="_blank">
+                      <img class="hyperlink" src="img/icons/link.png" alt="" />
+                    </a>
+                  )}
+                  {item.links.download && (
+                    <a href={item.links.download} target="_blank">
+                      <img class="hyperlink" src="img/download.png" alt="" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })
+    }
+    {!complete && (
+      <a class="moreProjects fade-up" href="/projects">Ver más proyectos</a>
+    )}
+  </div>
+</div>
+
+<style>
+  #Projects-Items {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 50px 10px;
+    color: white;
+    gap: 55px 7%;
+  }
+
+  .Project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 44%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    background: #2e2f35; /* Gradiente lineal en diagonal */
+    /* Only one background property should be used */
+    background-color: #373a469d;
+    border-radius: 15px;
+    color: white;
+    flex-direction: column;
+    transition:
+      transform 0.2s,
+      border 0.2s,
+      background-color 0.2s;
+    border: solid 1px #ffffff1f;
+  }
+
+  .Project:hover {
+    transform: translateY(-12px);
+    border: solid 1px #03bce4;
+    box-shadow:
+      0 0 24px 0 #00b7ff0e,
+      0 2px 24px 0 #00b7ff0e;
+
+    background-color: rgba(0, 133, 173, 0.15);
+  }
+
+  @keyframes throb {
+    0%,
+    100% {
+      transform: scale(1);
+      filter: brightness(1);
+    }
+    25%,
+    75% {
+      transform: scale(1.1);
+      filter: brightness(1.05);
+    }
+    50% {
+      transform: scale(1.2);
+      filter: brightness(1.1);
+    }
+  }
+
+  .Project:hover img.hyperlink {
+    filter: brightness(
+      1.2
+    ); /* Ajusta el valor según el nivel de brillo deseado */
+    /* animation: throb 0.65s ease-in infinite; /* Añade una transición suave */
+  }
+
+  .Project .Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 60px);
+    padding: 15px 30px;
+    
+  }
+
+  .Project img {
+    width: 90%;
+    height: auto;
+    border-radius: 25px;
+    display: flex;
+    margin: 0 0 0;
+  }
+
+  .Project img.Project-Image {
+    /* border-top: 1px solid #ffffff1f;
+    border-bottom: 1px solid #ffffff1f;
+    */
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    transition: .3s ease-in-out;
+  }
+
+  .Project:hover img.Project-Image {
+    filter: brightness(1.08) saturate(1.1);
+    transition: 0.3s;
+    transform: scale(1.02);
+    overflow: hidden;
+  }
+
+  .Project .header {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0;
+    gap: 10px;
+  }
+
+  .Project h3 {
+    margin: 5px auto 0 0;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+  }
+
+  .Project .Skills {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto 0 0;
+    padding: 0;
+    color: white;
+    gap: 15px;
+  }
+
+  .Project .Skills li {
+    position: relative;
+    list-style-type: none;
+  }
+  .Project .Skills li img,
+  .Project .Links img {
+    height: 35px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    transition: 0.3s;
+    z-index: 2;
+  }
+
+  .Project .Skills li::before {
+    display: block;
+    content: attr(data-skill);
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.2);
+    color: rgb(0, 174, 255);
+    background-color: #1e1f22;
+    overflow: hidden;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    pointer-events: none;
+    transition: 0.4s;
+    font-weight: 700;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .Project .Skills li:hover::before {
+    opacity: 1;
+    top: -32px;
+    transition: 0.3s;
+    transform: translateX(-50%) scale(1);
+  }
+
+  .Project .Skills li img:hover {
+    filter: brightness(1.4);
+    transition: 0.2s;
+  }
+
+  .Project .Links img {
+    border-radius: 0;
+  }
+
+  .Project .Links {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 10px 0px 10px 0px;
+    padding: 0;
+    color: white;
+
+    gap: 20px;
+    width: 100%;
+  }
+  .Project .Links a.details {
+    color: #2c2e37;
+    color: #1e1f24;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: "Roboto";
+    font-size: 16px;
+    transition: 0.3s;
+    padding: 12px;
+    margin: 0;
+    width: calc(100% - 32px);
+    border-radius: 10px;
+    background-color: #0ea5e9;
+    border: solid 2px #00b7ff;
+  }
+
+  .Project .Links a.details span {
+    transition: 0.3s;
+  }
+  .Project .Links a.details:hover {
+    background-color: rgba(0, 133, 173, 0.1);
+    color: #00b7ff;
+    color: white;
+    gap: 10px;
+    transition: 0.2s;
+  }
+  .Project .Links a.details:hover span {
+    transform: translateX(10px);
+  }
+
+  .Project .Links a.details span {
+    font-family: "WDXL Lubrifont TC", sans-serif;
+    font-weight: 800;
+  }
+
+  .Project p {
+    margin: 10px 32px 15px 0px;
+    font-family: "Roboto";
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.70);
+    font-weight: 400;
+    line-height: 135%;
+    word-spacing: 5%;
+    text-shadow: #00000041 0px 0px 5px;
+  }
+
+  .Project .Links li {
+    position: relative;
+    list-style-type: none;
+  }
+
+  a.moreProjects {
+    width: fit-content;
+    background-color: #373a469d;
+    border: solid 1px #ffffff1f;
+    border: solid 1px #03bce4;
+    color: #00b7ff;
+    padding: 15px 35px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 0;
+    align-items: center;
+  }
+  a.moreProjects:hover {
+    background-color: rgba(0, 133, 173, 0.1);
+    color: #00b7ff;
+    border: solid 1px #03bce4;
+    box-shadow: 0 0 24px 0 #00b7ff0e, 0 2px 24px 0 #00b7ff0e;
+    transition: 0.2s;
+    transform: translateY(-5px);
+  }
+
+  @media (max-width: 1024px) {
+    .Project {
+      width: 95%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #Projects-Items {
+      padding: 10px;
+      gap: 30px 5%;
+    }
+    .Project {
+      width: 100%;
+    }
+    .Project img.Project-Image {
+      width: 100%;
+    }
+
+    .Project .Content {
+      width: calc(100% - 30px);
+      padding: 15px;
+    }
+    .Project h3 {
+      font-size: 22px;
+    }
+    .Project p {
+      font-size: 18px;
+    }
+  }
+</style>

@@ -1,0 +1,225 @@
+---
+import data from "../data/main.json";
+
+---
+
+<div id="Front" class="fade-up">
+  <div id="Front-Left">
+    <h1>{data.hero.title}</h1>
+    <div id="Front-Left-1">
+      <a href="#Contact" aria-label="Contact me">
+        <button class="Contact"> {data.hero.button}</button></a
+      >
+      <a href="#Projects" aria-label="View my projects">
+        <p>{data.hero.link}</p>
+      </a>
+    </div>
+  </div>
+
+  <div id="Front-Right">
+    <span
+      >&#123;</span>
+      <img src="img/icon.png" alt="programador" />
+      <p>nderson <br /> Gómez García</p>
+      <span id="span2">&#125;</span>
+  </div>
+</div>
+
+<style>
+  button.Contact {
+    background: linear-gradient(to right,
+      #00d2ff,
+      #0292b3,#0292b3 , #00d0ff15, #00d0ff15
+    );
+    background-size: 350%;
+    border: 2px solid #00d2ff;
+    padding: 10px 20px 10px 20px;
+    color: #27282c;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 18px;
+    font-family: "Roboto Mono";
+    font-size: 28px;
+    transition: 0.2s ease-out;
+    text-wrap: nowrap;
+  }
+
+  button.Contact:hover {
+  background-position: right;    color: #00d2ff;
+    border: 2px solid #00d2ff;
+    cursor: pointer;
+    box-shadow: #00d0ff4f 0 0 10px;
+  }
+
+  #Front {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 130px 0 0 0;
+    padding: 0;
+    color: white;
+  }
+
+  @keyframes floating {
+    0% {
+      transform: translateY(-10px);
+      transform: rotate(5deg);
+    }
+    25% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+      transform: rotate(-5deg);
+    }
+
+    75% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+      transform: rotate(5deg);
+    }
+  }
+
+  #Front-Right {
+    float: right;
+    display: inline-flex;
+    animation: floating 3s ease-in-out infinite;
+  }
+  #Front-Right span {
+    margin-top: auto;
+    font-size: 300px;
+    font-weight: 500;
+    opacity: 0.25;
+  }
+
+  #Front-Right p {
+    margin-top: auto;
+    font-size: 42px;
+    font-weight: regular;
+    font-family: "Tauri";
+    transform: translate(0, 60%);
+  }
+
+  #Front-Right img {
+    width: auto;
+    margin: 12% 5px 0 10px;
+  }
+
+  #Front-Left {
+    float: left;
+    max-width: 44%;
+  }
+
+  #Front-Left h1 {
+    font-size: 50px;
+    font-weight: 600;
+    margin: 0;
+    font-family: "Roboto Mono";
+  }
+
+  #Front-Left-1 {
+    display: inline-flex;
+    margin-top: 50px;
+  }
+
+  #Front-Left-1 a {
+    text-decoration: none;
+  }
+  #Front-Left-1 p {
+    color: #00d0ff8a;
+    text-decoration: underline;
+    margin: auto 0 auto 20px;
+    font-size: 28px;
+    font-family: "Roboto Mono";
+    text-underline-offset: 5px; /* Ajusta este valor según tus necesidades */
+    text-decoration-thickness: 2px; /* Ajusta este valor para el grosor del subrayado */
+    font-weight: 400;
+  }
+  #Front-Left-1 p:hover {
+    color: #00d0ff;
+    cursor: pointer;
+    font-style: italic;
+    margin: auto 0 auto 20px;
+  }
+
+  #span2 {
+    transform: translate(0, 70px);
+  }
+@media (max-width: 1081px){
+    .Project{
+        width: 95%;
+    }
+    #Front{
+        display: inline-flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+      }
+    #Front-Right{
+        max-width: 100%;
+    }
+    #Front-Right span{
+        font-size: 180px;
+        float: left;
+    }
+
+    #Front-Left{
+        justify-content: center;
+        align-items: center;
+        float: right;
+        text-align: center;
+        width: 100%;
+        max-width: 80%;
+    }
+    #Front-Left h1{
+        font-size: 40px;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+  @media (max-width: 767px){
+    #Front-Left{
+      max-width: 100%;
+    }
+
+     #Front-Left h1{
+        font-size: 35px;
+    }
+    button.Contact, #Front-Left-1 a p{
+        font-size: 22px;
+    }
+    #Front-Right{
+      width: min-content;
+    }
+     #Front-Right span{  
+        font-size: 100px;
+    }
+    #Front-Right p{
+        font-size: 30px;
+    }
+    #Front-Right #span2{
+      transform: translate(5px, 55px);
+    }
+    #Front-Right img{
+        width: 100px;
+        height: auto;
+    }
+  }
+  @media (max-width: 380px) {
+    #Front-Right p{
+      font-size: 26px;
+    }
+    
+    #Front-Left-1{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+</style>

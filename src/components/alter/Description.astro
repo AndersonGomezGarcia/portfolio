@@ -1,0 +1,207 @@
+---
+import ImagePopup from "../elements/ImagePopup.astro";
+
+const { project } = Astro.props;
+type DescriptionItem =
+  | { type: "text"; value: string }
+  | { type: "img"; value: string }
+  | { type: "list"; value: string[] }
+  | { type: "demo"; value: any };
+---
+
+<section id="Description">
+  {/*<div class="Separator"></div>*/}
+
+  {
+    project.description.map((key: DescriptionItem) => {
+      return (
+        <p>
+          {key.type === "text" && <p class="fade-up">{key.value}</p>}
+          {key.type === "img" && (
+            <ImagePopup
+              thumbnailSrc={key.value}
+              fullSrc={key.value}
+              alt={`Imagen del proyecto ${project.name}`}></ImagePopup>
+          )}
+          {key.type === "list" && (
+            <ul class="fade-up">
+              {key.value.map((li, idx) => (
+                <li>{li}</li>
+              ))}
+            </ul>
+          )}
+          {key.type === "demo" && (
+            <h2>Demo</h2>
+            <div class="iframeContainer" set:html={key.value}>
+          
+              
+            </div>
+          )}
+        </p>
+      );
+    })
+  }
+  <!-- Demo <h1>Demo app</h1>
+  <div class="iframeContainer">
+    <iframe
+      src="https://drive.google.com/file/d/1AyNGJabNyvOzS06BFfWQ2UCc_a4iLCna/preview"
+      allow="autoplay"
+      onload="resizeIframe(this);"></iframe>
+  </div>-->
+  
+</section>
+<style>
+
+  #Description {
+    margin: 20px auto;
+    /* Ajusta según sea necesario */
+    padding: 10px 20px 20px 20px;
+    border-radius: 10px;
+    max-width: 1000px;
+    width: calc(100% - 40px);
+  }
+
+  #Description h1 {
+    font-size: 50px;
+    font-weight: 600;
+    font-family: "Roboto";
+    color: rgb(0, 171, 238);
+    transition: 0.4s;
+    padding: 0px 0;
+    margin: 0;
+  }
+
+  #Description h2{
+    font-size: 30px;
+    font-weight: 500;
+    font-family: "Roboto";
+    color: #00a6ca;
+    transition: 0.4s;
+    padding: 0px 0;
+    margin: 0;
+  }
+
+  #Description h1 span {
+    color: white;
+  }
+
+  #Description h1:hover {
+    white-space: 10px;
+    text-indent: 8px;
+    transition: 0.2s;
+    text-shadow: #00d0ff3d 1px 1px 05px;
+  }
+
+  #Description p,
+  #Description li {
+    font-size: 19px;
+    font-weight: 400;
+    font-family: "Roboto";
+    color: #ebfdff;
+    margin: 0;
+    padding: 0;
+    line-height: 150%;
+    letter-spacing: normal;
+  }
+
+  #Description ul {
+    background-color: rgba(0, 0, 0, 0.095); /**/
+    background-color: rgba(255, 255, 255, 0.035);
+    background: #373a469d;
+    margin-bottom: 45px;
+    padding: 20px 20px 20px 45px;
+    border-radius: 15px;
+    border: 1px solid #f4fdff0e;
+  }
+
+  #Description ul ul {
+    background-color: #27282c;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #f4fdff34;
+    border-radius: 20px;
+    margin: 15px 5px 5px 5px;
+  }
+
+  #Description ul ul li b {
+    color: #a8f2ff;
+  }
+
+  #Description li b {
+    color: rgb(49, 162, 255);
+
+    font-size: 1.35rem;
+    font-weight: 400;
+  }
+
+  #Description li {
+    margin: 10px 0;
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 300;
+    transition: 0.3s;
+  }
+
+  #Description li:hover {
+    transform: translate(10px, 0);
+    transition: 0.2s;
+  }
+
+  #Description img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0%;
+    transition: 0.3s;
+  }
+
+  #Description img:hover {
+    transform: scale(1.025);
+    transition: 0.2s;
+    border-radius: 15px;
+    box-shadow: #006fca 0px 0px 15px -5px;
+  }
+
+  .iframeContainer iframe {
+    width: 100%!important;
+    height: 500px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 10px;
+    box-shadow: #006fca 0px 0px 15px -5px;
+  }
+  .iframeContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #0005;
+  margin: 1rem 0;
+}
+
+  
+</style>
+<style is:global>
+  .iframeContainer {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 12px #0005;
+    margin: 1rem 0;
+  }
+
+  .iframeContainer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+    border-radius: 10px;
+    box-shadow: #006fca 0px 0px 15px -5px;
+  }
+</style>

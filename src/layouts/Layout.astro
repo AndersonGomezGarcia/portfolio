@@ -1,0 +1,114 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Anderson CV</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto Mono:600,300,400,500,500italic,400italic"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800"
+      rel="stylesheet"
+    />
+      <link
+      href="https://fonts.googleapis.com/css?family=Rubik:100,200,300,400,500,600,700,800"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Tauri"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+TC&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <slot />
+    <script>
+         
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.target.dataset.index - b.target.dataset.index) // asegura orden
+          .forEach((entry, i) => {
+            const el = entry.target;
+            el.style.animationDelay = `${i * 0.4}s`; // animación escalonada
+            el.classList.add("visible");
+            observer.unobserve(el);
+          });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll(".fade-up").forEach((el, i) => {
+      el.dataset.index = i; // guardamos el orden en el DOM
+      observer.observe(el);
+    });
+  </script>
+  
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0 auto;
+    width: 1200px;
+	max-width: 100%;
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: #282a31;
+    background-color: #25262c;
+    background-color: #24252b;
+    padding: 0 0 15%;
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    );
+    background-size: 20px 20px;
+    z-index: -1; /* Detrás del contenido */
+    pointer-events: none; /* No bloquea clicks */
+  }
+
+  @media (max-width: 1024px) {
+	body {
+	  width: 90%;
+    padding: 0 4%;
+	}
+  }
+
+  @media (max-width: 768px) {
+	body {
+	  width: 92%;
+	  padding: 0 4%;
+	}
+	
+  }
+  
+</style>

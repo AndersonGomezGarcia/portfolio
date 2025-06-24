@@ -1,0 +1,181 @@
+---
+import Title from "../components/elements/Title.astro";
+import data from "../data/main.json";
+---
+
+<div id="Experience " class="fade-up">
+        <Title title={data.experience.title} beforeTitle={data.experience.pretitle} />
+        <div class="Separator"></div>
+        <div id="Experience-Items">
+            { data.experience.experiences.map( (experience, index) => (
+                <div class="Experience fade-up" key={index}>
+                    <div class="ball"></div>
+                    <h3>{experience.title} <span>{experience.datetime}</span></h3>
+                    <p>{experience.description}</p>
+                    {/*<div class="Separator" style="width: 90%;"></div>*/}
+                </div>
+            ))}
+        </div>
+
+   <style>
+    #Experience-Items{
+    gap: 20px 0;
+    display: flex;
+    margin: 25px 0 0 0;
+    flex-direction: column;
+}
+
+.Experience{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 5px;
+    gap: 20px;
+    flex-direction: column; 
+    padding: 30px 5px 30px 50px;
+    position: relative;
+    transition: .4s;
+    border: solid 1px transparent ;
+    border-radius: 12px ;
+    background-color: #373a469d;
+    border-radius: 15px;
+        border: solid 1px #ffffff1f;
+
+
+}
+.Experience:hover{
+    background-color: rgba(255,255,255,0.045);
+    transition: .2s;
+    border: solid 1px #ffffff1f ;
+    border: solid 1px #03bce4;
+    background-color: rgba(0, 133, 173, 0.15);
+
+}
+
+@keyframes goteoAnimacion {
+    20%, 100% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(2);
+        opacity: 1;
+    }
+}
+
+@keyframes ondasAnimacion {
+    00% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(3);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+
+.Experience .ball {
+    content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
+    display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
+    height: 8px;
+    width: 8px;
+    border-radius: 5px;
+    position: absolute; /* Posiciona el pseudo-elemento absolutamente */
+    left: 20px;
+    top: 17px; /* Ajusta la posición según sea necesario */
+    background-color: #00D2FF;
+    animation: goteoAnimacion 1.5s infinite;
+
+}
+.Experience .ball::before{
+    content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
+    display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
+    height: 8px;
+    width: 8px;
+    border-radius: 5px;
+    position: absolute; /* Posiciona el pseudo-elemento absolutamente */
+    left: 0px;
+    top: 0px; /* Ajusta la posición según sea necesario */
+    background-color: #00D2FF;
+    animation: ondasAnimacion 1.5s infinite;
+
+}
+.Experience::before::after{
+    content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
+    display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
+    height: 8px;
+    width: 8px;
+    border-radius: 5px;
+    position: absolute; /* Posiciona el pseudo-elemento absolutamente */
+    left: 0px;
+    top: 0px; /* Ajusta la posición según sea necesario */
+    background-color: #00D2FF;
+    animation: goteoAnimacion 1s infinite;
+}
+.Experience::after {
+    content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
+    display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
+    height: calc(100% - 35px);
+    width: 2px;
+    position: absolute; /* Posiciona el pseudo-elemento absolutamente */
+    left: 23px;
+    top: 17px; /* Ajusta la posición según sea necesario */
+    background-color: #00D2FF;
+    opacity: .5;
+    border-radius: 2px;
+    transition: .4s;
+}
+@keyframes sliding{
+    0%{
+        height: original;
+    }
+    50%{
+        height: calc(80% - 35px);
+    }
+    100%{
+        height: original;
+    }
+}
+.Experience:hover::after{
+    background-color: #00D2FF;
+    opacity: .8;
+    animation: sliding .65s ease-in-out infinite;
+    
+}
+
+.Experience h3{
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Roboto';
+    color: #00D2FF;
+    color: rgb(211, 211, 211);
+    margin: 0;
+}
+
+.Experience h3 span{
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Roboto';
+    color: #00D2FF;
+    margin: 0 0 0 10px;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration: underline;
+    opacity: .75;
+}
+
+.Experience h4{
+    color: #0FA2C1;
+    position: relative;
+}
+
+.Experience p{
+    color: #B3BDC7;
+    font-size: var(--paragraph-font-size, 20px);
+    margin: 0px 0 -10px 0;
+}
+   </style>

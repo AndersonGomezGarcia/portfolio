@@ -1,0 +1,32 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/alter/Header.astro";
+import Description from "../../components/alter/Description.astro";
+import Footer from "../../components/alter/Footer.astro";
+import data from "../../data/projects.json";
+import BackButton from "../../components/elements/BackButton.astro";
+
+export const getStaticPaths = (() => {
+    const paths = data.projects.map((project) => ({
+        params: { project: project.key },
+    }));
+    return paths;
+}) satisfies GetStaticPaths;
+
+const { project } = Astro.params;
+const projectData = data.projects.find((p) => p.key === project ) || {
+    title: "Proyecto no encontrado",
+    description: [{ type: "text", value: "No se encontró el proyecto." }],
+    image: "img/not-found.png",
+    key: project,
+};
+
+---
+<Layout>
+    <BackButton />
+    <Header class="fade-up" project={projectData} />
+    <Description project={projectData} />
+    <Footer project={projectData} />
+</Layout>
+
