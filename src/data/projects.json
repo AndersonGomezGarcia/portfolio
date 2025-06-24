@@ -51,7 +51,7 @@
                 },
                 {
                     "type": "demo",
-                    "value": "<iframe src=\"https://drive.google.com/file/d/1AyNGJabNyvOzS06BFfWQ2UCc_a4iLCna/preview\" allow=\"autoplay\"onload=\"resizeIframe(this);\"></iframe>"
+                    "value": "<iframe src=\"https://www.youtube.com/embed/cboQx_XTsTA\" allow=\"autoplay\"onload=\"resizeIframe(this);\"></iframe>"
                 }
             ],
             "links": {
