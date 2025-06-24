@@ -1,5 +1,4 @@
 ---
-
 const baseUrl = import.meta.env.BASE_URL;
 import ImagePopup from "../elements/ImagePopup.astro";
 
@@ -22,7 +21,7 @@ type DescriptionItem =
           {key.type === "img" && (
             <ImagePopup
               thumbnailSrc={key.value}
-              fullSrc={ baseUrl + key.value}
+              fullSrc={baseUrl + key.value}
               alt={`Imagen del proyecto ${project.name}`}></ImagePopup>
           )}
           {key.type === "list" && (
