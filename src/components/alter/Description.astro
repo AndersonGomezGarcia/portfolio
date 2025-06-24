@@ -1,6 +1,6 @@
 ---
 import ImagePopup from "../elements/ImagePopup.astro";
-import globalUrl from "../../utils/urls.js";
+import {globalUrl} from "../../utils/urls.js";
 
 const { project } = Astro.props;
 type DescriptionItem =
@@ -33,9 +33,7 @@ type DescriptionItem =
           )}
           {key.type === "demo" && (
             <h2>Demo</h2>
-            <div class="iframeContainer" set:html={key.value}>
-          
-              
+            <div class="iframeContainer" set:html={key.value}>          
             </div>
           )}
         </p>

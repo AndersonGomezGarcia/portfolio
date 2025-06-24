@@ -1,6 +1,8 @@
 ---
 import type { RecordType } from "astro:schema";
 
+import {globalUrl} from "../../utils/urls.js";
+
 const { class: ClassName = "", project } = Astro.props;
 
 const headerBackgroundImageUrl = `url(${project.image})`;
@@ -38,7 +40,7 @@ const Items = totalItems.filter((item) => project.links[item]);
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={itemsIcons[Item]} alt={Item} />
+          <img src={globalUrl + itemsIcons[Item]} alt={Item} />
           {itemsNames[Item]}
         </a>
       );  
