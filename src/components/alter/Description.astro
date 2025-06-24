@@ -20,7 +20,7 @@ type DescriptionItem =
           {key.type === "text" && <p class="fade-up">{key.value}</p>}
           {key.type === "img" && (
             <ImagePopup
-              thumbnailSrc={key.value}
+              thumbnailSrc={globalUrl + key.value}
               fullSrc={globalUrl + key.value}
               alt={`Imagen del proyecto ${project.name}`}></ImagePopup>
           )}
