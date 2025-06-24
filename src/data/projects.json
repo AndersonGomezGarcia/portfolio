@@ -5,7 +5,7 @@
             "name": "Hotel el descanso",
             "date": "2024",
             "tagline": "Sistema de gestión hotelera",
-            "image": "/img/projects/project-1.avif",
+            "image": "img/projects/project-1.avif",
             "summary": "Un portal integral para la gestión de huéspedes y habitaciones de un complejo hotelero, con funcionalidades avanzadas de roles para diferentes tipos de usuarios, permitiendo una administración eficiente y personalizada. ",
             "tecnologies": [
                 "php",
@@ -22,7 +22,7 @@
                 },
                 {
                     "type": "img",
-                    "value": "/img/projects/project-1.avif"
+                    "value": "img/projects/project-1.avif"
                 },
                 {
                     "type": "text",
@@ -63,7 +63,7 @@
             "name": "Casa Hotel Mateguadua Website",
             "date": "2023",
             "tagline": "Sitio web para Casa Hotel Mateguadua",
-            "image": "/img/projects/project-2.avif",
+            "image": "img/projects/project-2.avif",
             "summary": "Página web para un hotel en Apartadó, Antioquia. Incluye información sobre habitaciones, ubicación, contacto y un carrusel de imágenes. Utiliza Bootstrap para el diseño y tiene integración con WhatsApp para reservas.",
             "tecnologies": [
                 "html",
@@ -78,7 +78,7 @@
                 },
                 {
                     "type": "img",
-                    "value": "/img/projects/project-2.avif"
+                    "value": "img/projects/project-2.avif"
                 },
                 {
                     "type": "text",
@@ -115,7 +115,7 @@
             "name": "Reproductor de Música",
             "date": "2022",
             "tagline": "Concepto con interfaz intuitiva",
-            "image": "/img/projects/project-3.avif",
+            "image": "img/projects/project-3.avif",
             "summary": "Concepto de sitio web para descubrir música libre de copyright. Permite escuchar temas, conocer a los autores y explorar géneros",
             "tecnologies": [
                 "html",
@@ -130,7 +130,7 @@
                 },
                 {
                     "type": "img",
-                    "value": "/img/projects/project-3.avif"
+                    "value": "img/projects/project-3.avif"
                 },
                 {
                     "type": "text",
@@ -167,7 +167,7 @@
             "name": "Clínica RIE",
             "date": "2024",
             "tagline": "Pagina web",
-            "image": "/img/projects/project-4.avif",
+            "image": "img/projects/project-4.avif",
             "summary": "Página web para una clínica dental. Ofrece servicios como implantología, ortodoncia, alta estética y odontopediatría. Destaca la experiencia del Dr. Alex Camacho y testimonios de pacientes.",
             "tecnologies": [
                 "html",
@@ -182,7 +182,7 @@
                 },
                 {
                     "type": "img",
-                    "value": "/img/projects/project-4.avif"
+                    "value": "img/projects/project-4.avif"
                 },
                 {
                     "type": "text",
@@ -218,7 +218,7 @@
             "name": "Pool Care",
             "date": "2024",
             "tagline": "Aplicación para el mantenimiento de piscinas",
-            "image": "/img/projects/project-5.avif",
+            "image": "img/projects/project-5.avif",
             "summary": "App móvil para mantener piscinas en óptimas condiciones. Con guías de mantenimiento, recordatorios y herramientas para calcular las cantidades de productos químicos necesarios, asegurando un cuidado eficiente y efectivo",
             "tecnologies": [
                 "react",
@@ -232,7 +232,7 @@
                 },
                 {
                     "type": "img",
-                    "value": "/img/projects/project-5.avif"
+                    "value": "img/projects/project-5.avif"
                 },
                 {
                     "type": "text",
@@ -266,7 +266,7 @@
             "name": "Mascota Feliz",
             "date": "2020",
             "tagline": "Aplicación para el cuidado de mascotas",
-            "image": "/img/projects/project-6.avif",
+            "image": "img/projects/project-6.avif",
             "summary": "Aplicacion de Veterinaria, creado con c# .NET, que permite a los dueños de mascotas gestionar citas, seguimiento de salud y consejos útiles para el cuidado de sus animales de compañía.",
             "tecnologies": [
                 "html",
@@ -280,7 +280,7 @@
                 },
                 {
                     "type": "img",
-                    "value": "/img/projects/project-6.avif"
+                    "value": "img/projects/project-6.avif"
                 },
                 {
                     "type": "text",
@@ -318,7 +318,7 @@
             "name": "DigitCol",
             "date": "2024",
             "tagline": "Empresa de desarrollo de software",
-            "image": "/img/projects/project-7.avif",
+            "image": "img/projects/project-7.avif",
             "summary": "Concepto de empresa desarrolladora de software, enfocado a la buena semantica y programacion con buenas practicas, facilitando el seo y la accesibilidad.",
             "tecnologies": [
                 "php",
@@ -332,7 +332,7 @@
                 },
                 {
                     "type": "img",
-                    "value": "/img/projects/project-7.avif"
+                    "value": "img/projects/project-7.avif"
                 },
                 {
                     "type": "text",
@@ -368,7 +368,7 @@
             "name": "AnderWeb",
             "date": "2025",
             "tagline": "Concepto de empresa de desarrollo web",
-            "image": "/img/projects/project-8.avif",
+            "image": "img/projects/project-8.avif",
             "summary": "Concepto de empresa desarrolladora de software, enfocado a la buena semantica y programacion con buenas practicas, facilitando el seo y la accesibilidad.",
             "tecnologies": [
                 "html",
@@ -382,7 +382,7 @@
                 },
                 {
                     "type": "img",
-                    "value": "/img/projects/project-8.avif"
+                    "value": "img/projects/project-8.avif"
                 },
                 {
                     "type": "text",
@@ -419,7 +419,7 @@
             "name": "WeekArt",
             "date": "2025",
             "tagline": "Red social para fotógrafos y creadores visuales",
-            "image": "/img/projects/WeekArt.avif",
+            "image": "img/projects/WeekArt.avif",
             "summary": "Aplicación web tipo red social para fotógrafos, que permite autenticar usuarios, subir publicaciones con imágenes, gestionar sesiones y navegar entre distintas páginas mediante React Router y Context API.",
             "tecnologies": [
                 "react",
@@ -436,7 +436,7 @@
                 },
                 {
                     "type": "img",
-                    "value": "/img/projects/WeekArt.avif"
+                    "value": "img/projects/WeekArt.avif"
                 },
                 {
                     "type": "text",
