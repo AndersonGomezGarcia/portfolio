@@ -1,3 +1,5 @@
+export const globalUrl = 'https://andersongomezgarcia.github.io/portfolio/';
+
 const baseUrl = 'img/icons/';
 
 const url = {

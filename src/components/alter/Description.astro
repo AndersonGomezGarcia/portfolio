@@ -1,5 +1,6 @@
 ---
 import ImagePopup from "../elements/ImagePopup.astro";
+import globalUrl from "../../utils/urls.js";
 
 const { project } = Astro.props;
 type DescriptionItem =
@@ -20,7 +21,7 @@ type DescriptionItem =
           {key.type === "img" && (
             <ImagePopup
               thumbnailSrc={key.value}
-              fullSrc={key.value}
+              fullSrc={globalUrl + key.value}
               alt={`Imagen del proyecto ${project.name}`}></ImagePopup>
           )}
           {key.type === "list" && (
