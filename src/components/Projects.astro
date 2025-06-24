@@ -19,7 +19,7 @@ interface Project {
     };
 }*/
 // Define the Project type based on your data structure
-const {complete} = Astro.props; 
+const {complete, nested} = Astro.props; 
 
 type Project = {
   key: string;
@@ -55,7 +55,7 @@ if (!complete) {
   selectedProjects = projects.projects;
 }
 
-
+const baseUrl = (nested === true) ? "../": "";
 ---
 
 <div id="Projects" class="fade-up">
@@ -66,7 +66,7 @@ if (!complete) {
       selectedProjects.map((item) => {
         return (
           <div class="Project fade-up">
-            <img class="Project-Image" src={`${item.image}`} alt={item.name} />
+            <img class="Project-Image" src={`${baseUrl + item.image}`} alt={item.name} />
             <div class="Content">
               <h3>{item.name}</h3>
               <p>{item.summary}</p>
@@ -74,12 +74,12 @@ if (!complete) {
                 <ul class="Skills">
                   {item.tecnologies.map((skill) => (
                     <li data-skill={skill}>
-                      <img src={getUrls(skill)} alt={skill} />
+                      <img src={baseUrl +getUrls(skill)} alt={skill} />
                     </li>
                   ))}
                 </ul>
                 <div class="Links">
-                  <a class="details" href={"/projects/" + item.key}>
+                  <a class="details" href={baseUrl + "./projects/" + item.key}>
                     Ver mas detalles{" "}
                     <span style="  font-family: 'WDXL Lubrifont TC', sans-serif">
                       {" "}
@@ -88,17 +88,17 @@ if (!complete) {
                   </a>
                   {item.links.github && (
                     <a href={item.links.github} target="_blank">
-                      <img class="github" src="img/github-link.png" alt="" />
+                      <img class="github" src={`${baseUrl}img/github-link.png`} alt="" />
                     </a>
                   )}
                   {item.links.url && (
                     <a href={item.links.url} target="_blank">
-                      <img class="hyperlink" src="img/icons/link.png" alt="" />
+                      <img class="hyperlink" src={`${baseUrl}img/icons/link.png`} alt="" />
                     </a>
                   )}
                   {item.links.download && (
                     <a href={item.links.download} target="_blank">
-                      <img class="hyperlink" src="img/download.png" alt="" />
+                      <img class="hyperlink" src={`${baseUrl}img/download.png`} alt="" />
                     </a>
                   )}
                 </div>
@@ -109,7 +109,7 @@ if (!complete) {
       })
     }
     {!complete && (
-      <a class="moreProjects fade-up" href="/projects">Ver más proyectos</a>
+      <a class="moreProjects fade-up" href="./projects">Ver más proyectos</a>
     )}
   </div>
 </div>
