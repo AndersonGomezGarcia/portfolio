@@ -5,7 +5,7 @@ import {globalUrl} from "../../utils/urls.js";
 
 const { class: ClassName = "", project } = Astro.props;
 
-const headerBackgroundImageUrl = `url(${project.image})`;
+const headerBackgroundImageUrl = `url(${globalUrl + project.image})`;
 
 const itemsIcons: Record<string, string> = {
   url: "/img/icons/link.png",
