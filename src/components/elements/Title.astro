@@ -14,8 +14,21 @@ h1 {
     font-weight: 400;
     font-family: "Roboto";
     color: #00d2ff;
-    margin: 0 0 0 10px;
+    position: relative;
+    margin: 0 0 0 0px;
     display: block;
+  }
+
+  h1 span:before{
+    content: " ";
+    display: inline-block;
+    width: 8px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #00d2ff;
+    margin-right: 5px;
+    vertical-align: middle;
+    bottom: calc(50% - 2.5px);
   }
 
   h1 {

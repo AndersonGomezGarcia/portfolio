@@ -1,5 +1,10 @@
 :root{
+    --backgroundColor: #1d2024;
     --paragraph-font-size: 17px;
+    --colorRandom: #1d2024;
+    --containerBg: #373a469d;
+    --containerBg: #4b4d585d;
+        --containerBg: #42474e3f;
 }
 
 @keyframes fadeUp {

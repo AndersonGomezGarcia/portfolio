@@ -1,5 +1,5 @@
 ---
-const { Group, items } = Astro.props;
+const { Group, items, tags } = Astro.props;
 ---
 
 <div id={Group} class="SkillGroup fade-up">
@@ -11,6 +11,7 @@ const { Group, items } = Astro.props;
           items.map((item: keyof typeof items) => (
             <li>
               <img src={item} alt={item} />
+              <span>{tags[items.indexOf(item)]}</span>
             </li>
           ))
         }
@@ -36,7 +37,7 @@ const { Group, items } = Astro.props;
     }
     .SkillGroup-Items {
       display: inline-flex;
-      background-color: #373a469d;
+      background-color: var(--containerBg);
 
       color: white;
       border: solid 1px #ffffff1f;
@@ -68,9 +69,23 @@ const { Group, items } = Astro.props;
     list-style: none;
   }
 
+  .SkillGroup ul li {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    gap: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+  }
+
   .SkillGroup ul li img {
+    display: block;
     height: 57.5px;
-    width: auto;
+    width: fit-content;
     margin: 0;
     padding: 0;
     transition: 0.3s;

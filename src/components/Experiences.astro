@@ -23,24 +23,27 @@ import data from "../data/main.json";
     display: flex;
     margin: 25px 0 0 0;
     flex-direction: column;
+    /*background-color: var(--containerBg);
+    border-radius: 15px;
+    border: solid 1px #ffffff1f;*/
 }
 
 .Experience{
     display: flex;
     flex-wrap: wrap;
-    margin: 0 0 5px;
+    margin: 0 0 0px 35px;
     gap: 20px;
     flex-direction: column; 
-    padding: 30px 5px 30px 50px;
+    padding: 30px 5px 30px 20px;
     position: relative;
     transition: .4s;
     border: solid 1px transparent ;
     border-radius: 12px ;
-    background-color: #373a469d;
+    background-color: var(--containerBg);
     border-radius: 15px;
         border: solid 1px #ffffff1f;
 
-
+*/
 }
 .Experience:hover{
     background-color: rgba(255,255,255,0.045);
@@ -52,12 +55,17 @@ import data from "../data/main.json";
 }
 
 @keyframes goteoAnimacion {
+    20% {
+        background-color: #00D2FF;
+    }
     20%, 100% {
         transform: scale(1.5);
         opacity: 1;
+        
     }
     70% {
         transform: scale(2);
+        background-color: inherit;
         opacity: 1;
     }
 }
@@ -77,25 +85,42 @@ import data from "../data/main.json";
     }
 }
 
+#Experience-Items .Experience:first-child .ball, #Experience-Items .Experience:first-child .ball::before {
+    animation-delay: 1.2s;
+}
+
+#Experience-Items .Experience:nth-child(2) .ball, #Experience-Items .Experience:nth-child(2) .ball::before {
+    animation-delay: .8s;
+}
+
+#Experience-Items .Experience:nth-child(3) .ball, #Experience-Items .Experience:nth-child(3) .ball::before {
+    animation-delay: 0.4s;
+}
 
 .Experience .ball {
     content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
     display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
     height: 8px;
     width: 8px;
-    border-radius: 5px;
+    border-radius: 10px;
     position: absolute; /* Posiciona el pseudo-elemento absolutamente */
-    left: 20px;
+    left: -35px;
     top: 17px; /* Ajusta la posición según sea necesario */
+    top: 40px;
     background-color: #00D2FF;
+    background-color: var(--containerBg);
+    background-color: #232d35!important;
+box-shadow: 0 0 0 1px #00D2FF inset;
     animation: goteoAnimacion 1.5s infinite;
-
+    z-index: 5;
 }
 .Experience .ball::before{
     content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
     display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
     height: 8px;
     width: 8px;
+    z-index: 1;
+
     border-radius: 5px;
     position: absolute; /* Posiciona el pseudo-elemento absolutamente */
     left: 0px;
@@ -111,23 +136,31 @@ import data from "../data/main.json";
     width: 8px;
     border-radius: 5px;
     position: absolute; /* Posiciona el pseudo-elemento absolutamente */
-    left: 0px;
+    left: -30px;
     top: 0px; /* Ajusta la posición según sea necesario */
     background-color: #00D2FF;
+    z-index: 1;
     animation: goteoAnimacion 1s infinite;
 }
+
 .Experience::after {
     content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
     display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
     height: calc(100% - 35px);
+    height: calc(100% + 25px);
     width: 2px;
     position: absolute; /* Posiciona el pseudo-elemento absolutamente */
-    left: 23px;
+    left: -32px;
     top: 17px; /* Ajusta la posición según sea necesario */
-    background-color: #00D2FF;
+    top: 40px;
+    background-color: #00d0ff5d;
     opacity: .5;
     border-radius: 2px;
     transition: .4s;
+}
+
+.Experience:last-child::after{
+    height: calc(100% - 60px);
 }
 @keyframes sliding{
     0%{
@@ -141,12 +174,15 @@ import data from "../data/main.json";
     }
 }
 .Experience:hover::after{
-    background-color: #00D2FF;
     opacity: .8;
-    animation: sliding .65s ease-in-out infinite;
-    
+    /*animation: sliding .65s ease-in-out infinite;*/
+    height: calc(50%);
 }
 
+.Experience:has(+ .Experience:hover)::after {
+  opacity: .8;
+  height: 75%;
+}
 .Experience h3{
     font-size: 25px;
     font-weight: 600;

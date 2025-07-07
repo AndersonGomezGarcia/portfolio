@@ -188,7 +188,7 @@ import Title from "../components/elements/Title.astro";
     color: white;
     flex-direction: column;
     border: solid 1.5px #ffffff1f;
-    background-color: #373a469d;
+    background-color: var(--containerBg);
 
     border-radius: 25px;
     width: calc(41% - 70px);
@@ -230,6 +230,7 @@ import Title from "../components/elements/Title.astro";
   #Contact-Info p:hover img.Copy {
     opacity: 1;
     transition: 0.1s;
+    filter: brightness(1.2);
     animation: horizontal-shaking 0.5s ease-in-out;
   }
 
@@ -270,7 +271,7 @@ import Title from "../components/elements/Title.astro";
     border-radius: 15px;
     padding: 10px 20px 10px 55px;
     background-color: #2c2d32;
-    background-color: #373a469d;
+    background-color: var(--containerBg);
 
     font-family: "Roboto";
     font-size: 20px;
@@ -286,9 +287,9 @@ import Title from "../components/elements/Title.astro";
 
   #Contact-Form form input::placeholder,
   #Contact-Form form textarea::placeholder {
-    color: #009eca;
+    color: #c0c0c0;
     font-family: "Roboto";
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
   }
 
@@ -299,7 +300,8 @@ import Title from "../components/elements/Title.astro";
   }
 
   #Contact-Form form button {
-    background-color: #00b7ff;
+        background: linear-gradient(to right,#0481d4, #00a5ce);
+
     border: none;
     padding: 10px 45px;
     color: #27282c;
@@ -307,7 +309,8 @@ import Title from "../components/elements/Title.astro";
     font-weight: 600;
     border-radius: 18px;
     font-family: "Roboto Mono";
-    font-size: 28px;
+    font-size: 20px;
+    color: white;
     transition: 0.3s;
     float: left;
     margin: 0 auto 0 0;

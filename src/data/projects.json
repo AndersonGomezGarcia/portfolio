@@ -26,7 +26,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Características principales"
+                    "value": "Características principales",
+                    "icon": "nutIcon"
                 },
                 {
                     "type": "list",
@@ -39,7 +40,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Tecnologías utilizadas:"
+                    "value": "Tecnologías utilizadas:",
+                    "icon": "codeIcon"
                 },
                 {
                     "type": "list",
@@ -82,7 +84,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Características principales"
+                    "value": "Características principales",
+                    "icon": "nutIcon"
                 },
                 {
                     "type": "list",
@@ -95,7 +98,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Tecnologías utilizadas:"
+                    "value": "Tecnologías utilizadas:",
+                    "icon": "codeIcon"
                 },
                 {
                     "type": "list",
@@ -134,7 +138,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Características principales"
+                    "value": "Características principales",
+                    "icon": "nutIcon"
                 },
                 {
                     "type": "list",
@@ -146,7 +151,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Tecnologías utilizadas:"
+                    "value": "Tecnologías utilizadas:",
+                    "icon": "codeIcon"
                 },
                 {
                     "type": "list",
@@ -186,7 +192,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Características principales"
+                    "value": "Características principales",
+                    "icon": "nutIcon"
                 },
                 {
                     "type": "list",
@@ -198,7 +205,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Tecnologías utilizadas:"
+                    "value": "Tecnologías utilizadas:",
+                    "icon": "codeIcon"
                 },
                 {
                     "type": "list",
@@ -236,7 +244,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Características principales"
+                    "value": "Características principales",
+                    "icon": "nutIcon"
                 },
                 {
                     "type": "list",
@@ -248,7 +257,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Tecnologías utilizadas:"
+                    "value": "Tecnologías utilizadas:",
+                    "icon": "codeIcon"
                 },
                 {
                     "type": "list",
@@ -284,7 +294,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Características principales"
+                    "value": "Características principales",
+                    "icon": "nutIcon"
                 },
                 {
                     "type": "list",
@@ -296,7 +307,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Tecnologías utilizadas:"
+                    "value": "Tecnologías utilizadas:",
+                    "icon": "codeIcon"
                 },
                 {
                     "type": "list",
@@ -336,7 +348,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Características principales"
+                    "value": "Características principales",
+                    "icon": "nutIcon"
                 },
                 {
                     "type": "list",
@@ -348,7 +361,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Tecnologías utilizadas:"
+                    "value": "Tecnologías utilizadas:",
+                    "icon": "codeIcon"
                 },
                 {
                     "type": "list",
@@ -386,7 +400,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Características principales"
+                    "value": "Características principales",
+                    "icon": "nutIcon"
                 },
                 {
                     "type": "list",
@@ -398,7 +413,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Tecnologías utilizadas:"
+                    "value": "Tecnologías utilizadas:",
+                    "icon": "codeIcon"
                 },
                 {
                     "type": "list",
@@ -440,7 +456,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Características principales"
+                    "value": "Características principales",
+                    "icon": "nutIcon"
                 },
                 {
                     "type": "list",
@@ -453,7 +470,8 @@
                 },
                 {
                     "type": "text",
-                    "value": "Tecnologías utilizadas:"
+                    "value": "Tecnologías utilizadas:",
+                    "icon": "codeIcon"
                 },
                 {
                     "type": "list",

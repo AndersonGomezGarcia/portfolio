@@ -137,7 +137,7 @@ const baseUrl = (nested === "true") ? "../": "";
     padding: 0;
     background: #2e2f35; /* Gradiente lineal en diagonal */
     /* Only one background property should be used */
-    background-color: #373a469d;
+    background-color: var(--containerBg);
     border-radius: 15px;
     color: white;
     flex-direction: column;
@@ -254,6 +254,8 @@ const baseUrl = (nested === "true") ? "../": "";
     margin: 0;
     padding: 0;
     transition: 0.3s;
+    filter: grayscale(1);
+    transition: .2s;
     z-index: 2;
   }
 
@@ -304,15 +306,26 @@ const baseUrl = (nested === "true") ? "../": "";
     gap: 20px;
     width: 100%;
   }
+
+  .Project .Links a img {
+    border: 1px solid #13a9ee85;
+    color: white;
+    border-radius: 10px;
+    padding: 6px;
+    transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
   .Project .Links a.details {
     color: #2c2e37;
     color: #1e1f24;
+    color: rgba(255, 255, 255, 0.95);
     display: flex;
     justify-content: center;
     gap: 10px;
     font-family: "Roboto", sans-serif;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 400;
     font-family: "Roboto";
     font-size: 16px;
     transition: 0.3s;
@@ -320,15 +333,19 @@ const baseUrl = (nested === "true") ? "../": "";
     margin: 0;
     width: calc(100% - 32px);
     border-radius: 10px;
+    /*
     background-color: #0ea5e9;
-    border: solid 2px #00b7ff;
+    background-color: #0492d4;*/
+    background: linear-gradient(to right,#0481d4, #00a5ce);
   }
 
   .Project .Links a.details span {
     transition: 0.3s;
   }
   .Project .Links a.details:hover {
-    background-color: rgba(0, 133, 173, 0.1);
+    /*background-color: rgba(0, 133, 173, 0.1);
+    background: rgba(0, 133, 173, 0.2);*/
+    box-shadow: 0 0 24px 0 #00b7ff0e, 0 2px 24px 0 #00b7ff0e;
     color: #00b7ff;
     color: white;
     gap: 10px;
@@ -361,7 +378,7 @@ const baseUrl = (nested === "true") ? "../": "";
 
   a.moreProjects {
     width: fit-content;
-    background-color: #373a469d;
+    background-color: var(--containerBg);
     border: solid 1px #ffffff1f;
     border: solid 1px #03bce4;
     color: #00b7ff;

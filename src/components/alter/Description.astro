@@ -1,13 +1,49 @@
 ---
 import ImagePopup from "../elements/ImagePopup.astro";
 import {globalUrl} from "../../utils/urls.js";
+import data from "../../data/projects.json";
 
 const { project } = Astro.props;
 type DescriptionItem =
-  | { type: "text"; value: string }
+  | { type: "text"; value: string; icon?: string }
   | { type: "img"; value: string }
   | { type: "list"; value: string[] }
-  | { type: "demo"; value: any };
+  | { type: "demo"; value: any }
+  | { type: "icon";  };
+
+
+type Project = {
+  key: string;
+  name: string;
+  tagline: string;
+  image: string;
+  summary: string;
+  tecnologies: string[];
+  description: Record<string, any>[];
+  links: {
+    url?: string;
+    github?: string;
+    download?: string;
+  };
+};
+type Projects = Project[];
+
+const allKeys = data.projects.map(project => project.key);
+const currentIndex = allKeys.indexOf(project.key);
+const prev = allKeys[currentIndex - 1] || allKeys[allKeys.length - 1];
+const next = allKeys[currentIndex + 1] || allKeys[0];
+
+const codeIcon = '<svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"> <g stroke="#03bce4" stroke-linecap="round" stroke-width="1.75"> <path stroke-linejoin="round" d="M7 8l-4 4 4 4"/> <path d="M10.5 18l3-12"/> <path stroke-linejoin="round" d="M17 8l4 4-4 4"/> </g> </svg>';
+
+
+const nutIcon = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#03bce4" version="1.1" id="mdi-nut" viewBox="0 0 24 24"><path d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7Z"/></svg>'
+
+const Icons = {
+  codeIcon: codeIcon,
+  nutIcon: nutIcon,
+}
+
+
 ---
 
 <section id="Description">
@@ -17,7 +53,7 @@ type DescriptionItem =
     project.description.map((key: DescriptionItem) => {
       return (
         <p>
-          {key.type === "text" && <p class="fade-up">{key.value}</p>}
+          {key.type === "text" && <p class="fade-up">{key.icon && <span class="icon" set:html={Icons[key.icon as keyof typeof Icons]}>{key.icon} </span>} {key.value}</p>}
           {key.type === "img" && (
             <ImagePopup
               thumbnailSrc={globalUrl + key.value}
@@ -32,8 +68,8 @@ type DescriptionItem =
             </ul>
           )}
           {key.type === "demo" && (
-            <h2>Demo</h2>
-            <div class="iframeContainer" set:html={key.value}>          
+            <h2 class="fade-up">Demo</h2>
+            <div class="iframeContainer fade-up" set:html={key.value}>          
             </div>
           )}
         </p>
@@ -47,7 +83,19 @@ type DescriptionItem =
       allow="autoplay"
       onload="resizeIframe(this);"></iframe>
   </div>-->
-  
+    <p class="buttons-title fade-up">Ver mas proyectos</p>
+
+  <div class="buttons">
+    <a href={`/projects/${prev}`} class="button fade-up" target="_blank" style="--i: 0">
+      <img src={`${globalUrl}img/left-arrow.svg`} alt="Anterior" />
+      Anterior
+    </a>
+    <a href="/projects" class="button fade-up" style="--i: 1">Ver Todos</a>
+    <a href={`/projects/${next}`} class="button fade-up" style="--i: 2">Siguiente
+     <img src={`${globalUrl}img/right-arrow.svg`} alt="Anterior" />
+    </a>
+  </div>
+
 </section>
 <style>
 
@@ -103,10 +151,17 @@ type DescriptionItem =
     letter-spacing: normal;
   }
 
+  #Description li::marker{
+    color: #54ceffb0;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
   #Description ul {
     background-color: rgba(0, 0, 0, 0.095); /**/
     background-color: rgba(255, 255, 255, 0.035);
     background: #373a469d;
+    background: var(--containerBg);
     margin-bottom: 45px;
     padding: 20px 20px 20px 45px;
     border-radius: 15px;
@@ -145,12 +200,18 @@ type DescriptionItem =
     transition: 0.2s;
   }
 
+  #Description li:hover::marker {
+    color: #00b7ff;
+    font-weight: 800;
+  }
+
   #Description img {
     width: 100%;
     height: auto;
     border-radius: 10px;
     margin: 20px 0%;
     transition: 0.3s;
+    pointer-events: none;
   }
 
   #Description img:hover {
@@ -178,7 +239,86 @@ type DescriptionItem =
   box-shadow: 0 0 12px #0005;
   margin: 1rem 0;
 }
+#Description p.buttons-title{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-top: 35px;
+  text-align: center;
+  transition: 0.2s;
+}
 
+.buttons{
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.buttons a.button{
+    background: #373a469d;
+    background: linear-gradient(to right,#008cff, #05c7f79a);
+    background: linear-gradient(to right,#0e5792a1, #00a2e27e);
+    background-size: 300% ;
+    background-position:  calc(var(--i) *   33%) center; ;
+    drop-shadow: 0 0 12px #0005;
+    margin-bottom: 45px;
+    text-decoration: none;
+    color:  #00b7ff;
+    color: rgba(255, 255, 255, 0.95);
+
+    text-justify: center;
+    font-weight: 500;
+    align-content: center;
+    padding: 0px 30px;
+    border-radius: 15px;
+}
+
+#Description .buttons a.button img{
+  width: 50px;
+  height: auto;
+  margin: 0px;
+  vertical-align: middle;
+  transition: 0.2s;
+}
+.buttons a.button img:hover{
+  transform: translateX(5px);
+  transition: 0.2s;
+}
+.buttons a.button:hover{
+ background-color: rgba(0, 133, 173, 0.1);
+    box-shadow: 0 0 24px 0 #00b7ff0e, 0 2px 24px 0 #00b7ff0e;
+    transition: 0.2s;
+    filter: brightness(1.1);
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+span.icon{
+  width: 28px;
+  height: 28px;
+  background-color: rgba(0, 140, 255, 0.363);
+  border-radius: 5px;
+  margin-right: 4px;
+  display: inline-flex;
+  padding: 2px;
+    transition: 0.2s;
+
+  transform: translateY(6px);
+}
+span.icon:hover {
+  background-color: rgba(0, 140, 255, 0.5);
+  box-shadow: 0 0 24px 0 #00b7ff0e, 0 2px 24px 0 #00b7ff0e;
+}
+
+span.icon svg{
+  max-width:5px;
+  height: 5px;
+  color: red;
+  fill: red!important;
+  background-color: red;
+}
   
 </style>
 <style is:global>

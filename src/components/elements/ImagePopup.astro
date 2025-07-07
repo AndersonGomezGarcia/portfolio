@@ -54,21 +54,47 @@ const { thumbnailSrc, fullSrc, alt = "" } = Astro.props;
   .image-popup-modal {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 50;
+      -webkit-backdrop-filter: blur(10px); /* Para Safari */
+    backdrop-filter: blur(10px);
   }
   .image-popup-modal.hidden {
+    animation: zoomOut 0.3s ease-out;
     display: none;
+  }
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.6);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes zoomOut {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: scale(0.6);
+      opacity: 0;
+    }
+    
   }
 
   .image-popup-full {
-    max-height: 90vh;
-    max-width: 90vw;
+    max-height: 85vh;
+    max-width: 85vw;
     object-fit: contain;
     border-radius: 0.75rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+
+    animation: zoomIn 0.3s ease-out;
   }
 </style>

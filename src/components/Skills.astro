@@ -13,6 +13,16 @@ const Tecnologies = [
     "img/icons/sql.png"
 ];
 
+const TecnologiesTags = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Git",
+    "PHP",
+    "C#",
+    "SQL"
+];
+
 const Frameworks = [
     "img/icons/bootstrap.png",
     "img/icons/tailwind.png",
@@ -23,6 +33,16 @@ const Frameworks = [
     "img/icons/angular.png"
 ];
 
+const FrameworksTags = [
+    "Bootstrap",
+    "Tailwind",
+    "React",
+    ".NET",
+    "Laravel",
+    "Astro",
+    "Angular"
+];
+
 const Tools = [
     "img/icons/figma.png",
     "img/icons/postgresql.png",
@@ -31,14 +51,24 @@ const Tools = [
     "img/icons/vscode.png",
     "img/icons/postman.png"
 ];
+
+const ToolsTags = [
+    "Figma",
+    "PostgreSQL",
+    "XAMPP",
+    "GitHub",
+    "VS Code",
+    "Postman"
+];
+
 ---
 <div id="Skills" class="fade-up">
 
         <Title title={data.Skills.title} beforeTitle={data.Skills.pretitle} />
         <div class="Separator"></div>
-        <SkillGroup  Group="Tecnologías" items={Tecnologies} />
-        <SkillGroup Group="Frameworks" items={Frameworks} />
-        <SkillGroup Group="Tools" items={Tools} />
+        <SkillGroup  Group="Tecnologías" items={Tecnologies} tags={TecnologiesTags} />
+        <SkillGroup Group="Frameworks" items={Frameworks} tags={FrameworksTags} />
+        <SkillGroup Group="Tools" items={Tools} tags={ToolsTags} />
     </div>
 
      <style>
@@ -55,7 +85,7 @@ const Tools = [
     margin: auto;
     padding: 0;
     background-color: #27282C;
-    background-color: #373a469d;
+    background-color: var(--containerBg);
     color: white;
     width: auto;
     max-width: 700px;
@@ -102,7 +132,7 @@ const Tools = [
 #Tecnologies-Items, #Frameworks-Items, #Tools-Items{
     display: inline-flex;
     background-color: #2e2f35;
-    background-color: #373a469d;
+    background-color: var(--containerBg);
     color: white;
     border: solid 1px #ffffff1f ;
     border-radius: 40px;

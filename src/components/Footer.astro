@@ -23,9 +23,10 @@ footer{
     left: 0;
     margin: 40px 0 0 0;
     color: #00A6CA;
+    color: white;
     font-weight: medium;
     font-family: 'Roboto Mono';
-    font-size: large;
+    font-size:  normal;
     text-align: center;
     align-items: center;
     padding: 10px 25% 5px 25%;
@@ -66,12 +67,22 @@ footer div a{
 
 footer img{
     width: 35px;
+        transition: .3s;
+    transform: scale(.9);
+    filter: grayscale(1);
 }
+
+
 footer div a:hover{
     color: #00D2FF;
     cursor: pointer;
     transition: .7s;
     rotate: 360deg;
+}
+
+footer div a:hover img{
+    filter: grayscale(0);
+    transform: scale(1.2);
 }
 footer p{
     margin: 0;

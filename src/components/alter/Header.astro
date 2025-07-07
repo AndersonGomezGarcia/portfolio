@@ -20,19 +20,23 @@ const itemsNames: Record<string, string> = {
 };
 const totalItems = ["url", "github"];
 
+
+
 const Items = totalItems.filter((item) => project.links[item]);
+
+const linksDisplay = Items.length > 0 ? "flex" : "none";
 ---
 
 <header class={ClassName + " fade-up"} >
   <div class="content">
     <span>{project.date}</span>
-    <h1>{project.name} - {project.tagline}</h1>
+    <h1><span>{project.name} - {project.tagline}</span></h1>
     <p>
       {project.summary}
     </p>
   </div>
-  <div class="relatives">
-    <span>Enlaces</span>
+  <div class="relatives"  style={{ display: linksDisplay }}>
+    <span >Enlaces</span>
     {Items.map((Item : string) => {
       return (
         <a
@@ -55,12 +59,13 @@ const Items = totalItems.filter((item) => project.links[item]);
     background-color: rgba(51, 52, 57, 0.8); /* Añadir algo de transparencia */
     background-color: #373a469d;
     width: 1000px;
-    height: 200px;
+    height: 280px;
     margin: 20px auto 0 auto;
-    padding: 50px 30px;
+    padding: 15px 30px 5px 30px;
     display: flex;
     gap: 20px;
     color: #00a6ca;
+    align-items: center;
     font-weight: 400;
     font-family: "Roboto", monospace;
     position: relative;
@@ -102,9 +107,14 @@ const Items = totalItems.filter((item) => project.links[item]);
     position: relative;
     z-index: 1;
   }
+  header .content {
+
+    max-width: 90%;
+  }
 
   header h1 {
     font-size: 36px;
+    max-width: fit-content;
     font-weight: 600;
     color: rgb(0, 171, 238);
     text-align: left;
@@ -113,7 +123,17 @@ const Items = totalItems.filter((item) => project.links[item]);
     padding: 0px 0;
     margin: 0;
   }
-
+  
+  header h1 span {
+    font-size: inherit;
+    line-height: 0 ;
+    font-weight: inherit;
+    text-shadow: none;
+  filter: drop-shadow(2px 2px #333);
+    background: linear-gradient(to right,#008cff, #05c6f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   header p,
   header span {
     text-align: left;
@@ -127,6 +147,7 @@ const Items = totalItems.filter((item) => project.links[item]);
   header span {
     font-weight: 600;
   }
+  
   header p {
     color: rgb(226, 226, 226);
   }
@@ -216,6 +237,11 @@ const Items = totalItems.filter((item) => project.links[item]);
       flex-direction: column;
       gap: 10px;
     }
+      header .content {
+
+    max-width: 95%;
+  }
+
     header .relatives {
       max-width: calc(100% - 40px);
       width: calc(100% - 40px);

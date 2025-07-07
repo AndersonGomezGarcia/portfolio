@@ -16,7 +16,9 @@ import cv from "../../../public/HOJAVIDA.pdf"; // Importa el archivo PDF de tu C
     </p>
     <a href="AndersonGomezGarciaCV.pdf" download="AndersonGomezGarciaCV.pdf"
       ><button id="CV">
+        <span>
         {data.about.button}
+        </span>
       </button></a>
     
   </div>
@@ -40,6 +42,14 @@ import cv from "../../../public/HOJAVIDA.pdf"; // Importa el archivo PDF de tu C
     height: 45px;
     transition: 0.4s;
     z-index: 100;
+  }
+
+  button#CV span {
+    background: linear-gradient(90deg,#03bce4  0%, #00f0ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
   }
 
   @keyframes hoverAnimation {
@@ -79,10 +89,36 @@ import cv from "../../../public/HOJAVIDA.pdf"; // Importa el archivo PDF de tu C
   }
 
   button#CV:hover {
-    background-color: #03bce4;
+    background-color: #03a8e4;
     color: white;
     transition: 0.2s;
     animation: none;
+  }
+
+  button#CV::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right,#0481d4, #00a5ce);
+    z-index: -1;
+    border-radius: 45px 45px 0 0;
+    transition: 0.4s;
+    opacity: 0;
+  }
+
+  button#CV:hover::before {
+    opacity: 1;
+  }
+
+  button#CV:hover span {
+    background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
   }
   #About,
   #Skills,
@@ -112,7 +148,7 @@ import cv from "../../../public/HOJAVIDA.pdf"; // Importa el archivo PDF de tu C
     width: 75%;
     background-color: #2f313a;
     background-color: #2f313a9d;
-    background-color: #373a469d;
+    background-color: var(--containerBg);
     transition: 0.4s;
     position: relative;
   }
@@ -134,10 +170,12 @@ import cv from "../../../public/HOJAVIDA.pdf"; // Importa el archivo PDF de tu C
     height: 80px; /* Ajusta la altura al 80% del contenedor padre */
     background-color: #ffffff1f;
     color: transparent;
-    margin: auto 20px; /* Centra verticalmente el separador */
+    /*margin: auto 20px; /* Centra verticalmente el separador */
+    margin: auto 40px;
     transition: 0.4s;
     flex-grow: 80%; /* Permite que el separador crezca para llenar el espacio disponible */
     width: 0;
+    opacity: 0;
   }
 
   #About-Info p {
