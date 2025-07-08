@@ -73,9 +73,13 @@ const baseUrl = (nested === "true") ? "../": "";
               <div class="header">
                 <ul class="Skills">
                   {item.tecnologies.map((skill) => (
+                    <li data-skill={skill} >
+                      {skill}
+                    </li>
+                    /*
                     <li data-skill={skill}>
                       <img src={baseUrl +getUrls(skill)} alt={skill} />
-                    </li>
+                    </li>*/
                   ))}
                 </ul>
                 <div class="Links">
@@ -88,7 +92,7 @@ const baseUrl = (nested === "true") ? "../": "";
                   </a>
                   {item.links.github && (
                     <a href={item.links.github} target="_blank">
-                      <img class="github" src={`${baseUrl}img/github-link.png`} alt="" />
+                      <img class="github" src={`${baseUrl}img/github-mark.svg`} alt="" />
                     </a>
                   )}
                   {item.links.url && (
@@ -247,6 +251,15 @@ const baseUrl = (nested === "true") ? "../": "";
     position: relative;
     list-style-type: none;
   }
+
+  /* temporal */
+  .Project .Skills li {
+    background-color:#0f579238 ;
+    padding: 4px 10px;
+    color: #0099ff;
+    border-radius: 10px;
+  }
+  /*
   .Project .Skills li img,
   .Project .Links img {
     height: 35px;
@@ -290,10 +303,19 @@ const baseUrl = (nested === "true") ? "../": "";
     filter: brightness(1.4);
     transition: 0.2s;
   }
-
+*/
   .Project .Links img {
     border-radius: 0;
   }
+
+  .Project .Links img{
+    width: 35px;
+    height: 35px;
+    fill: #00b7ff;
+    transition: 0.3s;
+    filter: brightness(1.2);
+  }
+
 
   .Project .Links {
     display: flex;
@@ -308,12 +330,15 @@ const baseUrl = (nested === "true") ? "../": "";
   }
 
   .Project .Links a img {
-    border: 1px solid #13a9ee85;
+    border: 1px solid #13a9ee27;
     color: white;
     border-radius: 10px;
     padding: 6px;
     transition: 0.3s;
     background-color: rgba(0, 0, 0, 0.25);
+    background: #0f579238;
+    object-fit: contain;
+
   }
 
   .Project .Links a.details {
