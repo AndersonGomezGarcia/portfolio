@@ -1,5 +1,13 @@
 ---
 import "../styles/global.css";
+import { globalUrl } from "../utils/urls";
+
+const {
+  title = "Anderson Gómez Garcia - Portafolio",
+  description = "Portafolio de Anderson Gómez Garcia, desarrollador web y programador con experiencia en tecnologías modernas.",
+  image = `${globalUrl}img/og-image.png`,
+  url = globalUrl,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -9,6 +17,33 @@ import "../styles/global.css";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0d0d0d" />
+    <meta name="author" content="Anderson Gómez" />
+
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={globalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={globalUrl} />
     <meta name="generator" content={Astro.generator} />
 
     <link
@@ -32,60 +67,58 @@ import "../styles/global.css";
       href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+TC&display=swap"
       rel="stylesheet"
     />
-   <script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.1.0/dist/mermaid.esm.min.mjs';
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.1.0/dist/mermaid.esm.min.mjs";
 
-  // Tu tema simplificado como objeto plano
-  const darkTheme = {
-    background: '#333',
-    mainBkg: '#32363a',
-    primaryColor: '#1f2020',
-    primaryTextColor: '#fff',
-    lineColor: '#0681d4',
-    fontFamily: '"trebuchet ms", verdana, arial, sans-serif',
-    fontSize: '16px',
-    clusterBkg: '#1d2024',
-    clusterBorder: '#3f5258',
-    nodeBorder: '#666f78',
-    nodeBkg: '#1f2020',
-    edgeLabelBackground: '#1f1f1f',
-    labelBackground: '#181818',
-    textColor: '#ccc',
-    titleColor: '#F9FFFE',
-    actorBkg: '#1f2020',
-    actorBorder: '#81B1DB',
-    actorTextColor: '#ccc',
-    noteBkgColor: '#fff5ad',
-    noteBorderColor: '#81B1DB',
-    taskBkgColor: '#2b2b2b',
-    taskBorderColor: '#81B1DB',
-    taskTextColor: '#ccc',
-    sectionBkgColor: '#2a2a2a',
-    todayLineColor: '#DB5757',
-    archGroupBorderColor:'#ccc',
-    
-    pie1: '#0b0000',
-    pie2: '#4d1037',
-    pie3: '#3f5258',
-    pie4: '#4f2f1b',
-    pie5: '#6e0a0a',
-    pie6: '#3b0048',
-    pie7: '#995a01',
-    pie8: '#154706',
-    pie9: '#161722',
-    pie10: '#00296f',
-    pie11: '#01629c',
-    pie12: '#010029',
+      // Tu tema simplificado como objeto plano
+      const darkTheme = {
+        background: "#333",
+        mainBkg: "#32363a",
+        primaryColor: "#1f2020",
+        primaryTextColor: "#fff",
+        lineColor: "#0681d4",
+        fontFamily: '"trebuchet ms", verdana, arial, sans-serif',
+        fontSize: "16px",
+        clusterBkg: "#1d2024",
+        clusterBorder: "#3f5258",
+        nodeBorder: "#666f78",
+        nodeBkg: "#1f2020",
+        edgeLabelBackground: "#1f1f1f",
+        labelBackground: "#181818",
+        textColor: "#ccc",
+        titleColor: "#F9FFFE",
+        actorBkg: "#1f2020",
+        actorBorder: "#81B1DB",
+        actorTextColor: "#ccc",
+        noteBkgColor: "#fff5ad",
+        noteBorderColor: "#81B1DB",
+        taskBkgColor: "#2b2b2b",
+        taskBorderColor: "#81B1DB",
+        taskTextColor: "#ccc",
+        sectionBkgColor: "#2a2a2a",
+        todayLineColor: "#DB5757",
+        archGroupBorderColor: "#ccc",
 
-    
-  };
+        pie1: "#0b0000",
+        pie2: "#4d1037",
+        pie3: "#3f5258",
+        pie4: "#4f2f1b",
+        pie5: "#6e0a0a",
+        pie6: "#3b0048",
+        pie7: "#995a01",
+        pie8: "#154706",
+        pie9: "#161722",
+        pie10: "#00296f",
+        pie11: "#01629c",
+        pie12: "#010029",
+      };
 
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: "base",
-    themeVariables: darkTheme
-  });
-</script>
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: "base",
+        themeVariables: darkTheme,
+      });
+    </script>
   </head>
   <body>
     <slot />
