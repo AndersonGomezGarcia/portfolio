@@ -1,132 +1,224 @@
- <footer>
-        <div>
-            <a href="mailto:andersongomezgarcia111@gmail.com"><img src="img/mail.png" alt="mail"></a>
-            <a href="https://discord.com/users/:withoutname1403"><img src="img/icons/discord.png" alt="discord"></a>
-            <!--<a href=""><img src="img/linkedin.png" alt=""></a>-->
-            <!-- <a href=""><img src="img/stackoverflow.png" alt=""></a>-->
-            <a href="tel:+57 3185836788"><img src="img/phone.png" alt=""></a>
-            <a href="https://api.whatsapp.com/send?phone=573185836788&text=Hola%20Anderson%2C%20estuve%20revisando%20tu%20portafolio%20y%20me%20pareci%C3%B3%20interesante"
-                target="_blank"><img src="img/whatsapp.png" alt=""></a>
-            <a href="https://t.me/AndersonGomezGarcia" target="_blank"><img src="img/telegram.png" alt=""></a>
-            <a href="https://github.com/AndersonGomezGarcia" target="_blank"><img src="img/github-img.png" alt=""></a>
+<footer>
+  <div>
+    <a href="mailto:andersongomezgarcia111@gmail.com"
+      ><img src="img/mail.png" alt="mail" /></a
+    >
+    <a href="https://discord.com/users/:withoutname1403"
+      ><img src="img/icons/discord.png" alt="discord" /></a
+    >
+    <!--<a href=""><img src="img/linkedin.png" alt=""></a>-->
+    <!-- <a href=""><img src="img/stackoverflow.png" alt=""></a>-->
+    <a href="tel:+57 3185836788"><img src="img/phone.png" alt="" /></a>
+    <a
+      href="https://api.whatsapp.com/send?phone=573185836788&text=Hola%20Anderson%2C%20estuve%20revisando%20tu%20portafolio%20y%20me%20pareci%C3%B3%20interesante"
+      target="_blank"><img src="img/whatsapp.png" alt="" /></a
+    >
+    <a href="https://t.me/AndersonGomezGarcia" target="_blank"
+      ><img src="img/telegram.png" alt="" /></a
+    >
+    <a href="https://github.com/AndersonGomezGarcia" target="_blank"
+      ><img src="img/github-img.png" alt="" /></a
+    >
+  </div>
+  <p style="margin: 0 0 10px;">
+    <em
+      >Codeando con pasión
+      <span class="heart" style="color: #ff4d6d;">❤️</span>, con cafecito
+      <span class="coffee">☕</span><span class="steam">💨</span>
+      y un poco de insomnio <span class="sleeping">😵‍💫</span>
+    </em>
 
-        </div>
-        <p>&copy;2025 Anderson Gomez Garcia | All right reserved</p>
-    </footer>
+    <br />
+    <span class="footer-copy">&copy;</span>
+    <span style="color: #9be1ff;">2025</span>
+    <strong>Anderson Gomez Garcia</strong>
+  </p>
+</footer>
 
-    <style>
-        
-footer{
+<style>
+  footer {
     background-color: #333439;
     width: 50%;
     position: absolute;
     left: 0;
     margin: 40px 0 0 0;
-    color: #00A6CA;
+    color: #00a6ca;
     color: white;
     font-weight: medium;
-    font-family: 'Roboto Mono';
-    font-size:  normal;
+    font-family: "Roboto Mono";
+    font-size: normal;
     text-align: center;
     align-items: center;
     padding: 10px 25% 5px 25%;
+    background-color: #25282c;
+    border-top: 1px solid #333439;
+  }
+  .footer-copy {
+    font-size: 24px; /* Sube a 16px o más si es necesario */
+  }
+  @keyframes beat {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.25);
+    }
+  }
+  .heart {
+    display: inline-block;
+    animation: beat .9s infinite;
+    transform-origin: center;
+    margin-left: -5px;
+    font-style: normal;
+  }
+  .sleeping {
+    font-size: 20px;
+    margin-left: -5px;
+    font-style: normal;
+  }
+
+  .coffee {
+    font-size: 20px;
+    margin-left: -5px;
+    font-style: normal;
+  }
+  .steam {
+    display: inline-block;
+    animation: floatUp 2s infinite ease-in-out;
+    font-size: 14px;
+    opacity: 0.6;
+    left: -25px;
+
+    rotate: -90deg;
+    margin-right: -20px;
+    position: relative;
+    top: -15px;
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateX(0);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateX(6px);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateX(12px);
+      opacity: 0;
+    }
+  }
+   .sleeping {
+  display: inline-block;
+  animation: tambaleo 2s infinite ease-in-out;
+  transform-origin: center bottom;
 }
 
-footer div {
+@keyframes tambaleo {
+  0%   { transform: rotate(0deg) translate(0, 0); }
+  10%  { transform: rotate(-5deg) translate(-1px, -1px); }
+  20%  { transform: rotate(4deg) translate(0.5px, 0.5px); }
+  30%  { transform: rotate(-6deg) translate(-1.5px, -1px); }
+  40%  { transform: rotate(5deg) translate(1px, 1px); }
+  50%  { transform: rotate(-3deg) translate(-0.5px, -0.5px); }
+  60%  { transform: rotate(4deg) translate(0.5px, 0.5px); }
+  70%  { transform: rotate(-4deg) translate(-1px, -0.5px); }
+  80%  { transform: rotate(3deg) translate(0.5px, -0.5px); }
+  90%  { transform: rotate(-2deg) translate(0, 0); }
+  100% { transform: rotate(0deg) translate(0, 0); }
+}
+
+  footer div {
     display: flex;
     justify-content: space-between; /* Dispersa los elementos uniformemente */
     align-items: center;
     margin: 5px 0 18px 0;
-    color: #00A6CA;
+    color: #00a6ca;
     font-weight: 500; /* Cambia 'medium' a '500' para font-weight */
-    font-family: 'Roboto Mono';
+    font-family: "Roboto Mono";
     font-size: large;
     text-align: center;
     width: 100%;
-}
+  }
 
-footer div a{
-    color: #00A6CA;
+  footer div a {
+    color: #00a6ca;
     text-decoration: none;
     font-weight: 500;
-    font-family: 'Roboto Mono';
+    font-family: "Roboto Mono";
     font-size: large;
-    transition: .3s;
-    padding: 12px;
+    transition: 0.3s;
+    padding: 10px;
     margin: 0;
     border-radius: 40px;
-    height: 38px;
-    width: 38px;
-    transition: .5s;
+    height: 32px;
+    width: 32px;
+    transition: 0.5s;
     background-color: rgba(0, 0, 0, 0.199);
     display: flex;
     align-items: center;
     justify-content: center;
+  }
 
-}
-
-footer img{
-    width: 35px;
-        transition: .3s;
-    transform: scale(.9);
+  footer img {
+    width: 28px;
+    transition: 0.3s;
+    transform: scale(0.9);
     filter: grayscale(1);
-}
+  }
 
-
-footer div a:hover{
-    color: #00D2FF;
+  footer div a:hover {
+    color: #00d2ff;
     cursor: pointer;
-    transition: .7s;
+    transition: 0.7s;
     rotate: 360deg;
-}
+  }
 
-footer div a:hover img{
+  footer div a:hover img {
     filter: grayscale(0);
     transform: scale(1.2);
-}
-footer p{
+  }
+  footer p {
     margin: 0;
-}
+  }
 
-@media (max-width: 1081px) {
-     footer {
-        width: 86%;
-        padding: 10px 7% 5px 7%;
-    }
-    footer img{
-        height: 29px;
-        
-    }   
-
-}
-
-
-@media (max-width: 768px) {
+  @media (max-width: 1081px) {
     footer {
-        max-width: 100%;
+      width: 86%;
+      padding: 10px 7% 5px 7%;
     }
-    footer img{
-        height: auto;
-        width: 25px;
-    }   
-}
-@media (max-width: 450px) {
+    footer img {
+      height: 29px;
+    }
+  }
+
+  @media (max-width: 768px) {
     footer {
-        max-width: 90%;
-        width: 100%;
-        padding: 10px 5% 5px 5%;
+      max-width: 100%;
+    }
+    footer img {
+      height: auto;
+      width: 25px;
+    }
+  }
+  @media (max-width: 450px) {
+    footer {
+      max-width: 90%;
+      width: 100%;
+      padding: 10px 5% 5px 5%;
     }
     footer div {
-        max-width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        justify-content: center;
+      max-width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
     }
-    footer img{
-        height: auto;
-        width: 28px;
-    }   
-}
-
+    footer img {
+      height: auto;
+      width: 28px;
+    }
+  }
 </style>

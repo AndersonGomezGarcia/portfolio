@@ -32,6 +32,60 @@ import "../styles/global.css";
       href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+TC&display=swap"
       rel="stylesheet"
     />
+   <script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.1.0/dist/mermaid.esm.min.mjs';
+
+  // Tu tema simplificado como objeto plano
+  const darkTheme = {
+    background: '#333',
+    mainBkg: '#32363a',
+    primaryColor: '#1f2020',
+    primaryTextColor: '#fff',
+    lineColor: '#0681d4',
+    fontFamily: '"trebuchet ms", verdana, arial, sans-serif',
+    fontSize: '16px',
+    clusterBkg: '#1d2024',
+    clusterBorder: '#3f5258',
+    nodeBorder: '#666f78',
+    nodeBkg: '#1f2020',
+    edgeLabelBackground: '#1f1f1f',
+    labelBackground: '#181818',
+    textColor: '#ccc',
+    titleColor: '#F9FFFE',
+    actorBkg: '#1f2020',
+    actorBorder: '#81B1DB',
+    actorTextColor: '#ccc',
+    noteBkgColor: '#fff5ad',
+    noteBorderColor: '#81B1DB',
+    taskBkgColor: '#2b2b2b',
+    taskBorderColor: '#81B1DB',
+    taskTextColor: '#ccc',
+    sectionBkgColor: '#2a2a2a',
+    todayLineColor: '#DB5757',
+    archGroupBorderColor:'#ccc',
+    
+    pie1: '#0b0000',
+    pie2: '#4d1037',
+    pie3: '#3f5258',
+    pie4: '#4f2f1b',
+    pie5: '#6e0a0a',
+    pie6: '#3b0048',
+    pie7: '#995a01',
+    pie8: '#154706',
+    pie9: '#161722',
+    pie10: '#00296f',
+    pie11: '#01629c',
+    pie12: '#010029',
+
+    
+  };
+
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: "base",
+    themeVariables: darkTheme
+  });
+</script>
   </head>
   <body>
     <slot />
@@ -40,10 +94,14 @@ import "../styles/global.css";
         (entries) => {
           entries
             .filter((entry) => entry.isIntersecting)
-            .sort((a, b) => a.target.dataset.index - b.target.dataset.index) // asegura orden
+            .sort((a, b) => {
+              const aIndex = Number((a.target as HTMLElement).dataset.index);
+              const bIndex = Number((b.target as HTMLElement).dataset.index);
+              return aIndex - bIndex;
+            }) // asegura orden
             .forEach((entry, i) => {
               const el = entry.target;
-              el.style.animationDelay = `${i * 0.4}s`; // animación escalonada
+              (el as HTMLElement).style.animationDelay = `${i * 0.4}s`; // animación escalonada
               el.classList.add("visible");
               observer.unobserve(el);
             });
@@ -76,12 +134,12 @@ import "../styles/global.css";
     background-color: #25262c;
     background-color: #24252b;
     background-color: var(--backgroundColor);
-       /* background-color: #1c1d22; */
+    /* background-color: #1c1d22; */
     padding: 0 0 15%;
     max-width: 100vw;
     width: 100%;
   }
-/*
+  /*
   body::before {
     background: linear-gradient(
       135deg,

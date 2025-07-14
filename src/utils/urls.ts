@@ -1,5 +1,5 @@
 //export const globalUrl = 'http://localhost:4321/';// 'https://andersongomezgarcia.github.io/portfolio/';
-export const globalUrl = 'http://192.168.18.19:4321/';
+export const globalUrl = 'https://andersongomezgarcia.github.io/portfolio/';
 const baseUrl = 'img/icons/';
 
 const url = {

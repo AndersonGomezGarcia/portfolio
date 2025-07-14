@@ -54,7 +54,7 @@ if (!complete) {
 } else {
   selectedProjects = projects.projects;
 }
-
+selectedProjects.reverse(); // Reverse the order of projects for display
 const baseUrl = (nested === "true") ? "../": "";
 ---
 
@@ -73,13 +73,15 @@ const baseUrl = (nested === "true") ? "../": "";
               <div class="header">
                 <ul class="Skills">
                   {item.tecnologies.map((skill) => (
+                    /*
                     <li data-skill={skill} >
                       {skill}
                     </li>
-                    /*
+                    */
+                    
                     <li data-skill={skill}>
                       <img src={baseUrl +getUrls(skill)} alt={skill} />
-                    </li>*/
+                    </li>
                   ))}
                 </ul>
                 <div class="Links">
@@ -97,7 +99,7 @@ const baseUrl = (nested === "true") ? "../": "";
                   )}
                   {item.links.url && (
                     <a href={item.links.url} target="_blank">
-                      <img class="hyperlink" src={`${baseUrl}img/icons/link.png`} alt="" />
+                      <img class="hyperlink" src={`${baseUrl}img/external-link.svg`} alt="" />
                     </a>
                   )}
                   {item.links.download && (
@@ -205,20 +207,27 @@ const baseUrl = (nested === "true") ? "../": "";
   }
 
   .Project img.Project-Image {
-    /* border-top: 1px solid #ffffff1f;
-    border-bottom: 1px solid #ffffff1f;
-    */
     border-radius: 15px 15px 0 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     width: 100%;
     transition: .3s ease-in-out;
+    overflow: hidden;
+    display: block;
+    /* Ensure the image fills the container but doesn't scale itself */
+    object-fit: cover;
+    will-change: transform;
   }
 
-  .Project:hover img.Project-Image {
+  .Project:hover .Project-Image {
+    /* Scale the parent .Project, not the image itself */
     filter: brightness(1.08) saturate(1.1);
     transition: 0.3s;
+  }
+
+  .Project:hover {
+    /* Scale the whole project card, including the image */
     transform: scale(1.02);
-    overflow: hidden;
+    transition: 0.2s;
   }
 
   .Project .header {
@@ -253,13 +262,16 @@ const baseUrl = (nested === "true") ? "../": "";
   }
 
   /* temporal */
+  /*
   .Project .Skills li {
     background-color:#0f579238 ;
     padding: 4px 10px;
     color: #0099ff;
+    border: solid 1px #3f678b3a;
     border-radius: 10px;
   }
-  /*
+    */
+  
   .Project .Skills li img,
   .Project .Links img {
     height: 35px;
@@ -303,14 +315,14 @@ const baseUrl = (nested === "true") ? "../": "";
     filter: brightness(1.4);
     transition: 0.2s;
   }
-*/
+
   .Project .Links img {
     border-radius: 0;
   }
 
   .Project .Links img{
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     fill: #00b7ff;
     transition: 0.3s;
     filter: brightness(1.2);
@@ -325,7 +337,7 @@ const baseUrl = (nested === "true") ? "../": "";
     padding: 0;
     color: white;
 
-    gap: 20px;
+    gap: 15px;
     width: 100%;
   }
 

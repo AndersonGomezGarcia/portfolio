@@ -3,12 +3,14 @@ import ImagePopup from "../elements/ImagePopup.astro";
 import {globalUrl} from "../../utils/urls.js";
 import data from "../../data/projects.json";
 
+
 const { project } = Astro.props;
 type DescriptionItem =
   | { type: "text"; value: string; icon?: string }
   | { type: "img"; value: string }
   | { type: "list"; value: string[] }
   | { type: "demo"; value: any }
+  | { type: "diagram"; value: string }
   | { type: "icon";  };
 
 
@@ -43,6 +45,14 @@ const Icons = {
   nutIcon: nutIcon,
 }
 
+const diagram = "architecture-beta\ngroup cliente(cloud)[Cliente]\n  service navegador(internet)[Navegador] in cliente\n  service app(react)[React App] in cliente\n\ngroup servidor(server)[Servidor]\n  service api(server)[Nodejs API] in servidor\n  service db(database)[PostgreSQL DB] in servidor\n  service drive(disk)[Google Drive] in servidor\n\nservice usuario(person)[Usuario]\n\nusuario:R -- L:navegador\nnavegador:B -- T:app\napp:R -- L:api\napi:B -- T:db\napi:B -- T:drive\n";
+
+const diagramJumpLine = diagram.split("\n").map((line, index) => {
+  if (index === 0) {
+    return line.replace("architecture-beta", "graph TD;");
+  }
+  return line;
+}).join("\n");
 
 ---
 
@@ -72,6 +82,35 @@ const Icons = {
             <div class="iframeContainer fade-up" set:html={key.value}>          
             </div>
           )}
+          {key.type === "diagram" && (
+            <ul class="fade-up diagram">
+              <h2>Diagrama de Arquitectura</h2>
+              <!-- <div class="mermaid">{key.value}</div>-->
+        
+              <div class="mermaid">
+architecture-beta
+group cliente(cloud)[Cliente]
+  service navegador(internet)[Navegador] in cliente
+  service app(catppuccin:javascript-react)[React App] in cliente
+
+group servidor(server)[Servidor]
+  service api(server)[Nodejs API] in servidor
+  service db(database)[PostgreSQL DB] in servidor
+  service drive(disk)[Google Drive] in servidor
+
+service usuario(person)[Usuario]
+
+usuario:R -- L:navegador
+navegador:B -- T:app
+app:R -- L:api
+api:B -- T:db
+api:B -- T:drive
+
+              </div>
+            </ul>
+          )} 
+
+ 
         </p>
       );
     })
@@ -166,6 +205,31 @@ const Icons = {
     padding: 20px 20px 20px 45px;
     border-radius: 15px;
     border: 1px solid #f4fdff0e;
+  }
+
+  #Description ul.diagram{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #Description ul.diagram h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  #Description ul.diagram .mermaid {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+  }
+
+  #Description ul.diagram .mermaid > svg{
+    min-width: 100%;
   }
 
   #Description ul ul {
@@ -343,4 +407,39 @@ span.icon svg{
     border-radius: 10px;
     box-shadow: #006fca 0px 0px 15px -5px;
   }
+
+
+.mermaid svg .node rect{
+   rx: 10px;
+  ry: 10px;
+}
+
+.mermaid rect.node-bkg{
+  rx:10px;
+}
+
+.mermaid svg rect{
+  rx:10px;
+  transition: 0.2s;
+  fill: linear-gradient(#008eec, #00b7ff)!important;
+
+
+}
+
+.mermaid rect:hover{
+  filter: brightness(1.2);
+  /* fill: #008eec!important; */
+  fill-opacity: .9;
+  box-shadow: 1px 1px 5px rgba(0, 195, 255, 0.333);
+
+  cursor: pointer;
+}
+
+.mermaid tspan{
+  pointer-events: none;
+}
+
+.mermaid line, .mermaid path, .mermaid polygon,.mermaid circle, .mermaid ellipse{
+  pointer-events: none;
+}
 </style>

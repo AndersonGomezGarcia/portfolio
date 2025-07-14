@@ -9,7 +9,7 @@ const { Group, items, tags } = Astro.props;
       <ul>
         {
           items.map((item: keyof typeof items) => (
-            <li>
+            <li data-label={tags[items.indexOf(item)]}>
               <img src={item} alt={item} />
               <span>{tags[items.indexOf(item)]}</span>
             </li>
@@ -20,44 +20,43 @@ const { Group, items, tags } = Astro.props;
   </div>
 </div>
 <style>
-    .SkillGroup{
-      width: 100%;
-      display: flex;
-      justify-content: center;
+  .SkillGroup {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .SkillGroup h3 {
+    font-size: 25px;
+    font-weight: 400;
+    font-family: "Roboto";
+    color: #00d2ff;
+    color: white;
+    margin: 40px auto 0 auto;
+    text-align: center;
+  }
+  .SkillGroup-Items {
+    display: inline-flex;
+    background-color: var(--containerBg);
 
-    }
-    .SkillGroup h3 {
-        font-size: 25px;
-        font-weight: 400;
-        font-family: "Roboto";
-        color: #00d2ff;
-        color: white;
-        margin: 40px auto 0 auto;
-        text-align: center;
-    }
-    .SkillGroup-Items {
-      display: inline-flex;
-      background-color: var(--containerBg);
-
-      color: white;
-      border: solid 1px #ffffff1f;
-      border-radius: 40px;
-      padding: 20px 30px;
-      margin: 20px auto 0 auto;
-      width: auto;
-      max-width: 100%;
-      transition: 0.4s;
-    }
-    .SkillGroup-Items:hover{
-        border: solid 1px #03BCE4;
-    transition: .2s;
+    color: white;
+    border: solid 1px #ffffff1f;
+    border-radius: 40px;
+    padding: 20px 30px;
+    margin: 20px auto 0 auto;
+    width: auto;
+    max-width: 100%;
+    transition: 0.4s;
+  }
+  .SkillGroup-Items:hover {
+    border: solid 1px #03bce4;
+    transition: 0.2s;
     padding: 20px;
     max-width: calc(100% - 30px);
     background-color: rgba(0, 133, 173, 0.1);
-    }
-    .SkillGroup ul {
-        display: flex;
-        justify-content: center;
+  }
+  .SkillGroup ul {
+    display: flex;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
@@ -91,12 +90,28 @@ const { Group, items, tags } = Astro.props;
     transition: 0.3s;
   }
 
-  .SkillGroup ul li img:hover {
+  .SkillGroup ul li span {
+    display: block;
+    position: absolute;
+    bottom: -12px;
+    opacity: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    transition: 0.2s;
+
+    margin-top: 5px;
+  }
+
+  .SkillGroup ul li:hover img {
     filter: brightness(
       1.4
     ); /* Ajusta el valor según el nivel de brillo deseado */
     transition: 0.2s; /* Añade una transición suave */
-    transform: translate(0, -8px);
+    transform: translate(0, -10px);
+  }
+
+  .SkillGroup ul li:hover span {
+    opacity: 1;
   }
 </style>
- 

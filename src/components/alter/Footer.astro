@@ -1,24 +1,115 @@
 <footer>
-  <p>&copy;2025 Anderson Gomez Garcia | All right reserved</p>
+   <p style="margin: 0 0 10px;">
+    <em
+      >Codeando con pasión
+      <span class="heart" style="color: #ff4d6d;">❤️</span>, con cafecito
+      <span class="coffee">☕</span><span class="steam">💨</span>
+      y un poco de insomnio <span class="sleeping">😵‍💫</span>
+    </em>
+
+    <br />
+    <span class="footer-copy">&copy;</span>
+    <span style="color: #9be1ff;">2025</span>
+    <strong>Anderson Gomez Garcia</strong>
+  </p>
 </footer>
 
 <style>
   footer {
     background-color: #333439;
-    width: 100%;
+    width: 50%;
+    position: absolute;
     left: 0;
-    padding: 10px 0px;
+    margin: 40px 0 0 0;
     color: #00a6ca;
     color: white;
-    position: absolute;
-    font-weight: 500;
+    font-weight: medium;
     font-family: "Roboto Mono";
-    font-size: large;
+    font-size: normal;
     text-align: center;
-    margin-top: auto; /* Asegura que el footer esté al final */
-    display: block;
-    clear: both; /* Asegura que el footer no flote */
+    align-items: center;
+    padding: 10px 25% 5px 25%;
+    background-color: #25282c;
+    border-top: 1px solid #333439;
   }
+   .footer-copy {
+    font-size: 24px; /* Sube a 16px o más si es necesario */
+  }
+  @keyframes beat {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  .heart {
+    display: inline-block;
+    animation: beat 1s infinite;
+    transform-origin: center;
+    margin-left: -5px;
+    font-style: normal;
+  }
+  .sleeping {
+    font-size: 20px;
+    margin-left: -5px;
+    font-style: normal;
+  }
+
+  .coffee {
+    font-size: 20px;
+    margin-left: -5px;
+    font-style: normal;
+  }
+  .steam {
+    display: inline-block;
+    animation: floatUp 2s infinite ease-in-out;
+    font-size: 14px;
+    opacity: 0.6;
+    left: -25px;
+
+    rotate: -90deg;
+    margin-right: -20px;
+    position: relative;
+    top: -15px;
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateX(0);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateX(6px);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateX(12px);
+      opacity: 0;
+    }
+  }
+  .sleeping {
+  display: inline-block;
+  font-size: 4rem;
+  animation: tambaleo 2s infinite ease-in-out;
+  transform-origin: center bottom;
+}
+
+@keyframes tambaleo {
+  0%   { transform: rotate(0deg) translateX(0); }
+  10%  { transform: rotate(-5deg) translateX(-2px); }
+  20%  { transform: rotate(4deg) translateX(1px); }
+  30%  { transform: rotate(-6deg) translateX(-3px); }
+  40%  { transform: rotate(5deg) translateX(2px); }
+  50%  { transform: rotate(-3deg) translateX(-1px); }
+  60%  { transform: rotate(4deg) translateX(1px); }
+  70%  { transform: rotate(-4deg) translateX(-2px); }
+  80%  { transform: rotate(3deg) translateX(1px); }
+  90%  { transform: rotate(-2deg) translateX(0); }
+  100% { transform: rotate(0deg) translateX(0); }
+}
+
 
   @media (max-width: 768px) {
     footer {

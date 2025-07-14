@@ -51,6 +51,7 @@
                         "Herramientas: Draw.io para modelado, SQL para gestión de datos."
                     ]
                 },
+              
                 {
                     "type": "demo",
                     "value": "<iframe src=\"https://www.youtube.com/embed/cboQx_XTsTA\" allow=\"autoplay\"onload=\"resizeIframe(this);\"></iframe>"
@@ -108,6 +109,11 @@
                         "Bootstrap para el diseño responsivo.",
                         "Firebase para la gestión de reservas y datos."
                     ]
+                },
+                {
+                    "type": "diagram",
+
+                    "value": "graph TD%% Usuario externo usuario([\"👤 <b>Usuario</b>\"])\n%% Subgraph Cliente con título HTML y nodos con emojis\nsubgraph cliente [\"<div style='width:22em; height:2em; display:flex; align-items:center;'><b>📦 Cliente</b></div>\"]\n    navegador([\"🌐 Navegador\"])\n    appReact([\"⚛️ React App\"])\n    navegador --> appReact\nend"
                 }
             ],
             "links": {
@@ -481,10 +487,20 @@
                         "Context API para gestionar la autenticación globalmente.",
                         "CSS y HTML semántico para una experiencia accesible y responsive."
                     ]
+                },
+                  {
+                    "type": "diagram",
+
+                    "value": "graph TD; usuario([👤 <b>Usuario</b>]); subgraph cliente [<div style='width:22em; height:2em; display:flex; align-items:center;'><b>📦 Cliente</b></div>]; navegador([🌐 Navegador]); appReact([⚛️ React App]); navegador --> appReact; end; subgraph servidor [<div style='width:28em; height:2em; display:flex; align-items:center;'><b>🖥️ Servidor</b></div>]; api([🟢 Node.js API]); db([🐘 PostgreSQL DB]); drive([📂 Google Drive API]); api --> db; api --> drive; end; usuario --> navegador; appReact --> api;"
+                },
+                {
+                    "type": "demo",
+                    "value": "<iframe width=\"1920\" height=\"778\" src=\"https://www.youtube.com/embed/jYSdHa9-ojk\" title=\"Weekart explicación codigo\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+
                 }
             ],
             "links": {
-                "github": "https://github.com/AndersonGomezGarcia/WeekArtApp"
+                "github": "https://github.com/AndersonGomezGarcia/weekart_backend"
             }
         }
     ]

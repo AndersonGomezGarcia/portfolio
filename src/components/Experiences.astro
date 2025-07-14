@@ -1,6 +1,10 @@
 ---
 import Title from "../components/elements/Title.astro";
 import data from "../data/main.json";
+import {Calendar, ChevronDown, ChevronUp  } from "@lucide/astro";
+
+const getFullText = (description: string | string[]) =>
+  Array.isArray(description) ? description.join('\n\n') : description;
 ---
 
 <div id="Experience " class="fade-up">
@@ -8,19 +12,64 @@ import data from "../data/main.json";
         <div class="Separator"></div>
         <div id="Experience-Items">
             { data.experience.experiences.map( (experience, index) => (
-                <div class="Experience fade-up" key={index}>
+                <div class="Experience fade-up">
+                        <ChevronDown size="24" class="chevron-down" />
+                        <ChevronUp size="24" class="chevron-up" />
+
                     <div class="ball"></div>
-                    <h3>{experience.title} <span>{experience.datetime}</span></h3>
-                    <p>{experience.description}</p>
+                    <h3>{experience.title} <span><Calendar size="18" /> {experience.datetime}</span></h3>
+                    <p class="description" data-full={getFullText(experience.description)}></p>
                     {/*<div class="Separator" style="width: 90%;"></div>*/}
                 </div>
             ))}
         </div>
+<script type="module" >
+  document.querySelectorAll('.Experience').forEach(exp => {
+    const p = exp.querySelector('.description');
+    const fullText = p.dataset.full;
+    const previewLength = 220;
+
+    if (fullText.length <= previewLength) {
+      p.textContent = fullText;
+      return;
+    }
+
+    const updateText = () => {
+      const expanded = exp.dataset.expanded === "true";
+      const parseText = (txt) => (txt || '').replace(/\n/g, '<br>');
+      p.innerHTML = expanded ? parseText(fullText) : parseText(fullText.slice(0, previewLength) + (fullText.length > previewLength ? '...' : ''));
+    };
+
+    // Estado inicial
+    updateText();
+
+    // Click en todo el bloque
+   exp.addEventListener('click', () => {
+  const current = exp.dataset.expanded === "true";
+  const newState = (!current).toString();
+  exp.dataset.expanded = newState;
+
+  const chevron = exp.querySelector('.chevron-down');
+  if (chevron) {
+    chevron.style.transform = newState === "true" ? 'rotate(180deg)' : 'rotate(0deg)';
+  }
+  //  exp.querySelector('.chevron-down').style.display = current ? 'block' : 'none';
+        //exp.querySelector('.chevron-up').style.display = current ? 'none' : 'block';
+
+  updateText(newState); // o simplemente updateText() si lee del dataset ya actualizado
+});
+
+  }); 
+</script>
 
    <style>
     #Experience-Items{
+    
     gap: 20px 0;
+
     display: flex;
+    justify-self: auto;
+   
     margin: 25px 0 0 0;
     flex-direction: column;
     /*background-color: var(--containerBg);
@@ -31,11 +80,12 @@ import data from "../data/main.json";
 .Experience{
     display: flex;
     flex-wrap: wrap;
-    margin: 0 0 0px 35px;
+    margin: 0 35px 0px 45px;
     gap: 20px;
     flex-direction: column; 
-    padding: 30px 5px 30px 20px;
+    padding: 30px 10px 30px 20px;
     position: relative;
+    cursor: pointer;
     transition: .4s;
     border: solid 1px transparent ;
     border-radius: 12px ;
@@ -52,6 +102,19 @@ import data from "../data/main.json";
     border: solid 1px #03bce4;
     background-color: rgba(0, 133, 173, 0.15);
 
+}
+
+.chevron-down, .chevron-up {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #ffffff;
+    transition: .3s;
+    transform: rotate(0deg);
+}
+
+.chevron-up {
+    display: none;
 }
 
 @keyframes goteoAnimacion {
@@ -190,17 +253,20 @@ box-shadow: 0 0 0 1px #00D2FF inset;
     color: #00D2FF;
     color: rgb(211, 211, 211);
     margin: 0;
+    display: flex;
+    align-items: center;
 }
 
 .Experience h3 span{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
+    display: flex;
+    align-items: center;
     font-family: 'Roboto';
     color: #00D2FF;
+    gap: 5px;
     margin: 0 0 0 10px;
     font-style: italic;
-    text-decoration: underline;
-    text-decoration: underline;
     opacity: .75;
 }
 

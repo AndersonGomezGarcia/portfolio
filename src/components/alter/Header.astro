@@ -3,6 +3,8 @@ import type { RecordType } from "astro:schema";
 
 import {globalUrl} from "../../utils/urls.js";
 
+import {Calendar} from "@lucide/astro";
+
 const { class: ClassName = "", project } = Astro.props;
 
 const headerBackgroundImageUrl = `url(${globalUrl + project.image})`;
@@ -29,7 +31,7 @@ const linksDisplay = Items.length > 0 ? "flex" : "none";
 
 <header class={ClassName + " fade-up"} >
   <div class="content">
-    <span>{project.date}</span>
+    <span><Calendar size="18" /> {project.date}</span>
     <h1><span>{project.name} - {project.tagline}</span></h1>
     <p>
       {project.summary}
@@ -111,6 +113,7 @@ const linksDisplay = Items.length > 0 ? "flex" : "none";
 
     max-width: 90%;
   }
+
 
   header h1 {
     font-size: 36px;

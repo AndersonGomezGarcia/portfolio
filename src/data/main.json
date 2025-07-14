@@ -26,21 +26,30 @@
     },
     "projects": {
         "pretitle": "Mis",
-        "title": "Proyectos"  
+        "title": "Proyectos"
     },
     "experience": {
         "pretitle": "Mi",
         "title": "Experiencia",
-        "experiences":[
+        "experiences": [
             {
                 "title": "Webcloster",
                 "datetime": "Actual (2025)",
-                "description": "Desarrollo de aplicaciones web con wordpress y maquetación de diseños responsivos."
+                "description": [
+                    " Optimizé el rendimiento web implementando lazy loading estratégico, control de caché, logrando mejoras tangibles en métricas como LCP y CLS.",
+                    "Resolví problemas de compatibilidad SVG con software profesional (CorelDRAW) mediante un sistema de exportación adaptado con rutas relativas y empaquetado automatizado en ZIP.",
+                    "Desarrollé interfaces modulares en Angular, con sistemas de rutas protegidas mediante guards, implementando un sistema de carga de plantillas dinámico y configurable, con lógica desacoplada y estructura escalable para la gestión de configuraciones persistentes, mediante carga y descarga de archivos JSON y formatos de imagen.",
+                    "Implementé un backend  desacoplado usando Slim PHP y Mustache,con sistema de autenticación seguro basado en JWT, estructurando endpoints eficientes con vistas limpias e integración sencilla."
+                ]
             },
             {
                 "title": "Trabajo Autonomo",
                 "datetime": "6 meses (2024)",
-                "description": "Desarrollo de aplicaciones web con tecnologías como HTML, CSS, JavaScript, PHP, Laravel, React, .NET, SQL, entre otras."
+                "description": [
+                    "Desarrollo y despliegue de aplicaciones web utilizando tecnologías como: HTML, CSS, JavaScript, PHP, Laravel, React, .NET, SQL, entre otras.",
+                    "Gestión técnica de entornos web, incluyendo configuración de dominios, DNS, integración con Firebase (deploy), y seguimiento de rendimiento.",
+                    "Aplicación de metodologías de desarrollo, abarcando levantamiento de requerimientos, planificación técnica, distribución de tareas y cumplimiento de estándares de diseño y buenas prácticas."
+                ]
             },
             {
                 "title": "Empresa GAB S.A.S",
@@ -59,5 +68,4 @@
             "button": "Enviar"
         }
     }
-
 }
