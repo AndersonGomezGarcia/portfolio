@@ -109,11 +109,6 @@
                         "Bootstrap para el diseño responsivo.",
                         "Firebase para la gestión de reservas y datos."
                     ]
-                },
-                {
-                    "type": "diagram",
-
-                    "value": "graph TD%% Usuario externo usuario([\"👤 <b>Usuario</b>\"])\n%% Subgraph Cliente con título HTML y nodos con emojis\nsubgraph cliente [\"<div style='width:22em; height:2em; display:flex; align-items:center;'><b>📦 Cliente</b></div>\"]\n    navegador([\"🌐 Navegador\"])\n    appReact([\"⚛️ React App\"])\n    navegador --> appReact\nend"
                 }
             ],
             "links": {

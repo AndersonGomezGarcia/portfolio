@@ -1,5 +1,104 @@
 ---
 import "../styles/global.css";
+import "../styles/animation.css";
+import Particles from "astro-particles";
+import type { ISourceOptions } from "tsparticles-engine";
+
+const options: ISourceOptions = {
+  autoPlay: true,
+  background: {
+    color: {
+      value: "#1d2024",
+    },
+    image: "",
+    position: "50% 50%",
+    repeat: "no-repeat",
+    size: "20%",
+    opacity: 1,
+  },
+  backgroundMask: {
+    composite: "destination-out",
+    cover: {
+      opacity: 1,
+      color: {
+        value: "",
+      },
+    },
+    enable: false,
+  },
+  clear: true,
+  defaultThemes: {},
+  delay: 0,
+  fullScreen: {
+    enable: true,
+    zIndex: -1,
+  },
+  interactivity: {
+    detectsOn: "window",
+    events: {
+      onClick: {
+        enable: true,
+        mode: "push",
+      },
+      onHover: {
+        enable: false,
+        mode: "bubble",
+        parallax: {
+          enable: false,
+          force: 2,
+          smooth: 10,
+        },
+      },
+      resize: {
+        delay: 0.5,
+        enable: true,
+      },
+    },
+  },
+
+  particles: {
+    number: {
+      density: {
+        enable: true,
+        width: 1920,
+        height: 1080,
+      },
+      limit: {
+        mode: "delete",
+        value: 0,
+      },
+      value: 160,
+    },
+    move: {
+      enable: true,
+    },
+    opacity: {
+      value: {
+        min: 0.01,
+        max: 0.15,
+      },
+    },
+    size: {
+      value: {
+        min: 1,
+        max: 3,
+      },
+      animation: {
+        count: 0,
+        enable: false,
+        speed: 5,
+        decay: 0,
+        delay: 0,
+        sync: false,
+        mode: "auto",
+        startValue: "random",
+        destroy: "none",
+      },
+    },
+    pauseOnOutsideViewport: true,
+  },
+};
+
 import { globalUrl } from "../utils/urls";
 
 const {
@@ -125,34 +224,70 @@ const {
     <script>
       const observer = new IntersectionObserver(
         (entries) => {
-          entries
-            .filter((entry) => entry.isIntersecting)
-            .sort((a, b) => {
-              const aIndex = Number((a.target as HTMLElement).dataset.index);
-              const bIndex = Number((b.target as HTMLElement).dataset.index);
-              return aIndex - bIndex;
-            }) // asegura orden
-            .forEach((entry, i) => {
-              const el = entry.target;
-              (el as HTMLElement).style.animationDelay = `${i * 0.4}s`; // animación escalonada
-              el.classList.add("visible");
-              observer.unobserve(el);
-            });
+          const visibles = entries.filter((entry) => entry.isIntersecting);
+
+          // Ordenar por aparición en el DOM (opcional)
+          visibles.sort((a, b) => {
+            return (
+              a.target.getBoundingClientRect().top -
+              b.target.getBoundingClientRect().top
+            );
+          });
+
+          visibles.forEach((entry, i) => {
+            const el = entry.target as HTMLElement;
+            el.style.animationDelay = `${0.6 + i * 0.6}s`; // delay relativo al grupo visible actual
+            el.classList.add("visible");
+            observer.unobserve(el);
+          });
         },
         { threshold: 0.1 }
       );
 
-      document.querySelectorAll(".fade-up").forEach((el, i) => {
-        el.dataset.index = i; // guardamos el orden en el DOM
-        observer.observe(el);
-      });
+      document
+        .querySelectorAll(".fade-up, .fade-right, .fade-left, .fade-group")
+        .forEach((el) => {
+          observer.observe(el);
+        });
     </script>
+
+    <script>
+      import {
+        type Container,
+        type Engine,
+        tsParticles,
+      } from "tsparticles-engine";
+      import { loadFull } from "tsparticles";
+
+      // the function name is the parameter passed to the init attribute
+      // required
+      // add the function to window is mandatory, it will be searched there
+      window.particlesInit = async function (engine: Engine) {
+        await loadFull(engine);
+      };
+
+      // the function name is the parameter passed to the loaded attribute
+      // optional
+      // add the function to window is mandatory, it will be searched there
+      window.particlesLoaded = function (container: Container) {
+        console.log("particlesLoaded callback");
+      };
+    </script>
+
+    <Particles id="tsparticles" options={options} init="particlesInit" />
   </body>
 </html>
 
 <style>
-  html,
-  body {
+  #tsparticles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Detrás del contenido */
+  }
+  html {
     margin: 0 auto;
     width: 1200px;
     max-width: 100%;

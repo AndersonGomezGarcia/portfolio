@@ -3,6 +3,8 @@ import Title from "../components/elements/Title.astro";
 import data from "../data/main.json";
 import {Calendar, ChevronDown, ChevronUp  } from "@lucide/astro";
 
+
+
 const getFullText = (description: string | string[]) =>
   Array.isArray(description) ? description.join('\n\n') : description;
 ---
@@ -13,9 +15,15 @@ const getFullText = (description: string | string[]) =>
         <div id="Experience-Items">
             { data.experience.experiences.map( (experience, index) => (
                 <div class="Experience fade-up">
-                        <ChevronDown size="24" class="chevron-down" />
-                        <ChevronUp size="24" class="chevron-up" />
-
+                    {
+                        getFullText(experience.description).length > 220 ? (
+                            <>
+                                {/* Mostrar chevron down y up si la descripción es larga */}
+                                <ChevronDown size="24" class="chevron-down" />
+                                <ChevronUp size="24" class="chevron-up" />
+                            </>
+                        ) : null
+                    }
                     <div class="ball"></div>
                     <h3>{experience.title} <span><Calendar size="18" /> {experience.datetime}</span></h3>
                     <p class="description" data-full={getFullText(experience.description)}></p>
@@ -279,5 +287,33 @@ box-shadow: 0 0 0 1px #00D2FF inset;
     color: #B3BDC7;
     font-size: var(--paragraph-font-size, 20px);
     margin: 0px 0 -10px 0;
+}
+
+.Experience p.description {
+    margin: 0 15px -10px 20px
+}
+
+
+@media ( max-width: 768px) {
+    #Experience-Items{
+        margin: 0;
+        padding: 0 20px;
+    }
+    .Experience{
+        margin: 0 0 0 10px;
+    }
+    .Experience .ball {
+        left: -25px;
+
+    }
+    .Experience::before::after{
+        left: -20px;
+    }
+    .Experience::after {
+        left: -22px;
+    }
+
+
+    
 }
    </style>

@@ -147,6 +147,7 @@ const baseUrl = (nested === "true") ? "../": "";
     border-radius: 15px;
     color: white;
     flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 2px 0px, rgba(0, 0, 0, 0.28) 0px 2px 4px 0px;
     transition:
       transform 0.2s,
       border 0.2s,
@@ -207,11 +208,12 @@ const baseUrl = (nested === "true") ? "../": "";
   }
 
   .Project img.Project-Image {
-    border-radius: 15px 15px 0 0;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 100%;
+    width: calc(100% - 30px);
     transition: .3s ease-in-out;
     overflow: hidden;
+    margin-top: 15px;
     display: block;
     /* Ensure the image fills the container but doesn't scale itself */
     object-fit: cover;
@@ -448,14 +450,15 @@ const baseUrl = (nested === "true") ? "../": "";
 
   @media (max-width: 768px) {
     #Projects-Items {
-      padding: 10px;
+      padding: 10px 3px;
       gap: 30px 5%;
     }
     .Project {
       width: 100%;
     }
     .Project img.Project-Image {
-      width: 100%;
+      width: calc(100% - 18px);
+      margin-top: 9px;
     }
 
     .Project .Content {
