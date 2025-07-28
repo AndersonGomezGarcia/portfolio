@@ -64,12 +64,42 @@ const diagramJumpLine = diagram.split("\n").map((line, index) => {
       return (
         <p>
           {key.type === "text" && <p class="fade-up">{key.icon && <span class="icon" set:html={Icons[key.icon as keyof typeof Icons]}>{key.icon} </span>} {key.value}</p>}
-          {key.type === "img" && (
-            <ImagePopup
-              thumbnailSrc={globalUrl + key.value}
-              fullSrc={globalUrl + key.value}
-              alt={`Imagen del proyecto ${project.name}`}></ImagePopup>
-          )}
+         {key.type === "img" && (
+  Array.isArray(key.value) ? (() => {
+    const mainImage = key.value[0];
+    const otherImages = key.value;
+
+    return (
+      <div class="image-gallery">
+        <div class="main-image">
+          <img id="mainImg" class="fade-up" src={globalUrl + mainImage} alt={`Imagen principal del proyecto ${project.name}`} />
+        </div>
+
+        <div class="thumbnail-gallery">
+          {otherImages.map((imgSrc: string, idx: number) => (
+            <img
+              src={globalUrl + imgSrc}
+              alt={`Imagen del proyecto ${project.name} ${idx + 1}`}
+              class={idx === 0 ? "thumb" + " fade-left-thumb" : "thumb" + " fade-left-thumb"}
+            />
+            ))}
+          </div>
+        </div>
+      );
+    })()
+    : (
+     
+        <div class="thumbnail-gallery">
+          <ImagePopup
+            thumbnailSrc={globalUrl + key.value}
+            fullSrc={globalUrl + key.value}
+            alt={`Imagen del proyecto ${project.name}`}
+            class="thumb active"
+          />
+        </div>
+          )
+        )}
+
           {key.type === "list" && (
             <ul class="fade-up">
               {key.value.map((li, idx) => (
@@ -442,4 +472,69 @@ span.icon svg{
 .mermaid line, .mermaid path, .mermaid polygon,.mermaid circle, .mermaid ellipse{
   pointer-events: none;
 }
+
+
+
+.thumbnail-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.thumbnail-gallery img.thumb {
+  width: 70px!important;
+  height: 70px!important;
+  object-fit: cover;
+  margin: 0!important;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  opacity: 0;
+}
+
+
+.thumb:hover {
+  transform: scale(1.05);
+  opacity: 1!important;
+}
+
+img.thumb.visible.active {
+  transition-delay: ;
+  border-color: #005baf70;
+  transition-delay: .4s;
+  opacity: 1!important;
+}
+
+
+
+
+
+
+#Description .main-image img#mainImg {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0 0 5px 0;
+  transition: 0.3s ease-in-out;
+}
 </style>
+
+<script type="module" is:inline>
+  const mainImg = document.getElementById('mainImg');
+  const thumbs = document.querySelectorAll('.thumb');
+
+  thumbs.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      mainImg.src = thumb.src;
+
+      // Quitar clase activa a todas
+      thumbs.forEach(t => t.classList.remove('active'));
+
+      // Activar la miniatura seleccionada
+      
+      thumb.classList.add('active');
+    });
+  });
+</script>

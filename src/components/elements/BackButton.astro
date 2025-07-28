@@ -2,9 +2,22 @@
 import {globalUrl} from '../../utils/urls.js';
 ---
 
-<button onclick="history.back(); return false;" class="BackButton">
+<button onclick="projectsBack(); return false;" class="BackButton">
   <a href="/"> <img src={`${globalUrl}img/icons/back.png`} alt="Back" /> Back</a>
 </button>
+
+<script is:inline>
+  function projectsBack() {
+    const path = window.location.pathname;
+
+    if (path.includes('/projects/') && path.split('/').length === 3) {
+      window.location.href = '/projects';
+    } else {
+      window.location.href = '/';
+    }
+  }
+</script>
+
 
 <style>
   .BackButton {

@@ -1,0 +1,499 @@
+{
+  "projects": [
+    {
+      "key": "hotel-el-descanso",
+      "name": "Hotel el descanso",
+      "date": "2024",
+      "tagline": "Hotel Management System",
+      "image": "img/projects/project-1.avif",
+      "summary": "A comprehensive portal for managing guests and rooms in a hotel complex, with advanced role functionalities for different types of users, allowing efficient and personalized administration.",
+      "tecnologies": [
+        "php",
+        "html",
+        "css",
+        "xampp",
+        "postgresql",
+        "figma"
+      ],
+      "description": [
+        {
+          "type": "text",
+          "value": "The Hotel Management System (HMS) is a solution designed for the efficient management of reservations, occupancy, and services at El Descanso hotel. It implements an optimized database, ensuring integrity and normalization up to 3NF."
+        },
+        {
+          "type": "img",
+          "value": "img/projects/project-1.avif"
+        },
+        {
+          "type": "text",
+          "value": "Main Features",
+          "icon": "nutIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "Registration and management of rooms, clients, and reservations.",
+            "Management of additional services (restaurant, bar, laundry, etc.).",
+            "User profiles with different access levels (manager, receptionist, cashier, administrator).",
+            "Generation of invoices and statistics on occupancy and cancellations."
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Technologies Used:",
+          "icon": "codeIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "Data modeling: Entity-Relationship Diagram (Chen).",
+            "Relational databases: Implementation with functional dependencies and normalization.",
+            "Tools: Draw.io for modeling, SQL for data management."
+          ]
+        },
+        {
+          "type": "demo",
+          "value": "<iframe src=\"https://www.youtube.com/embed/cboQx_XTsTA\" allow=\"autoplay\"onload=\"resizeIframe(this);\"></iframe>"
+        }
+      ],
+      "links": {
+        "github": "https://github.com/AndersonGomezGarcia/Hotel-el-descanso"
+      }
+    },
+    {
+      "key": "casa-hotel-mateguadua",
+      "name": "Casa Hotel Mateguadua Website",
+      "date": "2023",
+      "tagline": "Website for Casa Hotel Mateguadua",
+      "image": "img/projects/project-2.avif",
+      "summary": "Website for a hotel in Apartadó, Antioquia. Includes information about rooms, location, contact, and an image carousel. Uses Bootstrap for design and has WhatsApp integration for reservations.",
+      "tecnologies": [
+        "html",
+        "css",
+        "bootstrap",
+        "figma"
+      ],
+      "description": [
+        {
+          "type": "text",
+          "value": "The website for Casa Hotel Mateguadua is a platform designed to provide complete information about the hotel, including details about rooms, services, and booking options."
+        },
+        {
+          "type": "img",
+          "value": "img/projects/project-2.avif"
+        },
+        {
+          "type": "text",
+          "value": "Main Features",
+          "icon": "nutIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "Responsive design using Bootstrap.",
+            "WhatsApp integration for quick reservations.",
+            "Image gallery of the hotel and its facilities.",
+            "FAQ and contact section."
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Technologies Used:",
+          "icon": "codeIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "HTML, CSS, and JavaScript for front-end development.",
+            "Bootstrap for responsive design.",
+            "Firebase for managing reservations and data."
+          ]
+        }
+      ],
+      "links": {
+        "url": "https://casahotelmateguadua.web.app/"
+      }
+    },
+    {
+      "key": "Reproductor-de-Musica",
+      "name": "Music Player",
+      "date": "2022",
+      "tagline": "Concept with an intuitive interface",
+      "image": "img/projects/project-3.avif",
+      "summary": "Concept website for discovering copyright-free music. Allows listening to tracks, learning about authors, and exploring genres.",
+      "tecnologies": [
+        "html",
+        "css",
+        "bootstrap",
+        "figma"
+      ],
+      "description": [
+        {
+          "type": "text",
+          "value": "The Music Player is a website concept designed to facilitate the discovery of copyright-free music, offering an intuitive and attractive experience for users."
+        },
+        {
+          "type": "img",
+          "value": "img/projects/project-3.avif"
+        },
+        {
+          "type": "text",
+          "value": "Main Features",
+          "icon": "nutIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "Intuitive interface to explore music by genres.",
+            "Detailed information about authors and their works.",
+            "Integrated player to listen to tracks directly on the site."
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Technologies Used:",
+          "icon": "codeIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "HTML, CSS, and JavaScript for front-end development.",
+            "Modern frameworks for a smooth user experience.",
+            "Music API to access a wide catalog of tracks."
+          ]
+        }
+      ],
+      "links": {
+        "url": "https://anderc0de.github.io/Pagina-de-musica/",
+        "github": "https://github.com/AnderC0de/Pagina-de-musica"
+      }
+    },
+    {
+      "key": "clinica-rie",
+      "name": "RIE Clinic",
+      "date": "2024",
+      "tagline": "Website",
+      "image": "img/projects/project-4.avif",
+      "summary": "Website for a dental clinic. Offers services such as implantology, orthodontics, high aesthetics, and pediatric dentistry. Highlights Dr. Alex Camacho's experience and patient testimonials.",
+      "tecnologies": [
+        "html",
+        "css",
+        "bootstrap",
+        "figma"
+      ],
+      "description": [
+        {
+          "type": "text",
+          "value": "RIE Clinic is a website designed to provide information about the dental services offered, highlighting Dr. Alex Camacho's experience and testimonials from satisfied patients."
+        },
+        {
+          "type": "img",
+          "value": "img/projects/project-4.avif"
+        },
+        {
+          "type": "text",
+          "value": "Main Features",
+          "icon": "nutIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "Detailed information about services such as implantology, orthodontics, and pediatric dentistry.",
+            "Patient testimonials to build trust.",
+            "Contact form for inquiries and appointments."
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Technologies Used:",
+          "icon": "codeIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "HTML, CSS, and JavaScript for front-end development.",
+            "Modern frameworks for a smooth user experience.",
+            "SEO tools integration to improve search engine visibility."
+          ]
+        }
+      ],
+      "links": {
+        "url": "https://clinicarie-15673.web.app/"
+      }
+    },
+    {
+      "key": "pool-care",
+      "name": "Pool Care",
+      "date": "2024",
+      "tagline": "Application for pool maintenance",
+      "image": "img/projects/project-5.avif",
+      "summary": "Mobile app to keep pools in optimal condition. With maintenance guides, reminders, and tools to calculate the necessary amounts of chemicals, ensuring efficient and effective care.",
+      "tecnologies": [
+        "react",
+        "css",
+        "figma"
+      ],
+      "description": [
+        {
+          "type": "text",
+          "value": "Pool Care is a mobile application designed to help pool owners keep their facilities in optimal condition, providing maintenance guides, reminders, and useful tools."
+        },
+        {
+          "type": "img",
+          "value": "img/projects/project-5.avif"
+        },
+        {
+          "type": "text",
+          "value": "Main Features",
+          "icon": "nutIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "Detailed pool maintenance guides.",
+            "Reminders for cleaning and water treatment.",
+            "Calculators to determine the necessary amounts of chemicals."
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Technologies Used:",
+          "icon": "codeIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "HTML, CSS, and JavaScript for front-end development.",
+            "Mobile frameworks for a smooth user experience.",
+            "Health API to access information about chemicals."
+          ]
+        }
+      ],
+      "links": {}
+    },
+    {
+      "key": "mascota-feliz",
+      "name": "Happy Pet",
+      "date": "2020",
+      "tagline": "Pet care application",
+      "image": "img/projects/project-6.avif",
+      "summary": "Veterinary application, created with C# .NET, that allows pet owners to manage appointments, health tracking, and useful tips for caring for their pets.",
+      "tecnologies": [
+        "html",
+        "css",
+        "dotnet"
+      ],
+      "description": [
+        {
+          "type": "text",
+          "value": "Happy Pet is an application designed to help pet owners care for their pets, providing appointment reminders, health tracking, and useful tips."
+        },
+        {
+          "type": "img",
+          "value": "img/projects/project-6.avif"
+        },
+        {
+          "type": "text",
+          "value": "Main Features",
+          "icon": "nutIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "Veterinary appointment reminders.",
+            "Tracking of pet health and well-being.",
+            "Personalized tips for pet care."
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Technologies Used:",
+          "icon": "codeIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "HTML, CSS, and JavaScript for front-end development.",
+            "Modern frameworks for a smooth user experience.",
+            "Health API to access veterinary information."
+          ]
+        },
+        {
+          "type": "demo",
+          "value": "<iframe src=\"https://www.youtube.com/embed/HEQnqpjiKP4\" allow=\"autoplay\"onload=\"resizeIframe(this);\"></iframe>"
+        }
+      ],
+      "links": {}
+    },
+    {
+      "key": "digitcol",
+      "name": "DigitCol",
+      "date": "2024",
+      "tagline": "Software development company",
+      "image": "img/projects/project-7.avif",
+      "summary": "Software development company concept, focused on good semantics and programming with best practices, facilitating SEO and accessibility.",
+      "tecnologies": [
+        "php",
+        "html",
+        "figma"
+      ],
+      "description": [
+        {
+          "type": "text",
+          "value": "DigitCol is a software development company concept, focused on creating web and mobile applications with a strong emphasis on semantics, best programming practices, and SEO optimization."
+        },
+        {
+          "type": "img",
+          "value": "img/projects/project-7.avif"
+        },
+        {
+          "type": "text",
+          "value": "Main Features",
+          "icon": "nutIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "Development of web and mobile applications.",
+            "Focus on semantics and best programming practices.",
+            "SEO and accessibility optimization."
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Technologies Used:",
+          "icon": "codeIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "HTML, CSS, and JavaScript for front-end development.",
+            "Modern frameworks for a smooth user experience.",
+            "SEO tools to improve search engine visibility."
+          ]
+        }
+      ],
+      "links": {
+        "github": "https://github.com/AndersonGomezGarcia/commerce-app"
+      }
+    },
+    {
+      "key": "anderweb",
+      "name": "AnderWeb",
+      "date": "2025",
+      "tagline": "Web development company concept",
+      "image": "img/projects/project-8.avif",
+      "summary": "Software development company concept, focused on good semantics and programming with best practices, facilitating SEO and accessibility.",
+      "tecnologies": [
+        "html",
+        "css",
+        "figma"
+      ],
+      "description": [
+        {
+          "type": "text",
+          "value": "AnderWeb is a web development company concept, focused on creating websites and applications with a strong emphasis on semantics, best programming practices, and SEO optimization."
+        },
+        {
+          "type": "img",
+          "value": "img/projects/project-8.avif"
+        },
+        {
+          "type": "text",
+          "value": "Main Features",
+          "icon": "nutIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "Development of websites and web applications.",
+            "Focus on semantics and best programming practices.",
+            "SEO and accessibility optimization."
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Technologies Used:",
+          "icon": "codeIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "HTML, CSS, and JavaScript for front-end development.",
+            "Modern frameworks for a smooth user experience.",
+            "SEO tools to improve search engine visibility."
+          ]
+        }
+      ],
+      "links": {
+        "url": "https://andersongomezgarcia.github.io/WebCode/",
+        "github": "https://github.com/AndersonGomezGarcia/WebCode"
+      }
+    },
+    {
+      "key": "WeekArtApp",
+      "name": "WeekArt",
+      "date": "2025",
+      "tagline": "Social network for photographers and visual creators",
+      "image": "img/projects/WeekArt.avif",
+      "summary": "Web application similar to a social network for photographers, allowing user authentication, uploading posts with images, managing sessions, and navigating between different pages using React Router and Context API.",
+      "tecnologies": [
+        "react",
+        "javascript",
+        "html",
+        "css",
+        "postgresql",
+        "tailwind"
+      ],
+      "description": [
+        {
+          "type": "text",
+          "value": "WeekArt is a web application similar to a social network aimed at photographers and visual creators. Users can register, log in, upload their photos, navigate between pages, and view post details."
+        },
+        {
+          "type": "img",
+          "value": "img/projects/WeekArt.avif"
+        },
+        {
+          "type": "text",
+          "value": "Main Features",
+          "icon": "nutIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "Persistent authentication system with Context API and localStorage.",
+            "Navigation between pages with React Router (Home, Profile, Upload, Categories, PostDetail, SearchResults).",
+            "Modals for login and signup activated from the navigation bar.",
+            "Clear componentization and best practices in React."
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Technologies Used:",
+          "icon": "codeIcon"
+        },
+        {
+          "type": "list",
+          "value": [
+            "React and Hooks for front-end logic.",
+            "React Router for page navigation.",
+            "Context API to manage authentication globally.",
+            "CSS and semantic HTML for an accessible and responsive experience."
+          ]
+        },
+        {
+          "type": "diagram",
+          "value": "graph TD; usuario([👤 <b>User</b>]); subgraph cliente [<div style='width:22em; height:2em; display:flex; align-items:center;'><b>📦 Client</b></div>]; navegador([🌐 Browser]); appReact([⚛️ React App]); navegador --> appReact; end; subgraph servidor [<div style='width:28em; height:2em; display:flex; align-items:center;'><b>🖥️ Server</b></div>]; api([🟢 Node.js API]); db([🐘 PostgreSQL DB]); drive([📂 Google Drive API]); api --> db; api --> drive; end; usuario --> navegador; appReact --> api;"
+        },
+        {
+          "type": "demo",
+          "value": "<iframe width=\"1920\" height=\"778\" src=\"https://www.youtube.com/embed/jYSdHa9-ojk\" title=\"Weekart explicación codigo\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+        }
+      ],
+      "links": {
+        "github": "https://github.com/AndersonGomezGarcia/weekart_backend"
+      }
+    }
+  ]
+}

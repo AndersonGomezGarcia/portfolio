@@ -60,6 +60,20 @@ canvas{
     }
 }
 
+@keyframes fadeLeft50{
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+        pointer-events: none;
+    }
+
+    to {
+        opacity: .5;
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+}
+
 .fade-up {
     opacity: 0;
     transition: opacity 0.6s;
@@ -71,7 +85,7 @@ canvas{
 }
 
 
-.fade-left {
+.fade-left, .fade-left-thumb {
     opacity: 0;
     transition: opacity 0.6s;
 }
@@ -80,6 +94,12 @@ canvas{
     animation: fadeLeft 0.7s forwards;
     animation-delay: 4s;
 }
+
+.fade-left-thumb.visible {
+    animation: fadeLeft50 0.7s forwards;
+    animation-delay: 10s;
+}
+
 
 .fade-right {
     opacity: 0;

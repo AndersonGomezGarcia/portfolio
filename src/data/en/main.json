@@ -1,0 +1,71 @@
+{
+  "menu": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Soft Developer / Front End - Back End",
+    "button": "Contact Me",
+    "link": "My Projects"
+  },
+  "about": {
+    "pretitle": "About Me",
+    "title": "Who am I?",
+    "button": "Download my CV",
+    "description1": "I have a strong affinity for technological development, exploring both design and backend, as well as databases. My education includes studies at SENA and Univalle.",
+    "description2": "I’m a developer focused on specific tasks, I listen to others’ opinions first before proposing mine, and I prefer clear conditions and avoiding ambiguities when working."
+  },
+  "Skills": {
+    "pretitle": "Skills",
+    "title": "Technologies and Tools",
+    "tecnologies": "Technologies",
+    "frameworks": "Frameworks",
+    "tools": "Tools"
+  },
+  "projects": {
+    "pretitle": "My",
+    "title": "Projects"
+  },
+  "experience": {
+    "pretitle": "My",
+    "title": "Experience",
+    "experiences": [
+      {
+        "title": "Webcloster",
+        "datetime": "Current (2025)",
+        "description": [
+          "Optimized web performance by implementing strategic lazy loading and cache control, achieving tangible improvements in metrics such as LCP and CLS.",
+          "Resolved SVG compatibility issues with professional software (CorelDRAW) by developing an export system with relative paths and automated ZIP packaging.",
+          "Developed modular interfaces in Angular with protected route systems using guards, implementing a dynamic and configurable template loader, decoupled logic, and a scalable structure for persistent configuration management via JSON and image file loading/saving.",
+          "Implemented a decoupled backend using Slim PHP and Mustache, with a secure JWT-based authentication system, structuring efficient endpoints with clean views and simple integration."
+        ]
+      },
+      {
+        "title": "Freelance Work",
+        "datetime": "6 months (2024)",
+        "description": [
+          "Development and deployment of web applications using technologies such as HTML, CSS, JavaScript, PHP, Laravel, React, .NET, SQL, among others.",
+          "Technical management of web environments, including domain setup, DNS configuration, Firebase integration (deploy), and performance monitoring.",
+          "Application of development methodologies, covering requirements gathering, technical planning, task distribution, and compliance with design standards and best practices."
+        ]
+      },
+      {
+        "title": "Empresa GAB S.A.S",
+        "datetime": "3 and a half months (2023)",
+        "description": "In charge of Access Control for personnel and vehicles."
+      }
+    ]
+  },
+  "contact": {
+    "pretitle": "Get in",
+    "title": "Touch",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "button": "Send"
+    }
+  }
+}
