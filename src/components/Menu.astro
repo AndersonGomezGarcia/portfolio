@@ -6,14 +6,24 @@
         <div id="hamburger" class="hamburger" onclick="toggleMenu()">☰ Menu</div>
         <nav class="menu" id="nav-menu">
             <img src="img/icon.png" alt="programador">
-            <li> <a href="#About" onclick="toggleMenu()" aria-label="view about me">About</a></li>
-            <li> <a href="#Skills" onclick="toggleMenu()" aria-label="view my skills">Skills</a></li>
-            <li> <a href="#Projects" onclick="toggleMenu()" aria-label="View my projects">Projects</a></li>
-            <li> <a href="#Contact" onclick="toggleMenu()" aria-label="Contact">Contact</a></li>
+            <li> <a class="scroll-link" href="#About" onclick="toggleMenu()" aria-label="view about me">About</a></li>
+            <li> <a class="scroll-link" href="#Projects" onclick="toggleMenu()" aria-label="View my projects">Projects</a></li>
+            <li> <a class="scroll-link" href="#Experience" onclick="toggleMenu()" aria-label="View my projects">Experience</a></li>
+            <li> <a class="scroll-link" href="#Contact" onclick="toggleMenu()" aria-label="Contact">Contact</a></li>
             <div id="translate" onclick="changeLanguage()"></div>
         </nav>
     </div>
 <script client:load>
+    document.querySelectorAll('.scroll-link').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
+});
+
      function toggleMenu() {
             if (window.innerWidth <= 768) { // Verifica si el ancho de la pantalla es menor o igual a 768px
 
@@ -42,10 +52,9 @@
     color: white;
     padding: 2px 70px;
     text-align: center;
-    border-radius: 0 0 80px 80px;
-    border-radius: 20px;
-    height: 60px;
-    margin: 20px auto 0 auto;
+    border-radius: var(--containerBR);
+    height: 55px;
+    margin: 8px auto 0 auto;
     top: 0;
     max-width: 1100px;
     width: calc(100% - 140px);
@@ -55,17 +64,8 @@
     border: solid 1px #ffffff0e;
     backdrop-filter: blur(9px);
     z-index: 1000;
-
     left: calc(50% - 620px);
     background-color: rgba(46, 47, 56, 0.85);
-    background-color: #2f313a9d;
-    background-color: #3638419d;
-    /*background-color: #1d2024bb;
-    /*;
-    background-color: rgba(19, 19, 19, 0.57);
-    background-color: rgba(19, 19, 19, 0.45);
-    background: #0000003d;*/
-    background-color: #191b1dd5;
     background-color: #262a2eb6
 
 }
@@ -111,7 +111,6 @@ nav li {
     list-style: none;
     margin: 0 20px; /* Reduce el margen para pantallas más pequeñas */
     position: relative;
-    border-radius: 25px;
     padding: 10px;
     transition: .4s;
 }
@@ -161,10 +160,10 @@ nav li a {
     color: #03BCE4;
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 17px;
     font-family: 'Roboto';
     font-weight: 400;
-    padding: 10px 20px; /* Reduce el padding para pantallas más pequeñas */
+    padding: 8px 20px; /* Reduce el padding para pantallas más pequeñas */
 }
 
 nav li:hover a {

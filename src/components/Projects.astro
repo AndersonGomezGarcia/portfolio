@@ -60,7 +60,7 @@ selectedProjects.reverse(); // Reverse the order of projects for display
 const baseUrl = nested === "true" ? "../" : "";
 ---
 
-<div id="Projects" class="fade-up">
+<div id="Projects" class="fade-up section">
   <Title title={data.projects.title} beforeTitle={data.projects.pretitle} />
   <div class="Separator"></div>
   <div id="Projects-Items">
@@ -135,13 +135,17 @@ const baseUrl = nested === "true" ? "../" : "";
 </div>
 
 <style>
+
+  div#Projects:target {
+    scroll-margin-top: 120px!important;
+  }
   #Projects-Items {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
     margin: 0;
-    padding: 50px 10px;
+    padding: 10px 10px 50px;
     color: white;
     gap: 55px 7%;
   }
@@ -156,9 +160,8 @@ const baseUrl = nested === "true" ? "../" : "";
     overflow: hidden;
     padding: 0;
     background: #2e2f35; /* Gradiente lineal en diagonal */
-    /* Only one background property should be used */
     background-color: var(--containerBg);
-    border-radius: 15px;
+    border-radius: var(--containerBR);
     color: white;
     flex-direction: column;
     box-shadow:
@@ -170,6 +173,7 @@ const baseUrl = nested === "true" ? "../" : "";
       background-color 0.2s;
     border: solid 1px #ffffff1f;
   }
+
 
   .Project:hover {
     transform: translateY(-12px);
@@ -282,16 +286,7 @@ const baseUrl = nested === "true" ? "../" : "";
     list-style-type: none;
   }
 
-  /* temporal */
-  /*
-  .Project .Skills li {
-    background-color:#0f579238 ;
-    padding: 4px 10px;
-    color: #0099ff;
-    border: solid 1px #3f678b3a;
-    border-radius: 10px;
-  }
-    */
+
 
   .Project .Skills li img,
   .Project .Links img {
@@ -513,4 +508,6 @@ const baseUrl = nested === "true" ? "../" : "";
       font-size: 18px;
     }
   }
+
+
 </style>

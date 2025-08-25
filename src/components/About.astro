@@ -4,7 +4,7 @@ import data from "../data/main.json";
 import cv from "../../../public/HOJAVIDA.pdf"; // Importa el archivo PDF de tu CV
 ---
 
-<div id="About" class="fade-up">
+<div id="About" class="fade-up section">
   <Title title={data.about.title} beforeTitle={data.about.pretitle} />
   <div id="About-Info">
     <p>
@@ -124,10 +124,10 @@ import cv from "../../../public/HOJAVIDA.pdf"; // Importa el archivo PDF de tu C
   #Skills,
   #Contact,
   #Projects {
-    padding: 50px 0 50px 0;
+    margin: 50px 0 50px 0;
   }
   #About {
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -137,8 +137,8 @@ import cv from "../../../public/HOJAVIDA.pdf"; // Importa el archivo PDF de tu C
   }
   #About-Info {
     border: solid 1.5px #ffffff1f;
-    border-radius: 22px;
-    margin: 45px auto 0 auto;
+    border-radius: var(--containerBR);
+    margin: 25px auto 0 auto;
     padding: 30px 35px;
     display: flex;
     flex-direction: row;

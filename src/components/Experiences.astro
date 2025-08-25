@@ -9,7 +9,7 @@ const getFullText = (description: string | string[]) =>
   Array.isArray(description) ? description.join('\n\n') : description;
 ---
 
-<div id="Experience " class="fade-up">
+<div id="Experience" class="fade-up section">
         <Title title={data.experience.title} beforeTitle={data.experience.pretitle} />
         <div class="Separator"></div>
         <div id="Experience-Items">
@@ -80,9 +80,7 @@ const getFullText = (description: string | string[]) =>
    
     margin: 25px 0 0 0;
     flex-direction: column;
-    /*background-color: var(--containerBg);
-    border-radius: 15px;
-    border: solid 1px #ffffff1f;*/
+
 }
 
 .Experience{
@@ -96,12 +94,11 @@ const getFullText = (description: string | string[]) =>
     cursor: pointer;
     transition: .4s;
     border: solid 1px transparent ;
-    border-radius: 12px ;
     background-color: var(--containerBg);
-    border-radius: 15px;
+    border-radius: 20px;
         border: solid 1px #ffffff1f;
 
-*/
+
 }
 .Experience:hover{
     background-color: rgba(255,255,255,0.045);

@@ -24,7 +24,7 @@
     <em
       >Codeando con pasión
       <span class="heart" style="color: #ff4d6d;">❤️</span>, con cafecito
-      <span class="coffee">☕</span><span class="steam">💨</span>
+      <span class="coffee-steam"><span class="steam">💨</span><span class="coffee">☕</span></span>
       y un poco de insomnio <span class="sleeping">😵‍💫</span>
     </em>
 
@@ -67,7 +67,7 @@
   }
   .heart {
     display: inline-block;
-    animation: beat .9s infinite;
+    animation: beat 0.9s infinite;
     transform-origin: center;
     margin-left: -5px;
     font-style: normal;
@@ -79,21 +79,26 @@
   }
 
   .coffee {
+    display: block;
     font-size: 20px;
     margin-left: -5px;
     font-style: normal;
   }
   .steam {
-    display: inline-block;
+    display: block;
     animation: floatUp 2s infinite ease-in-out;
     font-size: 14px;
     opacity: 0.6;
-    left: -25px;
-
+    left: calc(-50% + 6px);
     rotate: -90deg;
-    margin-right: -20px;
+    transform: translate(-50%);
     position: relative;
-    top: -15px;
+    top: 0px;
+  }
+
+  .coffee-steam{
+    display: inline-block;
+    align-items: center;
   }
 
   @keyframes floatUp {
@@ -110,25 +115,47 @@
       opacity: 0;
     }
   }
-   .sleeping {
-  display: inline-block;
-  animation: tambaleo 2s infinite ease-in-out;
-  transform-origin: center bottom;
-}
+  .sleeping {
+    display: inline-block;
+    animation: tambaleo 2s infinite ease-in-out;
+    transform-origin: center bottom;
+  }
 
-@keyframes tambaleo {
-  0%   { transform: rotate(0deg) translate(0, 0); }
-  10%  { transform: rotate(-5deg) translate(-1px, -1px); }
-  20%  { transform: rotate(4deg) translate(0.5px, 0.5px); }
-  30%  { transform: rotate(-6deg) translate(-1.5px, -1px); }
-  40%  { transform: rotate(5deg) translate(1px, 1px); }
-  50%  { transform: rotate(-3deg) translate(-0.5px, -0.5px); }
-  60%  { transform: rotate(4deg) translate(0.5px, 0.5px); }
-  70%  { transform: rotate(-4deg) translate(-1px, -0.5px); }
-  80%  { transform: rotate(3deg) translate(0.5px, -0.5px); }
-  90%  { transform: rotate(-2deg) translate(0, 0); }
-  100% { transform: rotate(0deg) translate(0, 0); }
-}
+  @keyframes tambaleo {
+    0% {
+      transform: rotate(0deg) translate(0, 0);
+    }
+    10% {
+      transform: rotate(-5deg) translate(-1px, -1px);
+    }
+    20% {
+      transform: rotate(4deg) translate(0.5px, 0.5px);
+    }
+    30% {
+      transform: rotate(-6deg) translate(-1.5px, -1px);
+    }
+    40% {
+      transform: rotate(5deg) translate(1px, 1px);
+    }
+    50% {
+      transform: rotate(-3deg) translate(-0.5px, -0.5px);
+    }
+    60% {
+      transform: rotate(4deg) translate(0.5px, 0.5px);
+    }
+    70% {
+      transform: rotate(-4deg) translate(-1px, -0.5px);
+    }
+    80% {
+      transform: rotate(3deg) translate(0.5px, -0.5px);
+    }
+    90% {
+      transform: rotate(-2deg) translate(0, 0);
+    }
+    100% {
+      transform: rotate(0deg) translate(0, 0);
+    }
+  }
 
   footer div {
     display: flex;

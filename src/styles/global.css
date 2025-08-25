@@ -4,7 +4,8 @@
     --colorRandom: #1d2024;
     --containerBg: #373a469d;
     --containerBg: #4b4d585d;
-        --containerBg: #42474e3f;
+    --containerBg: #42474e3f;
+    --containerBR: 20px;
 }
 
 astro-particles{
@@ -12,6 +13,9 @@ astro-particles{
     height: 0;
 }
 
+.section{
+    scroll-margin-top: 60px!important;
+}
 canvas{
     position: absolute;
     height: 0;

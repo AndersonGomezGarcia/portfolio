@@ -23,5 +23,5 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-
+astro.config.mjs
 astro.config.mjs# ignore astro build output
