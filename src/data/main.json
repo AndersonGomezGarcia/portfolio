@@ -1,9 +1,10 @@
 {
     "menu": {
-        "home": "Home",
-        "about": "About",
-        "projects": "Projects",
-        "contact": "Contact"
+        "home": "Inicio",
+        "about": "Sobre mi",
+        "projects": "Proyectos",
+        "experience": "Experiencia",
+        "contact": "Contacto"
     },
     "hero": {
         "title": "Desarrollador Soft / Front End - Back End",
@@ -26,7 +27,9 @@
     },
     "projects": {
         "pretitle": "Mis",
-        "title": "Proyectos"
+        "title": "Proyectos",
+        "moreProjects": "Ver más proyectos",
+        "moreDetails": "Ver más detalles"
     },
     "experience": {
         "pretitle": "Mi",
@@ -67,5 +70,10 @@
             "message": "Mensaje",
             "button": "Enviar"
         }
+    },
+    "footer": {
+        "one": "Codeando con pasión",
+        "two": ", con cafecito",
+        "three": " y un poco de insomnio"
     }
 }

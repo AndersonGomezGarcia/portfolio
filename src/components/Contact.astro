@@ -2,32 +2,51 @@
 import Title from "../components/elements/Title.astro";
 
 import { Phone, Mail, MapPin } from "@lucide/astro";
+
+import def_data from "../data/main.json";
+import en_data from "../data/en/main.json";
+import es_data from "../data/es/main.json";
+
+
+const { lan } = Astro.props;
+
+let data;
+if (lan) {
+  if (lan === "en") {
+    data = en_data;
+  } else {
+    data = es_data;
+  }
+
+}else{
+  data = def_data;
+}
 ---
 
 <div id="Contact" class="fade-up section">
-  <Title title="Contacto" beforeTitle="Hazme" />
+  <Title title={data.contact.title} beforeTitle={data.contact.pretitle} />
   <div class="Separator"></div>
   <div id="Contact-Items">
     <div id="Contact-Info" class="fade-right">
-      <img class="Contact-IMG" src="img/icons/contact.png" alt="" />
-      <h2>Anderson Gomez Garcia <img src="img/icons/colombia.svg" alt="" /></h2>
+      <img class="Contact-IMG" src="/img/icons/contact.png" alt="" />
+      <h2>Anderson Gomez Garcia <img src="/img/icons/colombia.svg" alt="" /></h2>
       <p class="copyable" style="display: flex;">
         <Mail size="24" style="margin-right: 10px; display:block" />
         <span>
           andersongomezgarcia111<wbr />@gmail.com
-          <img class="Copy" src="img/copy.png" alt="copy icon" />
+          <img class="Copy" src="/img/copy.png" alt="copy icon" />
         </span>
       </p>
       <p class="copyable">
         <Phone />
 
-        +57 3185836788 <img class="Copy" src="img/copy.png" alt="copy icon" />
+        +57 3185836788 <img class="Copy" src="/img/copy.png" alt="copy icon" />
       </p>
       <p class="copyable">
         <MapPin />
         Tulúa, Valle del Cauca, Colombia <img
           class="Copy"
-          src="img/copy.png"
+          src="/img/copy.png"
           alt="copy icon"
         />
       </p>
@@ -38,14 +57,14 @@ import { Phone, Mail, MapPin } from "@lucide/astro";
           class="fade-item"
           type="text"
           id="name"
-          placeholder="Nombre"
+          placeholder={data.contact.form.name}
           required
         />
         <input
           class="fade-item"
           type="email"
           id="email"
-          placeholder="Correo"
+          placeholder={data.contact.form.email}
           required
         />
         <textarea
@@ -54,9 +73,9 @@ import { Phone, Mail, MapPin } from "@lucide/astro";
           id="message"
           cols="30"
           rows="10"
-          placeholder="Mensaje"
+          placeholder={data.contact.form.message}
           required></textarea>
-        <button class="fade-item" type="submit">Enviar</button>
+        <button class="fade-item" type="submit">{data.contact.form.button}</button>
       </form>
     </div>
   </div>

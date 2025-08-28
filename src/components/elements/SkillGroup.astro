@@ -10,7 +10,7 @@ const { Group, items, tags } = Astro.props;
         {
           items.map((item: keyof typeof items) => (
             <li data-label={tags[items.indexOf(item)]}>
-              <img src={item} alt={item} />
+              <img src={"/" + item} alt={item} />
               <span>{tags[items.indexOf(item)]}</span>
             </li>
           ))

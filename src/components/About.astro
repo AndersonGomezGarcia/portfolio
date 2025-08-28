@@ -1,7 +1,24 @@
 ---
 import Title from "../components/elements/Title.astro";
-import data from "../data/main.json";
 import cv from "../../../public/HOJAVIDA.pdf"; // Importa el archivo PDF de tu CV
+import def_data from "../data/main.json";
+import en_data from "../data/en/main.json";
+import es_data from "../data/es/main.json";
+
+
+const { lan } = Astro.props;
+
+let data;
+if (lan) {
+  if (lan === "en") {
+    data = en_data;
+  } else {
+    data = es_data;
+  }
+
+}else{
+  data = def_data;
+}
 ---
 
 <div id="About" class="fade-up section">
@@ -17,10 +34,10 @@ import cv from "../../../public/HOJAVIDA.pdf"; // Importa el archivo PDF de tu C
     <a href="AndersonGomezGarciaCV.pdf" download="AndersonGomezGarciaCV.pdf"
       ><button id="CV">
         <span>
-        {data.about.button}
+          {data.about.button}
         </span>
-      </button></a>
-    
+      </button></a
+    >
   </div>
 </div>
 
@@ -45,7 +62,7 @@ import cv from "../../../public/HOJAVIDA.pdf"; // Importa el archivo PDF de tu C
   }
 
   button#CV span {
-    background: linear-gradient(90deg,#03bce4  0%, #00f0ff 100%);
+    background: linear-gradient(90deg, #03bce4 0%, #00f0ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -53,7 +70,7 @@ import cv from "../../../public/HOJAVIDA.pdf"; // Importa el archivo PDF de tu C
   }
 
   @keyframes hoverAnimation {
-    0% {
+    ljhl 0% {
       top: -46px;
       height: 45px;
     }
@@ -95,14 +112,14 @@ import cv from "../../../public/HOJAVIDA.pdf"; // Importa el archivo PDF de tu C
     animation: none;
   }
 
-  button#CV::before{
+  button#CV::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to right,#0481d4, #00a5ce);
+    background: linear-gradient(to right, #0481d4, #00a5ce);
     z-index: -1;
     border-radius: 45px 45px 0 0;
     transition: 0.4s;
@@ -192,33 +209,31 @@ import cv from "../../../public/HOJAVIDA.pdf"; // Importa el archivo PDF de tu C
     #About-Info {
       flex-direction: column;
       width: calc(100% - 110px);
-      margin: 55px 0 0 0 ;
+      margin: 55px 0 0 0;
     }
     #About-Info .Separator {
       height: 0;
       width: 100%;
       margin: 20px 0;
     }
-    button#CV{
-        background-color: #0000003d;
-        border: none;
-        padding: 10px 25px 5px 25px;
-        color: #00F0FF;
-        font-weight: 600;
-        border-radius: 45px 45px 0 0;
-        font-family: 'Roboto';
-        font-size: 22px;
-        position: absolute;
-        top: -46px;
-        display: inline-flex;
-        right: 50%;
-        white-space: nowrap; /* Evita que el texto dentro del botón salte de línea */
-        height: 45px;
-        transition: .4s;
-        transform: translate(50%, 0);
-        z-index: 100;
+    button#CV {
+      background-color: #0000003d;
+      border: none;
+      padding: 10px 25px 5px 25px;
+      color: #00f0ff;
+      font-weight: 600;
+      border-radius: 45px 45px 0 0;
+      font-family: "Roboto";
+      font-size: 22px;
+      position: absolute;
+      top: -46px;
+      display: inline-flex;
+      right: 50%;
+      white-space: nowrap; /* Evita que el texto dentro del botón salte de línea */
+      height: 45px;
+      transition: 0.4s;
+      transform: translate(50%, 0);
+      z-index: 100;
     }
   }
-
-  
 </style>

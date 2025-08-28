@@ -1,316 +1,337 @@
 ---
 import Title from "../components/elements/Title.astro";
-import data from "../data/main.json";
-import {Calendar, ChevronDown, ChevronUp  } from "@lucide/astro";
+import { Calendar, ChevronDown, ChevronUp } from "@lucide/astro";
 
+import def_data from "../data/main.json";
+import en_data from "../data/en/main.json";
+import es_data from "../data/es/main.json";
 
+const { lan } = Astro.props;
+
+let data;
+if (lan) {
+  if (lan === "en") {
+    data = en_data;
+  } else {
+    data = es_data;
+  }
+} else {
+  data = def_data;
+}
 
 const getFullText = (description: string | string[]) =>
-  Array.isArray(description) ? description.join('\n\n') : description;
+  Array.isArray(description) ? description.join("\n\n") : description;
 ---
 
 <div id="Experience" class="fade-up section">
-        <Title title={data.experience.title} beforeTitle={data.experience.pretitle} />
-        <div class="Separator"></div>
-        <div id="Experience-Items">
-            { data.experience.experiences.map( (experience, index) => (
-                <div class="Experience fade-up">
-                    {
-                        getFullText(experience.description).length > 220 ? (
-                            <>
-                                {/* Mostrar chevron down y up si la descripción es larga */}
-                                <ChevronDown size="24" class="chevron-down" />
-                                <ChevronUp size="24" class="chevron-up" />
-                            </>
-                        ) : null
-                    }
-                    <div class="ball"></div>
-                    <h3>{experience.title} <span><Calendar size="18" /> {experience.datetime}</span></h3>
-                    <p class="description" data-full={getFullText(experience.description)}></p>
-                    {/*<div class="Separator" style="width: 90%;"></div>*/}
-                </div>
-            ))}
+  <Title title={data.experience.title} beforeTitle={data.experience.pretitle} />
+  <div class="Separator"></div>
+  <div id="Experience-Items">
+    {
+      data.experience.experiences.map((experience, index) => (
+        <div class="Experience fade-up">
+          {getFullText(experience.description).length > 220 ? (
+            <>
+              {/* Mostrar chevron down y up si la descripción es larga */}
+              <ChevronDown size="24" class="chevron-down" />
+              <ChevronUp size="24" class="chevron-up" />
+            </>
+          ) : null}
+          <div class="ball" />
+          <h3>
+            {experience.title}{" "}
+            <span>
+              <Calendar size="18" /> {experience.datetime}
+            </span>
+          </h3>
+          <p
+            class="description"
+            data-full={getFullText(experience.description)}
+          />
+          {/*<div class="Separator" style="width: 90%;"></div>*/}
         </div>
-<script type="module" >
-  document.querySelectorAll('.Experience').forEach(exp => {
-    const p = exp.querySelector('.description');
-    const fullText = p.dataset.full;
-    const previewLength = 220;
-
-    if (fullText.length <= previewLength) {
-      p.textContent = fullText;
-      return;
+      ))
     }
+  </div>
+  <script type="module">
+    document.querySelectorAll(".Experience").forEach((exp) => {
+      const p = exp.querySelector(".description");
+      const fullText = p.dataset.full;
+      const previewLength = 220;
 
-    const updateText = () => {
-      const expanded = exp.dataset.expanded === "true";
-      const parseText = (txt) => (txt || '').replace(/\n/g, '<br>');
-      p.innerHTML = expanded ? parseText(fullText) : parseText(fullText.slice(0, previewLength) + (fullText.length > previewLength ? '...' : ''));
-    };
+      if (fullText.length <= previewLength) {
+        p.textContent = fullText;
+        return;
+      }
 
-    // Estado inicial
-    updateText();
+      const updateText = () => {
+        const expanded = exp.dataset.expanded === "true";
+        const parseText = (txt) => (txt || "").replace(/\n/g, "<br>");
+        p.innerHTML = expanded
+          ? parseText(fullText)
+          : parseText(
+              fullText.slice(0, previewLength) +
+                (fullText.length > previewLength ? "..." : "")
+            );
+      };
 
-    // Click en todo el bloque
-   exp.addEventListener('click', () => {
-  const current = exp.dataset.expanded === "true";
-  const newState = (!current).toString();
-  exp.dataset.expanded = newState;
+      // Estado inicial
+      updateText();
 
-  const chevron = exp.querySelector('.chevron-down');
-  if (chevron) {
-    chevron.style.transform = newState === "true" ? 'rotate(180deg)' : 'rotate(0deg)';
-  }
-  //  exp.querySelector('.chevron-down').style.display = current ? 'block' : 'none';
+      // Click en todo el bloque
+      exp.addEventListener("click", () => {
+        const current = exp.dataset.expanded === "true";
+        const newState = (!current).toString();
+        exp.dataset.expanded = newState;
+
+        const chevron = exp.querySelector(".chevron-down");
+        if (chevron) {
+          chevron.style.transform =
+            newState === "true" ? "rotate(180deg)" : "rotate(0deg)";
+        }
+        //  exp.querySelector('.chevron-down').style.display = current ? 'block' : 'none';
         //exp.querySelector('.chevron-up').style.display = current ? 'none' : 'block';
 
-  updateText(newState); // o simplemente updateText() si lee del dataset ya actualizado
-});
+        updateText(newState); // o simplemente updateText() si lee del dataset ya actualizado
+      });
+    });
+  </script>
 
-  }); 
-</script>
+  <style>
+    #Experience-Items {
+      gap: 20px 0;
 
-   <style>
-    #Experience-Items{
-    
-    gap: 20px 0;
+      display: flex;
+      justify-self: auto;
 
-    display: flex;
-    justify-self: auto;
-   
-    margin: 25px 0 0 0;
-    flex-direction: column;
-
-}
-
-.Experience{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 35px 0px 45px;
-    gap: 20px;
-    flex-direction: column; 
-    padding: 30px 10px 30px 20px;
-    position: relative;
-    cursor: pointer;
-    transition: .4s;
-    border: solid 1px transparent ;
-    background-color: var(--containerBg);
-    border-radius: 20px;
-        border: solid 1px #ffffff1f;
-
-
-}
-.Experience:hover{
-    background-color: rgba(255,255,255,0.045);
-    transition: .2s;
-    border: solid 1px #ffffff1f ;
-    border: solid 1px #03bce4;
-    background-color: rgba(0, 133, 173, 0.15);
-
-}
-
-.chevron-down, .chevron-up {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: #ffffff;
-    transition: .3s;
-    transform: rotate(0deg);
-}
-
-.chevron-up {
-    display: none;
-}
-
-@keyframes goteoAnimacion {
-    20% {
-        background-color: #00D2FF;
+      margin: 25px 0 0 0;
+      flex-direction: column;
     }
-    20%, 100% {
+
+    .Experience {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 35px 0px 45px;
+      gap: 20px;
+      flex-direction: column;
+      padding: 30px 10px 30px 20px;
+      position: relative;
+      cursor: pointer;
+      transition: 0.4s;
+      border: solid 1px transparent;
+      background-color: var(--containerBg);
+      border-radius: 20px;
+      border: solid 1px #ffffff1f;
+    }
+    .Experience:hover {
+      background-color: rgba(255, 255, 255, 0.045);
+      transition: 0.2s;
+      border: solid 1px #ffffff1f;
+      border: solid 1px #03bce4;
+      background-color: rgba(0, 133, 173, 0.15);
+    }
+
+    .chevron-down,
+    .chevron-up {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #ffffff;
+      transition: 0.3s;
+      transform: rotate(0deg);
+    }
+
+    .chevron-up {
+      display: none;
+    }
+
+    @keyframes goteoAnimacion {
+      20% {
+        background-color: #00d2ff;
+      }
+      20%,
+      100% {
         transform: scale(1.5);
         opacity: 1;
-        
-    }
-    70% {
+      }
+      70% {
         transform: scale(2);
         background-color: inherit;
         opacity: 1;
+      }
     }
-}
 
-@keyframes ondasAnimacion {
-    00% {
+    @keyframes ondasAnimacion {
+      00% {
         transform: scale(1);
         opacity: 0.5;
-    }
-    50% {
+      }
+      50% {
         transform: scale(3);
         opacity: 0;
-    }
-    100% {
+      }
+      100% {
         transform: scale(1);
         opacity: 0;
+      }
     }
-}
 
-#Experience-Items .Experience:first-child .ball, #Experience-Items .Experience:first-child .ball::before {
-    animation-delay: 1.2s;
-}
+    #Experience-Items .Experience:first-child .ball,
+    #Experience-Items .Experience:first-child .ball::before {
+      animation-delay: 1.2s;
+    }
 
-#Experience-Items .Experience:nth-child(2) .ball, #Experience-Items .Experience:nth-child(2) .ball::before {
-    animation-delay: .8s;
-}
+    #Experience-Items .Experience:nth-child(2) .ball,
+    #Experience-Items .Experience:nth-child(2) .ball::before {
+      animation-delay: 0.8s;
+    }
 
-#Experience-Items .Experience:nth-child(3) .ball, #Experience-Items .Experience:nth-child(3) .ball::before {
-    animation-delay: 0.4s;
-}
+    #Experience-Items .Experience:nth-child(3) .ball,
+    #Experience-Items .Experience:nth-child(3) .ball::before {
+      animation-delay: 0.4s;
+    }
 
-.Experience .ball {
-    content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
-    display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
-    height: 8px;
-    width: 8px;
-    border-radius: 10px;
-    position: absolute; /* Posiciona el pseudo-elemento absolutamente */
-    left: -35px;
-    top: 17px; /* Ajusta la posición según sea necesario */
-    top: 40px;
-    background-color: #00D2FF;
-    background-color: var(--containerBg);
-    background-color: #232d35!important;
-box-shadow: 0 0 0 1px #00D2FF inset;
-    animation: goteoAnimacion 1.5s infinite;
-    z-index: 5;
-}
-.Experience .ball::before{
-    content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
-    display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
-    height: 8px;
-    width: 8px;
-    z-index: 1;
+    .Experience .ball {
+      content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
+      display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
+      height: 8px;
+      width: 8px;
+      border-radius: 10px;
+      position: absolute; /* Posiciona el pseudo-elemento absolutamente */
+      left: -35px;
+      top: 17px; /* Ajusta la posición según sea necesario */
+      top: 40px;
+      background-color: #00d2ff;
+      background-color: var(--containerBg);
+      background-color: #232d35 !important;
+      box-shadow: 0 0 0 1px #00d2ff inset;
+      animation: goteoAnimacion 1.5s infinite;
+      z-index: 5;
+    }
+    .Experience .ball::before {
+      content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
+      display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
+      height: 8px;
+      width: 8px;
+      z-index: 1;
 
-    border-radius: 5px;
-    position: absolute; /* Posiciona el pseudo-elemento absolutamente */
-    left: 0px;
-    top: 0px; /* Ajusta la posición según sea necesario */
-    background-color: #00D2FF;
-    animation: ondasAnimacion 1.5s infinite;
+      border-radius: 5px;
+      position: absolute; /* Posiciona el pseudo-elemento absolutamente */
+      left: 0px;
+      top: 0px; /* Ajusta la posición según sea necesario */
+      background-color: #00d2ff;
+      animation: ondasAnimacion 1.5s infinite;
+    }
+    .Experience::before::after {
+      content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
+      display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
+      height: 8px;
+      width: 8px;
+      border-radius: 5px;
+      position: absolute; /* Posiciona el pseudo-elemento absolutamente */
+      left: -30px;
+      top: 0px; /* Ajusta la posición según sea necesario */
+      background-color: #00d2ff;
+      z-index: 1;
+      animation: goteoAnimacion 1s infinite;
+    }
 
-}
-.Experience::before::after{
-    content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
-    display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
-    height: 8px;
-    width: 8px;
-    border-radius: 5px;
-    position: absolute; /* Posiciona el pseudo-elemento absolutamente */
-    left: -30px;
-    top: 0px; /* Ajusta la posición según sea necesario */
-    background-color: #00D2FF;
-    z-index: 1;
-    animation: goteoAnimacion 1s infinite;
-}
+    .Experience::after {
+      content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
+      display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
+      height: calc(100% - 35px);
+      height: calc(100% + 25px);
+      width: 2px;
+      position: absolute; /* Posiciona el pseudo-elemento absolutamente */
+      left: -32px;
+      top: 17px; /* Ajusta la posición según sea necesario */
+      top: 40px;
+      background-color: #00d0ff5d;
+      opacity: 0.5;
+      border-radius: 2px;
+      transition: 0.4s;
+    }
 
-.Experience::after {
-    content: ""; /* Asegúrate de que el pseudo-elemento tenga contenido */
-    display: block; /* Asegúrate de que el pseudo-elemento sea un bloque */
-    height: calc(100% - 35px);
-    height: calc(100% + 25px);
-    width: 2px;
-    position: absolute; /* Posiciona el pseudo-elemento absolutamente */
-    left: -32px;
-    top: 17px; /* Ajusta la posición según sea necesario */
-    top: 40px;
-    background-color: #00d0ff5d;
-    opacity: .5;
-    border-radius: 2px;
-    transition: .4s;
-}
-
-.Experience:last-child::after{
-    height: calc(100% - 60px);
-}
-@keyframes sliding{
-    0%{
+    .Experience:last-child::after {
+      height: calc(100% - 60px);
+    }
+    @keyframes sliding {
+      0% {
         height: original;
-    }
-    50%{
+      }
+      50% {
         height: calc(80% - 35px);
-    }
-    100%{
+      }
+      100% {
         height: original;
+      }
     }
-}
-.Experience:hover::after{
-    opacity: .8;
-    /*animation: sliding .65s ease-in-out infinite;*/
-    height: calc(50%);
-}
+    .Experience:hover::after {
+      opacity: 0.8;
+      /*animation: sliding .65s ease-in-out infinite;*/
+      height: calc(50%);
+    }
 
-.Experience:has(+ .Experience:hover)::after {
-  opacity: .8;
-  height: 75%;
-}
-.Experience h3{
-    font-size: 25px;
-    font-weight: 600;
-    font-family: 'Roboto';
-    color: #00D2FF;
-    color: rgb(211, 211, 211);
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
+    .Experience:has(+ .Experience:hover)::after {
+      opacity: 0.8;
+      height: 75%;
+    }
+    .Experience h3 {
+      font-size: 25px;
+      font-weight: 600;
+      font-family: "Roboto";
+      color: #00d2ff;
+      color: rgb(211, 211, 211);
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
 
-.Experience h3 span{
-    font-size: 18px;
-    font-weight: 400;
-    display: flex;
-    align-items: center;
-    font-family: 'Roboto';
-    color: #00D2FF;
-    gap: 5px;
-    margin: 0 0 0 10px;
-    font-style: italic;
-    opacity: .75;
-}
+    .Experience h3 span {
+      font-size: 18px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      font-family: "Roboto";
+      color: #00d2ff;
+      gap: 5px;
+      margin: 0 0 0 10px;
+      font-style: italic;
+      opacity: 0.75;
+    }
 
-.Experience h4{
-    color: #0FA2C1;
-    position: relative;
-}
+    .Experience h4 {
+      color: #0fa2c1;
+      position: relative;
+    }
 
-.Experience p{
-    color: #B3BDC7;
-    font-size: var(--paragraph-font-size, 20px);
-    margin: 0px 0 -10px 0;
-}
+    .Experience p {
+      color: #b3bdc7;
+      font-size: var(--paragraph-font-size, 20px);
+      margin: 0px 0 -10px 0;
+    }
 
-.Experience p.description {
-    margin: 0 15px -10px 20px
-}
+    .Experience p.description {
+      margin: 0 15px -10px 20px;
+    }
 
-
-@media ( max-width: 768px) {
-    #Experience-Items{
+    @media (max-width: 768px) {
+      #Experience-Items {
         margin: 0;
         padding: 0 20px;
-    }
-    .Experience{
+      }
+      .Experience {
         margin: 0 0 0 10px;
-    }
-    .Experience .ball {
+      }
+      .Experience .ball {
         left: -25px;
-
-    }
-    .Experience::before::after{
+      }
+      .Experience::before::after {
         left: -20px;
-    }
-    .Experience::after {
+      }
+      .Experience::after {
         left: -22px;
+      }
     }
-
-
-    
-}
-   </style>
+  </style>
+</div>

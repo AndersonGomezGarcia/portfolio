@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
+    "experience": "Experience",
     "contact": "Contact"
   },
   "hero": {
@@ -26,7 +27,9 @@
   },
   "projects": {
     "pretitle": "My",
-    "title": "Projects"
+    "title": "Projects",
+    "moreProjects": "See more projects",
+    "moreDetails": "See more details"
   },
   "experience": {
     "pretitle": "My",
@@ -67,5 +70,10 @@
       "message": "Message",
       "button": "Send"
     }
+  },
+  "footer": {
+    "one": "Coding with passion",
+    "two": ", with coffee",
+    "three": " and a little insomnia"
   }
 }

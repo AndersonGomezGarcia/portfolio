@@ -1,0 +1,21 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import data from "../../data/main.json";
+import getUrls from "../../utils/urls.js";
+import Projects from "../../components/Projects.astro";
+import Footer from "../../components/alter/Footer.astro";
+import Title from "../../components/elements/Title.astro";
+import BackButton from "../../components/elements/BackButton.astro";
+---
+
+<Layout>
+  <BackButton />
+  <Projects complete="true" nested="true" />
+  <Footer />
+</Layout>
+
+<style>
+  body {
+    padding: 0;
+  }
+</style>

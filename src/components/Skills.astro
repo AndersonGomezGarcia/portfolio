@@ -1,7 +1,24 @@
 ---
 import Title from "../components/elements/Title.astro"; 
 import SkillGroup from "./elements/SkillGroup.astro";
-import data from "../data/main.json";
+import def_data from "../data/main.json";
+import en_data from "../data/en/main.json";
+import es_data from "../data/es/main.json";
+
+
+const { lan } = Astro.props;
+
+let data;
+if (lan) {
+  if (lan === "en") {
+    data = en_data;
+  } else {
+    data = es_data;
+  }
+
+}else{
+  data = def_data;
+}
 
 const Tecnologies = [
     "img/icons/html.png",
@@ -66,9 +83,9 @@ const ToolsTags = [
 
         <Title title={data.Skills.title} beforeTitle={data.Skills.pretitle} />
         <div class="Separator"></div>
-        <SkillGroup  Group="Tecnologías" items={Tecnologies} tags={TecnologiesTags} />
-        <SkillGroup Group="Frameworks" items={Frameworks} tags={FrameworksTags} />
-        <SkillGroup Group="Tools" items={Tools} tags={ToolsTags} />
+        <SkillGroup  Group={data.Skills.tecnologies} items={Tecnologies} tags={TecnologiesTags} />
+        <SkillGroup Group={data.Skills.frameworks} items={Frameworks} tags={FrameworksTags} />
+        <SkillGroup Group={data.Skills.tools} items={Tools} tags={ToolsTags} />
     </div>
 
      <style>

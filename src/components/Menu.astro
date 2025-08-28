@@ -1,54 +1,102 @@
 ---
+import def_data from "../data/main.json";
+import en_data from "../data/en/main.json";
+import es_data from "../data/es/main.json";
 
+
+const { lan } = Astro.props;
+
+let data;
+if (lan) {
+  if (lan === "en") {
+    data = en_data;
+  } else {
+    data = es_data;
+  }
+
+}else{
+  data = def_data;
+}
 
 ---
- <div id="Menu">
-        <div id="hamburger" class="hamburger" onclick="toggleMenu()">☰ Menu</div>
-        <nav class="menu" id="nav-menu">
-            <img src="img/icon.png" alt="programador">
-            <li> <a class="scroll-link" href="#About" onclick="toggleMenu()" aria-label="view about me">About</a></li>
-            <li> <a class="scroll-link" href="#Projects" onclick="toggleMenu()" aria-label="View my projects">Projects</a></li>
-            <li> <a class="scroll-link" href="#Experience" onclick="toggleMenu()" aria-label="View my projects">Experience</a></li>
-            <li> <a class="scroll-link" href="#Contact" onclick="toggleMenu()" aria-label="Contact">Contact</a></li>
-            <div id="translate" onclick="changeLanguage()"></div>
-        </nav>
-    </div>
+
+<div id="Menu">
+  <div id="hamburger" class="hamburger" onclick="toggleMenu()">☰ Menu</div>
+  <nav class="menu" id="nav-menu">
+    <img src="/img/icon.png" alt="programador" />
+    <li>
+      <a
+        class="scroll-link"
+        href="#About"
+        onclick="toggleMenu()"
+        aria-label="view about me">{data.menu.about}</a>
+    </li>
+    <li>
+      <a
+        class="scroll-link"
+        href="#Projects"
+        onclick="toggleMenu()"
+        aria-label="View my projects">{data.menu.projects}</a>
+    </li>
+    <li>
+      <a
+        class="scroll-link"
+        href="#Experience"
+        onclick="toggleMenu()"
+        aria-label="View my projects">{data.menu.experience}</a>
+    </li>
+    <li>
+      <a
+        class="scroll-link"
+        href="#Contact"
+        onclick="toggleMenu()"
+        aria-label="Contact">{data.menu.contact}</a>
+    </li>
+    <div id="translate" onclick="changeLanguage()"></div>
+  </nav>
+</div>
 <script client:load>
-    document.querySelectorAll('.scroll-link').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+  document.querySelectorAll(".scroll-link").forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     });
   });
-});
 
-     function toggleMenu() {
-            if (window.innerWidth <= 768) { // Verifica si el ancho de la pantalla es menor o igual a 768px
+  function toggleMenu() {
+    if (window.innerWidth <= 768) {
+      // Verifica si el ancho de la pantalla es menor o igual a 768px
 
-                var menu = document.getElementById('nav-menu'); /*as HTMLElement | null*/
-                var hamburger = document.getElementById('hamburger');
+      var menu = document.getElementById("nav-menu"); /*as HTMLElement | null*/
+      var hamburger = document.getElementById("hamburger");
 
-                if (!menu || !hamburger) {
-                    console.error('Menu or hamburger element not found');
-                    return;
-                }
-                if (menu.style.display === 'block') {
-                    menu.style.display = 'none';
-                    hamburger.innerHTML = '☰ Menu';
+      if (!menu || !hamburger) {
+        console.error("Menu or hamburger element not found");
+        return;
+      }
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+        hamburger.innerHTML = "☰ Menu";
+      } else {
+        menu.style.display = "block";
+        hamburger.innerHTML = "✖ Close";
+      }
+    }
+  }
 
-                } else {
-                    menu.style.display = 'block';
-                    hamburger.innerHTML = '✖ Close';
-
-                }
-            }
-        }
+  function changeLanguage() {
+    const currentLang = document.documentElement.lang;
+    const newLang = currentLang === "en" ? "es" : "en";
+    document.documentElement.lang = newLang;
+    window.location.href = `/${newLang}/`;
+    // Aquí puedes agregar lógica para cargar el contenido en el nuevo idioma
+  }
 </script>
 <style>
-
-#Menu {
+  #Menu {
     color: white;
     padding: 2px 70px;
     text-align: center;
@@ -66,56 +114,54 @@
     z-index: 1000;
     left: calc(50% - 620px);
     background-color: rgba(46, 47, 56, 0.85);
-    background-color: #262a2eb6
+    background-color: #262a2eb6;
+  }
 
-}
-
-nav {
+  nav {
     display: flex;
     justify-content: center;
     align-self: center;
     margin: auto;
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
-}
+  }
 
-@keyframes jump {
+  @keyframes jump {
     0% {
-
-        transform: translateY(0) scale(.9) rotate(10deg) ; /* Posición inicial y final */
+      transform: translateY(0) scale(0.9) rotate(10deg); /* Posición inicial y final */
     }
     25% {
-        transform: translateY(-2px) rotate(10deg); /* Altura del salto */
+      transform: translateY(-2px) rotate(10deg); /* Altura del salto */
     }
     50% {
-        transform: translateY(0) scale(.9) rotate(-10deg) ;
+      transform: translateY(0) scale(0.9) rotate(-10deg);
     }
     75% {
-        transform: translateY(-2px) rotate(10deg);
+      transform: translateY(-2px) rotate(10deg);
     }
 
     100% {
-        transform: translateY(0) scale(.9) rotate(10deg) ;
+      transform: translateY(0) scale(0.9) rotate(10deg);
     }
-}
+  }
 
-nav img{
+  nav img {
     height: 35px;
     width: auto;
     position: absolute;
     top: calc(50% - 14px);
     left: 55px;
     animation: jump 1s ease-in-out infinite;
-}
+  }
 
-nav li {
+  nav li {
     list-style: none;
     margin: 0 20px; /* Reduce el margen para pantallas más pequeñas */
     position: relative;
     padding: 10px;
-    transition: .4s;
-}
+    transition: 0.4s;
+  }
 
-nav li::before{
+  nav li::before {
     content: "";
     width: 100%;
     height: 40px;
@@ -123,28 +169,26 @@ nav li::before{
     left: 0;
     top: 0px;
     border-radius: 12px;
-    transition: .2s ease-in-out;
-    transform: scale(.8);
+    transition: 0.2s ease-in-out;
+    transform: scale(0.8);
     border: solid 0px #ffffff0e;
+  }
 
-}
-
-.hamburger{
+  .hamburger {
     display: none;
-}
-/*
+  }
+  /*
 nav li:hover {
     background-color: rgba(0, 0, 0, 0.20);
     transition: .3s;
 }*/
-nav li:hover::before {
+  nav li:hover::before {
     background-color: rgba(255, 255, 255, 0.05);
-    transition: .1s ease-in;
+    transition: 0.1s ease-in;
     transform: scale(1);
     border: solid 1px #ffffff0e;
-
-}
-nav li:not(:nth-last-child(-n+2))::after {
+  }
+  nav li:not(:nth-last-child(-n + 2))::after {
     content: "";
     position: absolute;
     right: -20px; /* Ajusta según el margen */
@@ -154,144 +198,143 @@ nav li:not(:nth-last-child(-n+2))::after {
     width: 3px; /* Grosor del separador */
     border-radius: 2px;
     background-color: #ffffff6b; /* Color del separador */
-}
+  }
 
-nav li a {
-    color: #03BCE4;
+  nav li a {
+    color: #03bce4;
     color: white;
     text-decoration: none;
     font-size: 17px;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-weight: 400;
     padding: 8px 20px; /* Reduce el padding para pantallas más pequeñas */
-}
+  }
 
-nav li:hover a {
-    filter: drop-shadow(0 0 5px #03bbe488); /* Aplica un brillo del color del icono */
-    transition: .15s; /* Añade una transición suave */
-}
+  nav li:hover a {
+    filter: drop-shadow(
+      0 0 5px #03bbe488
+    ); /* Aplica un brillo del color del icono */
+    transition: 0.15s; /* Añade una transición suave */
+  }
 
-nav #translate{
+  nav #translate {
     background-size: cover;
-    background-image: url('/img/traducir-hover.png');
+    background-image: url("/img/traducir-hover.png");
     height: 40px;
     width: 40px;
     content: "";
     position: absolute;
-    transition: .2s;
+    transition: 0.2s;
     right: 35px;
     top: calc(50% - 22px);
-}
+  }
 
-#translate:hover{
-    background-image: url('/img/traducir-hover.png');
-    filter: drop-shadow(0 0 5px #03bbe4); /* Aplica un brillo del color del icono */
-    transition: .2s;
+  #translate:hover {
+    background-image: url("/img/traducir-hover.png");
+    filter: drop-shadow(
+      0 0 5px #03bbe4
+    ); /* Aplica un brillo del color del icono */
+    transition: 0.2s;
     cursor: pointer;
-}
+  }
 
-/* Media queries para pantallas más pequeñas */
-@media (max-width: 1110px) {
+  /* Media queries para pantallas más pequeñas */
+  @media (max-width: 1110px) {
     #Menu {
-        width: 82%; /* Ajusta el ancho del menú */
-        padding: 2px 20px; /* Reduce el padding */
-        left: calc(9% - 21px); /* Ajusta la posición del menú */
+      width: 82%; /* Ajusta el ancho del menú */
+      padding: 2px 20px; /* Reduce el padding */
+      left: calc(9% - 21px); /* Ajusta la posición del menú */
     }
 
     nav li {
-        margin: 0 10px; /* Reduce el margen */
+      margin: 0 10px; /* Reduce el margen */
     }
 
     nav li:not(:last-child)::after {
-        right: -10px; /* Ajusta según el margen */
+      right: -10px; /* Ajusta según el margen */
     }
 
     nav li a {
-        padding: 10px 10px; /* Reduce el padding */
+      padding: 10px 10px; /* Reduce el padding */
     }
-}
+  }
 
-
-
-
-
-@media (max-width: 860px) {
+  @media (max-width: 860px) {
     #Menu {
-        width: calc(100% - 42px); /* Ajusta el ancho del menú */
-        padding: 2px 20px; /* Reduce el padding */
-        left: 0;
+      width: calc(100% - 42px); /* Ajusta el ancho del menú */
+      padding: 2px 20px; /* Reduce el padding */
+      left: 0;
     }
 
     nav li {
-        margin: 0 10px; /* Reduce el margen */
+      margin: 0 10px; /* Reduce el margen */
     }
 
     nav li:not(:last-child)::after {
-        right: -10px; /* Ajusta según el margen */
+      right: -10px; /* Ajusta según el margen */
     }
 
     nav li a {
-        padding: 10px 10px; /* Reduce el padding */
+      padding: 10px 10px; /* Reduce el padding */
     }
-    
-.hamburger {
-    cursor: pointer;
-    font-size: 24px;
-}
-}
 
-
-@media (max-width: 768px) {
-
-    body{
-        padding: 0 7% 0 7%;
+    .hamburger {
+      cursor: pointer;
+      font-size: 24px;
     }
-    #Menu{
-        position: fixed;
-        height: auto;
-        display: block;
-        width: 100%;
-        padding:10px 0;
-        margin: 0;
-        top: 0;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding: 0 7% 0 7%;
     }
-    
-    nav li{
-        margin:  14px auto;
-        width: fit-content;
+    #Menu {
+      position: fixed;
+      height: auto;
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+      margin: 0;
+      top: 0;
+    }
+
+    nav li {
+      margin: 14px auto;
+      width: fit-content;
     }
 
     nav li:not(:last-child)::after {
-        content: "";
-        position: absolute;
-        right: 10%; /* Ajusta según el margen */
-        top: 115%;
-        transform: translateY(-50%);
-        height: 3px; /* Ajusta según tus necesidades */
-        width: 80%; /* Grosor del separador */
-        border-radius: 2px;
-        background-color: #03BCE4; /* Color del separador */
+      content: "";
+      position: absolute;
+      right: 10%; /* Ajusta según el margen */
+      top: 115%;
+      transform: translateY(-50%);
+      height: 3px; /* Ajusta según tus necesidades */
+      width: 80%; /* Grosor del separador */
+      border-radius: 2px;
+      background-color: #03bce4; /* Color del separador */
     }
-    nav li  a{
-        padding: 10px 50px;
+    nav li a {
+      padding: 10px 50px;
     }
-    #Front-Left h1{
-        font-size: 35px;
+    #Front-Left h1 {
+      font-size: 35px;
     }
-    button.Contact, #Front-Left-1 a p{
-        font-size: 22px;
+    button.Contact,
+    #Front-Left-1 a p {
+      font-size: 22px;
     }
     .menu {
-        display: none;
-        flex-direction: row;
-        position: static;
+      display: none;
+      flex-direction: row;
+      position: static;
     }
     .hamburger {
-        display: block;
-        width: 100%;
+      display: block;
+      width: 100%;
     }
     .menu a {
-        padding: 10px 20px;
+      padding: 10px 20px;
     }
-}
+  }
 </style>

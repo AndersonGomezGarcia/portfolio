@@ -4,6 +4,8 @@ import "../styles/animation.css";
 import Particles from "astro-particles";
 import type { ISourceOptions } from "tsparticles-engine";
 
+
+const {lan} = Astro.props;
 const options: ISourceOptions = {
   autoPlay: true,
   background: {
@@ -110,7 +112,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lan}>
   <head>
     <title>Anderson CV</title>
     <meta charset="UTF-8" />
