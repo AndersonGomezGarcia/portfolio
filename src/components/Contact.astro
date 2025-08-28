@@ -7,6 +7,7 @@ import def_data from "../data/main.json";
 import en_data from "../data/en/main.json";
 import es_data from "../data/es/main.json";
 
+import {globalUrl} from "../utils/urls.js";
 
 const { lan } = Astro.props;
 
@@ -28,25 +29,25 @@ if (lan) {
   <div class="Separator"></div>
   <div id="Contact-Items">
     <div id="Contact-Info" class="fade-right">
-      <img class="Contact-IMG" src="/img/icons/contact.png" alt="" />
-      <h2>Anderson Gomez Garcia <img src="/img/icons/colombia.svg" alt="" /></h2>
+      <img class="Contact-IMG" src={`${globalUrl}/img/icons/contact.png`} alt="" />
+      <h2>Anderson Gomez Garcia <img src={`${globalUrl}/img/icons/colombia.svg`} alt="" /></h2>
       <p class="copyable" style="display: flex;">
         <Mail size="24" style="margin-right: 10px; display:block" />
         <span>
           andersongomezgarcia111<wbr />@gmail.com
-          <img class="Copy" src="/img/copy.png" alt="copy icon" />
+          <img class="Copy" src={`${globalUrl}/img/copy.png`} alt="copy icon" />
         </span>
       </p>
       <p class="copyable">
         <Phone />
 
-        +57 3185836788 <img class="Copy" src="/img/copy.png" alt="copy icon" />
+        +57 3185836788 <img class="Copy" src={`${globalUrl}/img/copy.png`} alt="copy icon" />
       </p>
       <p class="copyable">
         <MapPin />
         Tulúa, Valle del Cauca, Colombia <img
           class="Copy"
-          src="/img/copy.png"
+          src={`${globalUrl}/img/copy.png`}
           alt="copy icon"
         />
       </p>

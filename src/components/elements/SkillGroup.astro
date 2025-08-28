@@ -1,5 +1,6 @@
 ---
 const { Group, items, tags } = Astro.props;
+import {globalUrl} from "../../utils/urls.js";
 ---
 
 <div id={Group} class="SkillGroup fade-up">
@@ -10,7 +11,7 @@ const { Group, items, tags } = Astro.props;
         {
           items.map((item: keyof typeof items) => (
             <li data-label={tags[items.indexOf(item)]}>
-              <img src={"/" + item} alt={item} />
+              <img src={globalUrl + "/" + item} alt={item} />
               <span>{tags[items.indexOf(item)]}</span>
             </li>
           ))

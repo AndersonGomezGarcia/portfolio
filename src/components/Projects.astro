@@ -10,6 +10,7 @@ import es_data from "../data/es/main.json";
 import def_projects from "../data/projects.json";
 import en_projects from "../data/en/projects.json";
 import es_projects from "../data/es/projects.json";
+import {globalUrl} from "../utils/urls.js";
 
 const { lan } = Astro.props;
 
@@ -26,16 +27,21 @@ if (lan) {
 }
 
 let projects;
+let language;
 
 if (lan) {
   if (lan === "en") {
     projects = en_projects;
+    language = "en";
   } else {
     projects = es_projects;
+    language = "es";
+
   }
 
 }else{
   projects = def_projects;
+  language = "es";
 }
 
 /*
@@ -101,7 +107,7 @@ const baseUrl = nested === "true" ? "../" : "";
           <div class="Project fade-up">
             <img
               class="Project-Image"
-              src={`/${baseUrl + item.image}`}
+              src={`${globalUrl + baseUrl + item.image}`}
               alt={item.name}
             />
             <div class="Content">
@@ -117,12 +123,12 @@ const baseUrl = nested === "true" ? "../" : "";
                     */
 
                     <li data-skill={skill}>
-                      <img src={'/'+baseUrl + getUrls(skill)} alt={skill} />
+                      <img src={globalUrl + '/'+baseUrl + getUrls(skill)} alt={skill} />
                     </li>
                   ))}
                 </ul>
                 <div class="Links">
-                  <a class="details" href={baseUrl + "./projects/" + item.key}>
+                  <a class="details" href={baseUrl + './' + language + "/projects/" + item.key}>
                     {data.projects.moreDetails}{" "}
                     <span style="  font-family: 'WDXL Lubrifont TC', sans-serif">
                       {" "}
@@ -143,7 +149,7 @@ const baseUrl = nested === "true" ? "../" : "";
                     <a href={item.links.download} target="_blank">
                       <img
                         class="hyperlink"
-                        src={`${baseUrl}img/download.png`}
+                        src={`${globalUrl + baseUrl}img/download.png`}
                         alt=""
                       />
                     </a>
