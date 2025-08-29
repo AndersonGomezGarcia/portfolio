@@ -1,6 +1,24 @@
 ---
-import data from "../data/main.json";
+import def_data from "../data/main.json";
+import en_data from "../data/en/main.json";
+import es_data from "../data/es/main.json";
 
+
+import {globalUrl} from "../utils/urls.js";
+
+const { lan } = Astro.props;
+
+let data;
+if (lan) {
+  if (lan === "en") {
+    data = en_data;
+  } else {
+    data = es_data;
+  }
+
+}else{
+  data = def_data;
+}
 ---
 
 <div id="Front" class="fade-up">
@@ -19,7 +37,7 @@ import data from "../data/main.json";
   <div id="Front-Right">
     <span
       >&#123;</span>
-      <img src="/img/icon.png" alt="programador" />
+      <img src={globalUrl + "/img/icon.png"} alt="programador" />
       <p>nderson <br /> Gómez García</p>
       <span id="span2">&#125;</span>
   </div>
