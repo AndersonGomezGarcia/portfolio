@@ -3,8 +3,7 @@ import def_data from "../data/main.json";
 import en_data from "../data/en/main.json";
 import es_data from "../data/es/main.json";
 
-
-import {globalUrl} from "../utils/urls.js";
+import { globalUrl } from "../utils/urls.js";
 
 const { lan } = Astro.props;
 
@@ -15,11 +14,9 @@ if (lan) {
   } else {
     data = es_data;
   }
-
-}else{
+} else {
   data = def_data;
 }
-
 ---
 
 <div id="Menu">
@@ -31,34 +28,40 @@ if (lan) {
         class="scroll-link"
         href="#About"
         onclick="toggleMenu()"
-        aria-label="view about me">{data.menu.about}</a>
+        aria-label="view about me">{data.menu.about}</a
+      >
     </li>
     <li>
       <a
         class="scroll-link"
         href="#Projects"
         onclick="toggleMenu()"
-        aria-label="View my projects">{data.menu.projects}</a>
+        aria-label="View my projects">{data.menu.projects}</a
+      >
     </li>
     <li>
       <a
         class="scroll-link"
         href="#Experience"
         onclick="toggleMenu()"
-        aria-label="View my projects">{data.menu.experience}</a>
+        aria-label="View my projects">{data.menu.experience}</a
+      >
     </li>
     <li>
       <a
         class="scroll-link"
         href="#Contact"
         onclick="toggleMenu()"
-        aria-label="Contact">{data.menu.contact}</a>
+        aria-label="Contact">{data.menu.contact}</a
+      >
     </li>
-    <div id="translate"
+    <div
+      id="translate"
       data-globalurl={globalUrl}
       style={`background-image: url('${globalUrl}/img/traducir-hover.png'); background-size: cover; height: 40px; width: 40px; position: absolute; transition: 0.2s; right: 35px; top: calc(50% - 22px);`}
-
-     onclick="changeLanguage()"></div>
+      onclick="changeLanguage()"
+    >
+    </div>
   </nav>
 </div>
 
@@ -97,13 +100,87 @@ if (lan) {
   function changeLanguage() {
     const currentLang = document.documentElement.lang;
     const newLang = currentLang === "en" ? "es" : "en";
-//    document.documentElement.lang = newLang;
+    //    document.documentElement.lang = newLang;
     const translate = document.getElementById("translate");
     const globalUrl = translate.dataset.globalurl;
     console.log("Changing language to:", newLang, "in", globalUrl);
-   window.location.href = globalUrl + `./${newLang}/`;
+    window.location.href = globalUrl + `./${newLang}/`;
     // Aquí puedes agregar lógica para cargar el contenido en el nuevo idioma
   }
+
+  // --- Config ---
+  const headerOffsetPx = 64; // si tu header es más alto, súbelo
+  document.addEventListener("DOMContentLoaded", () => {
+    // Mapear secciones y links
+    const links = Array.from(document.querySelectorAll("#Menu a"));
+    /*const sections = links
+      .map((a) => document.querySelector(a.getAttribute("href")))
+      .filter(Boolean);
+    console.log(links, sections);*/
+    const sections = document.querySelectorAll(' #About, #Skills, #Contact, #Projects, #Experience');
+
+    // Helper: activar link
+    function setActive(id) {
+      links.forEach((a) => {
+        const isActive = a.getAttribute("href") === `#${id}`;
+        a.classList.toggle("active", isActive);
+        a.setAttribute("aria-current", isActive ? "true" : "false");
+      });
+    }
+
+    const sectionAlias = {
+      Skills: "About", // Cuando Skills está visible, marcá About como activo
+      Hero: "About", // Ejemplo, si querés otros cambios
+    };
+
+    // IntersectionObserver con margen para considerar el header
+    const io = new IntersectionObserver(
+      (entries) => {
+        console.log("IO created");
+
+        // Elegimos la sección con mayor intersección visible
+        let best = null;
+        for (const e of entries) {
+          if (!best || e.intersectionRatio > best.intersectionRatio) best = e;
+        }
+        if (best && best.isIntersecting) {
+          let id = best.target.id;
+
+          console.log("Active section changed to:", id);
+          // Si esa sección tiene alias, usar el alias
+          if (sectionAlias[id]) {
+            id = sectionAlias[id];
+          }
+
+          setActive(id);
+        }
+      },
+      {
+        root: null,
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+        // top negativo = ignora la franja tapada por el header
+        rootMargin: `-${headerOffsetPx}px 0px -50% 0px`,
+      }
+    );
+    sections.forEach((s) => io.observe(s));
+
+    // Fallback por si IO no existe
+    if (!("IntersectionObserver" in window)) {
+      const onScroll = () => {
+        const y = window.scrollY + headerOffsetPx + window.innerHeight * 0.3;
+        let current = sections[0].id;
+        sections.forEach((sec) => {
+          const top = sec.offsetTop;
+          if (y >= top) current = sec.id;
+        });
+        setActive(current);
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    }
+
+    sections.forEach((s) => io.observe(s));
+  });
 </script>
 <style>
   #Menu {
@@ -216,8 +293,35 @@ nav li:hover {
     text-decoration: none;
     font-size: 17px;
     font-family: "Roboto";
+    position: relative;
     font-weight: 400;
+    transition: 0.35s ease-in;
     padding: 8px 20px; /* Reduce el padding para pantallas más pequeñas */
+  }
+
+  nav li a.active {
+    color: #b9e9ff;
+    filter: drop-shadow(
+      0 0 5px #03bbe45d
+    ); /* Aplica un brillo del color del icono */
+    transition: 0.25s; /* Añade una transición suave */
+  }
+  nav li a::after {
+    opacity: 0;
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 10px;
+    background-color: #00d2ff;
+    border-radius: 2px;
+    transition: 0.35s ease-in;
+  }
+
+  nav li a.active::after {
+    opacity: 1;
   }
 
   nav li:hover a {

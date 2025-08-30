@@ -23,7 +23,7 @@ const getFullText = (description: string | string[]) =>
   Array.isArray(description) ? description.join("\n\n") : description;
 ---
 
-<div id="Experience" class="fade-up section">
+<section id="Experience" class="fade-up section">
   <Title title={data.experience.title} beforeTitle={data.experience.pretitle} />
   <div class="Separator"></div>
   <div id="Experience-Items">
@@ -53,6 +53,7 @@ const getFullText = (description: string | string[]) =>
       ))
     }
   </div>
+</section>
   <script type="module">
     document.querySelectorAll(".Experience").forEach((exp) => {
       const p = exp.querySelector(".description");
