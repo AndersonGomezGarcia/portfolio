@@ -29,7 +29,15 @@
         "pretitle": "Mis",
         "title": "Proyectos",
         "moreProjects": "Ver más proyectos",
-        "moreDetails": "Ver más detalles"
+        "moreDetails": "Ver más detalles",
+        "details":{
+            "links": "Enlaces",
+            "more": "Ver mas proyectos",
+            "diagram": "Diagrama de arquitectura",
+            "prev": "Anterior",
+            "next": "Siguiente",
+            "all": "Todos"
+        }
     },
     "experience": {
         "pretitle": "Mi",

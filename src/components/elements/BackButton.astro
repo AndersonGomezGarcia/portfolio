@@ -2,18 +2,22 @@
 import {globalUrl} from '../../utils/urls.js';
 ---
 
-<button onclick="projectsBack(); return false;" class="BackButton">
+<button onclick="projectsBack(); return false;" data-globalUrl={globalUrl} class="BackButton">
   <a href="/"> <img src={`${globalUrl}img/icons/back.png`} alt="Back" /> Back</a>
 </button>
 
 <script is:inline>
   function projectsBack() {
     const path = window.location.pathname;
+    const globalUrl = document.querySelector('.BackButton').dataset.globalurl;
+    const lan = document.documentElement.lang;
+    const url = globalUrl + lan;
+    console.log(url);
 
     if (path.includes('/projects/') && path.split('/').length === 3) {
-      window.location.href = '/projects';
+      window.location.href = url + '/projects';
     } else {
-      window.location.href = '/';
+      window.location.href = url;
     }
   }
 </script>

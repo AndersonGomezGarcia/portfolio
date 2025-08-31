@@ -6,6 +6,7 @@ import Description from "../../components/alter/Description.astro";
 import Footer from "../../components/alter/Footer.astro";
 import data from "../../data/projects.json";
 import BackButton from "../../components/elements/BackButton.astro";
+import MainData from "../../data/es/main.json";
 
 export const getStaticPaths = (() => {
     const paths = data.projects.map((project) => ({
@@ -22,11 +23,13 @@ const projectData = data.projects.find((p) => p.key === project ) || {
     key: project,
 };
 
+
+console.log("estoy es lada data antes de enviarse:", MainData);
 ---
 <Layout>
     <BackButton />
     <Header class="fade-up" project={projectData} />
-    <Description project={projectData} />
+    <Description project={projectData} maindata={MainData} />
 </Layout>
 <Footer project={projectData} />
 

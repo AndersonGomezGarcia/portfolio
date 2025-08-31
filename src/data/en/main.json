@@ -29,7 +29,15 @@
     "pretitle": "My",
     "title": "Projects",
     "moreProjects": "See more projects",
-    "moreDetails": "See more details"
+    "moreDetails": "See more details",
+    "details":{
+            "links": "Links",
+            "more": "See more projects",
+            "diagram": "Arch Diagram",
+            "prev": "Previous",
+            "next": "Next",
+            "all": "All"
+        }
   },
   "experience": {
     "pretitle": "My",

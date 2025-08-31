@@ -451,9 +451,16 @@
                     "type": "text",
                     "value": "WeekArt es una aplicación web tipo red social dirigida a fotógrafos y creadores visuales. Los usuarios pueden registrarse, iniciar sesión, subir sus fotos, navegar entre páginas y ver detalles de publicaciones."
                 },
-                {
+                 {
                     "type": "img",
-                    "value": "img/projects/WeekArt.avif"
+                    "value": [
+                        "img/projects/WeekArt.avif",
+                        "img/projects/WeekArt-2.avif",
+                        "img/projects/WeekArt-3.avif",
+                        "img/projects/WeekArt-4.avif",
+                        "img/projects/WeekArt-5.avif",
+                        "img/projects/WeekArt-6.avif"
+                    ]
                 },
                 {
                     "type": "text",

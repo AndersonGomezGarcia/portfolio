@@ -107,7 +107,7 @@ const baseUrl = nested === "true" ? "../" : "";
           <div class="Project fade-up">
             <img
               class="Project-Image"
-              src={`${globalUrl + baseUrl + item.image}`}
+              src={`${globalUrl + item.image}`}
               alt={item.name}
             />
             <div class="Content">
@@ -128,7 +128,7 @@ const baseUrl = nested === "true" ? "../" : "";
                   ))}
                 </ul>
                 <div class="Links">
-                  <a class="details" href={baseUrl + './' + language + "/projects/" + item.key}>
+                  <a class="details" href={globalUrl + './' + language + "/projects/" + item.key}>
                     {data.projects.moreDetails}{" "}
                     <span style="  font-family: 'WDXL Lubrifont TC', sans-serif">
                       {" "}

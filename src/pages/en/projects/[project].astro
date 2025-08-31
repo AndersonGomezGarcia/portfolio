@@ -6,6 +6,8 @@ import Description from "../../../components/alter/Description.astro";
 import Footer from "../../../components/alter/Footer.astro";
 import data from "../../../data/en/projects.json";
 import BackButton from "../../../components/elements/BackButton.astro";
+import MainData from "../../../data/en/main.json";
+
 
 export const getStaticPaths = (() => {
     const paths = data.projects.map((project) => ({
@@ -23,10 +25,10 @@ const projectData = data.projects.find((p) => p.key === project ) || {
 };
 
 ---
-<Layout>
+<Layout lan="en">
     <BackButton />
     <Header class="fade-up" project={projectData} />
-    <Description project={projectData} />
+    <Description project={projectData} maindata={MainData} />
 </Layout>
 <Footer project={projectData} />
 

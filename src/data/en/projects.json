@@ -452,7 +452,14 @@
         },
         {
           "type": "img",
-          "value": "img/projects/WeekArt.avif"
+          "value": [
+            "img/projects/WeekArt.avif",
+            "img/projects/WeekArt-2.avif",
+            "img/projects/WeekArt-3.avif",
+            "img/projects/WeekArt-4.avif",
+            "img/projects/WeekArt-5.avif",
+            "img/projects/WeekArt-6.avif"
+          ]
         },
         {
           "type": "text",
@@ -484,7 +491,7 @@
         },
         {
           "type": "diagram",
-          "value": "graph TD; usuario([👤 <b>User</b>]); subgraph cliente [<div style='width:22em; height:2em; display:flex; align-items:center;'><b>📦 Client</b></div>]; navegador([🌐 Browser]); appReact([⚛️ React App]); navegador --> appReact; end; subgraph servidor [<div style='width:28em; height:2em; display:flex; align-items:center;'><b>🖥️ Server</b></div>]; api([🟢 Node.js API]); db([🐘 PostgreSQL DB]); drive([📂 Google Drive API]); api --> db; api --> drive; end; usuario --> navegador; appReact --> api;"
+          "value": "graph TD; User([👤 <b>User</b>]); subgraph client [<div style='width:22em; height:2em; display:flex; align-items:center;'><b>📦 Client</b></div>]; navegador([🌐 Browser]); appReact([⚛️ React App]); navegador --> appReact; end; subgraph servidor [<div style='width:28em; height:2em; display:flex; align-items:center;'><b>🖥️ Server</b></div>]; api([🟢 Node.js API]); db([🐘 PostgreSQL DB]); drive([📂 Google Drive API]); api --> db; api --> drive; end; usuario --> navegador; appReact --> api;"
         },
         {
           "type": "demo",
